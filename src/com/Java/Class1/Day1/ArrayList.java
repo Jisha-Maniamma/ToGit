@@ -1,4 +1,4 @@
-package com.Java.Class1;
+package com.Java.Class1.Day1;
 
 import java.util.List;
 import java.util.Scanner;
