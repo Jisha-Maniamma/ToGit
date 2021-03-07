@@ -16,7 +16,10 @@ public class MobilePhone {
     //name number
     public void addContact(Contacts contact) {
         int number = contact.getNumber();
-        if (!FindContact(number)) {
+        //System.out.println("hai");
+        if (!FindContact(number) ) {
+          //  System.out.println("hai1");
+
             mobilePhone.add(contact);
             System.out.println("The contact has been saved...");
         } else
@@ -29,13 +32,20 @@ public class MobilePhone {
             mobilePhone.set(i, Contacts.addContact(newname, mobilePhone.get(i).getNumber()));
             return true;
         }
+
         return false;
     }
 
-    public boolean modify(Contacts c1, Contacts c2) {
-        int i = FindContact(c1);
-        if (i >= 0) {
-            mobilePhone.set(i, c2);
+    public boolean modify(Contacts oldContact, Contacts newContact) {
+        int i = FindContact(oldContact);
+//        System.out.println(mobilePhone.indexOf(oldContact));
+//        //System.out.println(i);
+//        System.out.println("......"+mobilePhone.get(0).getName());
+//        System.out.println("....."+Find(oldContact.getName()));
+
+        if (Find(oldContact.getName())) {
+            mobilePhone.set(FindContact(oldContact.getName()), newContact);
+            System.out.println("contact modified");
             return true;
         } else {
             System.out.println("sorry no such contact exixts");
@@ -62,7 +72,7 @@ public class MobilePhone {
     }
 
     private int FindContact(String name) {
-        for(int i=0;i<=mobilePhone.size();i++){
+        for(int i=0;i<mobilePhone.size();i++){
             if(mobilePhone.get(i).getName().equals(name)){
                 return i;
             }
@@ -72,6 +82,7 @@ public class MobilePhone {
     public boolean Find(String name) {
 
             if(FindContact(name)>=0){
+                System.out.println("The contact number is "+mobilePhone.get(FindContact(name)).getNumber());
                 return true;
             }
 
@@ -79,19 +90,35 @@ public class MobilePhone {
     }
 
     public boolean FindContact(int number) {
-        for(int i=0;i<=mobilePhone.size();i++){
-            if(mobilePhone.get(i).getNumber()==number){
-                return true;
-            }
+        for(Contacts c: mobilePhone){
+             if(c.getNumber()==number){
+                 System.out.println("The contact name is "+c.getName());
+                 return true;
+             }
+            
         }
+
+
         return false;
     }
 
-    private int FindContact(Contacts c1) {
-        return mobilePhone.indexOf(c1);
+//    private int FindContact(Contacts c1) {
+//      //  System.out.println(mobilePhone.size());
+//      // System.out.println(mobilePhone.indexOf(c1));
+//      // print();
+//        return this.mobilePhone.indexOf(c1);
+//    }
+    private int FindContact(Contacts contact) {
+        return this.mobilePhone.indexOf(contact);
+    }
+    public void print(){
+        for(int i=0;i<mobilePhone.size();i++){
+            System.out.println((i+1)+" name: "+this.mobilePhone.get(i).getName()+" number: "+mobilePhone.get(i).getNumber());
+        }
     }
     public boolean Find(Contacts c2){
-        if(FindContact(c2)>=0){
+        int i=FindContact(c2);
+        if(i>=0){
             return true;
         }
         return false;
