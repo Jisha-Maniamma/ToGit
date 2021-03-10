@@ -2,6 +2,7 @@ package com.Java.Class1.Day5;
 
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Main_day5 {
     public static void main(String[] args) {
@@ -50,6 +51,7 @@ public class Main_day5 {
         print(projectsNew2);
         ////////////////////////////////////////////////////////
 
+        printUsingIterator(projects);
 
     }
 
@@ -59,6 +61,23 @@ public class Main_day5 {
 
         } System.out.println("-----------");
     }
+
+    public static void printUsingIterator(LinkedList<String> list){
+        System.out.println("Using List Iterator the list is displayed as-");
+        ListIterator<String> iterator= list.listIterator();
+        System.out.println("FORWARD ");
+        System.out.println();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }System.out.println("-----------");
+        System.out.println("BACKWARD");
+        System.out.println();
+        while(iterator.hasPrevious()){
+            System.out.println(iterator.previous());
+        }
+        System.out.println("-----------");
+    }
+
 /////////////Array to List////////////
     public static void ArrayToList(String[] a){
         LinkedList<String> List=new LinkedList<>();
