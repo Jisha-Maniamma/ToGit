@@ -1,5 +1,6 @@
 package com.Java.Class1.Day5;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Main_day5 {
@@ -8,6 +9,10 @@ public class Main_day5 {
         projects.add("Project1");
         projects.add("Project2");
         projects.add("Project3");
+        projects.add("Project83");
+        projects.add("Abkjbvjsv");
+        projects.add("kvmv");
+        projects.add("xcxbvcxb");
         projects.addFirst("Project0");
         print(projects);
         System.out.println("-----------");
@@ -24,6 +29,14 @@ public class Main_day5 {
         System.out.println("-----------");
 
         ListToarray(projects);
+        System.out.println("-----------");
+
+        //To sort
+        System.out.println("the sorted list is-");
+        Collections.sort(projects);
+        print(projects);
+        System.out.println("-----------");
+
 
     }
 
