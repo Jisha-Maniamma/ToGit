@@ -23,6 +23,8 @@ public class Main_day5 {
         ArrayToList(array1);
         System.out.println("-----------");
 
+        ListToarray(projects);
+
     }
 
     public static void print(LinkedList<String> list){
@@ -39,5 +41,13 @@ public class Main_day5 {
 
         }
         print(List);
+    }
+
+    public static void ListToarray(LinkedList<String> list){
+String[] array=list.toArray(new String[list.size()]);
+for(String a:array){
+    System.out.println(a);
+}
+
     }
 }
