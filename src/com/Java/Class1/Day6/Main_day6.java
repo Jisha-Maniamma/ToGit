@@ -1,15 +1,27 @@
 package com.Java.Class1.Day6;
 
-public class Main_day6 extends projects {
-    void status(){
-        System.out.println("This is the abstract class method declared inside extended class "+getClass().getMethods().toString());
-    }
+public class Main_day6  {
+
     public static void main(String[] args) {
-projects p1=new Main_day6();
-p1.status();
+        projects Business1=new BusinessProjects();
+        projects IT1=new ITProjects();
+        Business1.about();
+        IT1.about();
     }
 }
 
 abstract class projects{
-    abstract void status();
+    abstract void about();
+
+}
+
+class BusinessProjects extends projects{
+    void about(){
+        System.out.println("this is about Business projects");
+    }
+}
+class ITProjects extends projects{
+    void about(){
+        System.out.println("this is about IT projects");
+    }
 }
