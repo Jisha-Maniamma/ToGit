@@ -44,10 +44,10 @@ public class Main_day5 {
     }
 
     public static void ListToarray(LinkedList<String> list){
-String[] array=list.toArray(new String[list.size()]);
-for(String a:array){
-    System.out.println(a);
-}
+        String[] array=list.toArray(new String[list.size()]);
+        for(String a:array){
+            System.out.println(a);
+        }
 
     }
 }
