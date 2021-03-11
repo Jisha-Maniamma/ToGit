@@ -1,4 +1,4 @@
-package com.Java.Class1.Day6;
+package com.Java.Class1.Day6.AbstractClass1;
 
 public abstract class Animal {
 

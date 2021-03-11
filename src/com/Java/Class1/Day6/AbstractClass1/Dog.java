@@ -1,6 +1,6 @@
-package com.Java.Class1.Day6;
+package com.Java.Class1.Day6.AbstractClass1;
 
-public abstract class Dog extends Animal{
+public abstract class Dog extends Animal {
     Dog(String name){
         super(name);
     }
