@@ -7,7 +7,7 @@ public class Main_Abstract {
         MyDog.eat();
         MyDog.Hunt();
 
-        Dog SomeOneDog=new RajapalayamDog("Huntter");
+        Dog SomeOneDog=new RajapalayamDog("Hunter");
         SomeOneDog.eat();
         SomeOneDog.Hunt();
 
