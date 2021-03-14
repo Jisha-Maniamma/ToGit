@@ -1,6 +1,6 @@
 package com.Java.Class1.Day6.AbstractClass1;
 
-public abstract class Dog extends Animal {
+public abstract class Dog extends Animal implements MakesSound {
     Dog(String name){
         super(name);
     }
@@ -22,6 +22,11 @@ pugDog(String name){
     public void Hunt() {
         System.out.println(getName()+"- I am cute and i cannot hunt");
     }
+
+    @Override
+    public void barks() {
+        System.out.println("barks bowww");
+    }
 }
 class RajapalayamDog extends Dog{
 RajapalayamDog(String name){
@@ -32,4 +37,8 @@ RajapalayamDog(String name){
         System.out.println(getName()+"- I am cute , But i can Hunt");
     }
 
+    @Override
+    public void barks() {
+        System.out.println("bark Boww! Boww!");
+    }
 }

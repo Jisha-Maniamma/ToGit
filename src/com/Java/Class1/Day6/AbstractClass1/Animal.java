@@ -10,4 +10,7 @@ private String name;
     public String getName() {
         return name;
     }
+    public void sayHai(){
+        System.out.println("Hi.. i am "+getName());
+    }
 }
