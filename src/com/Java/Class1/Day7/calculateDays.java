@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class calculateDays {
+public static Scanner scan=new Scanner (System.in);
+
     public static void main(String[] args) {
 
         AddHolidays(LocalDate.of(2020,01,01) ,LocalDate.of(2020,01,02)
@@ -27,7 +29,10 @@ public class calculateDays {
 
         );
         System.out.println("No. of holiadys are "+dates.size());
-        System.out.println("The dates in this year, exclusing holidays are... "+getBusinesdays(2,LocalDate.of(2020,04,01),LocalDate.of(2020,8,3)));
+        System.out.println("If saturday is not holiday in your company enter 1 ............or else enter 2 if saturday is a holiday");
+        int choice=scan.nextInt();
+        scan.nextLine();
+        System.out.println("The dates in this year, exclusing holidays are... "+getBusinesdays(choice,LocalDate.of(2020,04,01),LocalDate.of(2020,8,3)));
     }
 
 
