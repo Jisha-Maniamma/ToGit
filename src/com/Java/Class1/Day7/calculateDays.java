@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class calculateDays {
-public static Scanner scan=new Scanner (System.in);
+    public static Scanner scan=new Scanner (System.in);
 
     public static void main(String[] args) {
 
@@ -32,20 +32,37 @@ public static Scanner scan=new Scanner (System.in);
         System.out.println("If saturday is not holiday in your company enter 1 ............or else enter 2 if saturday is a holiday");
         int choice=scan.nextInt();
         scan.nextLine();
-        System.out.println("The dates in this year, exclusing holidays are... "+getBusinesdays(choice,LocalDate.of(2020,04,01),LocalDate.of(2020,8,3)));
+        System.out.println("......................................................................................");
+        System.out.println("The dates in this year, exclusing holidays are... "+getBusinesdays(choice,LocalDate.of(2020,03,01),LocalDate.of(2020,10,3)));
+        System.out.println("......................................................................................");
+        AddDates(LocalDate.of(2020,04,06));
+        System.out.println("No. of holiadys are "+dates.size());
+        System.out.println("If saturday is not holiday in your company enter 1 ............or else enter 2 if saturday is a holiday");
+        choice=scan.nextInt();
+        scan.nextLine();
+        System.out.println("......................................................................................");
+
+        System.out.println("The dates in this year, exclusing holidays are... "+getBusinesdays(choice,LocalDate.of(2020,03,01),LocalDate.of(2020,10,3)));
+        System.out.println("......................................................................................");
+
+       for(LocalDate a:dates){
+           System.out.println(a);
+       }
+
+
     }
 
 
 
 
-    private static List<LocalDate> dates;
+    public static List<LocalDate> dates=new ArrayList<>();
 
 
 
 
 
     public static List<LocalDate> AddHolidays(LocalDate... datesInput){
-        dates=new ArrayList<>();
+
         for(LocalDate NewDates:datesInput){
 
             dates.add(NewDates);
@@ -53,10 +70,16 @@ public static Scanner scan=new Scanner (System.in);
         return dates;
     }
 
+    public static List<LocalDate> AddDates(LocalDate date1){
+
+        dates.add(date1);
+        return dates;
+    }
 
 
 
     public static int getBusinesdays(int choice,LocalDate startDate, LocalDate endDate){
+        System.out.println("Inside....calculator...No. of holiadys are "+dates.size());
         if(startDate.isAfter(endDate)){
             throw new IllegalArgumentException("Sorry the dates must be checked for order");
         }
