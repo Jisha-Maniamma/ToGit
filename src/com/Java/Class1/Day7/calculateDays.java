@@ -28,8 +28,8 @@ public class calculateDays {
                 ,LocalDate.of(2020,12,31)
 
         );
-        System.out.println("No. of holiadys are "+dates.size());
-        System.out.println("If saturday is not holiday in your company enter 1 ............or else enter 2 if saturday is a holiday");
+        System.out.println("No. of holidays are "+dates.size());
+        System.out.println("If saturday is not holiday in your company enter 1 ............or else enter 2 if saturday is a holiday.....enter 3 if the holidays are random");
         int choice=scan.nextInt();
         scan.nextLine();
         System.out.println("......................................................................................");
@@ -44,14 +44,15 @@ public class calculateDays {
         scan.nextLine();
         System.out.println("......................................................................................");
 
-        System.out.println("The dates in this year, exclusing holidays are... "+
+        System.out.println("The dates in this year, excluding holidays are... "+
                 getBusinesdays(choice,LocalDate.of(2020,03,01),
                         LocalDate.of(2020,10,3)));
         System.out.println("......................................................................................");
 
-       for(LocalDate a:dates){
-           System.out.println(a);
-       }
+        /////////To print the list of holidays
+//       for(LocalDate a:dates){
+//           System.out.println(a);
+//       }
 
 
     }
@@ -83,7 +84,7 @@ public class calculateDays {
 
 
     public static int getBusinesdays(int choice,LocalDate startDate, LocalDate endDate){
-        System.out.println("Inside....calculator...No. of holiadys are "+dates.size());
+        System.out.println("Inside....calculator...No. of holidays are "+dates.size());
         if(startDate.isAfter(endDate)){
             throw new IllegalArgumentException("Sorry the dates must be checked for order");
         }
@@ -106,6 +107,16 @@ public class calculateDays {
                 while(tempStartdate.isBefore(endDate) ) {
                     DayOfWeek day = tempStartdate.getDayOfWeek();
                     if (!dates.contains(tempStartdate)  && day!=DayOfWeek.SATURDAY && day != DayOfWeek.SUNDAY) {
+                        businessDay++;
+
+                    }
+                    tempStartdate = tempStartdate.plusDays(1);
+                }
+                break;
+            case 3 :
+                while(tempStartdate.isBefore(endDate) ) {
+                    DayOfWeek day = tempStartdate.getDayOfWeek();
+                    if (!dates.contains(tempStartdate) ) {
                         businessDay++;
 
                     }
