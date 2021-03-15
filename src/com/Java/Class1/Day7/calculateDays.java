@@ -30,17 +30,21 @@ public class calculateDays {
         System.out.println("The dates in this year, exclusing holidays are... "+getBusinesdays(2,LocalDate.of(2020,04,01),LocalDate.of(2020,8,3)));
     }
 
+
+
+
     private static List<LocalDate> dates;
 
-    public static List<LocalDate> AddHolidays(LocalDate... datesInput){
 
+
+
+
+    public static List<LocalDate> AddHolidays(LocalDate... datesInput){
         dates=new ArrayList<>();
         for(LocalDate NewDates:datesInput){
 
             dates.add(NewDates);
         }
-
-
         return dates;
     }
 
@@ -50,7 +54,6 @@ public class calculateDays {
     public static int getBusinesdays(int choice,LocalDate startDate, LocalDate endDate){
         if(startDate.isAfter(endDate)){
             throw new IllegalArgumentException("Sorry the dates must be checked for order");
-
         }
         int businessDay=0;
         LocalDate tempStartdate=startDate;
@@ -81,17 +84,6 @@ public class calculateDays {
 
                 break;
         }
-
-
-
-
-
-
-
-
-
-
-
         return businessDay;
     }
 
