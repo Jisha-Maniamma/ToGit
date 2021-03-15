@@ -33,7 +33,9 @@ public class calculateDays {
         int choice=scan.nextInt();
         scan.nextLine();
         System.out.println("......................................................................................");
-        System.out.println("The dates in this year, exclusing holidays are... "+getBusinesdays(choice,LocalDate.of(2020,03,01),LocalDate.of(2020,10,3)));
+        System.out.println("The dates in this year, exclusing holidays are... "+
+                getBusinesdays(choice,LocalDate.of(2020,03,01),
+                        LocalDate.of(2020,10,3)));
         System.out.println("......................................................................................");
         AddDates(LocalDate.of(2020,04,06));
         System.out.println("No. of holiadys are "+dates.size());
@@ -42,7 +44,9 @@ public class calculateDays {
         scan.nextLine();
         System.out.println("......................................................................................");
 
-        System.out.println("The dates in this year, exclusing holidays are... "+getBusinesdays(choice,LocalDate.of(2020,03,01),LocalDate.of(2020,10,3)));
+        System.out.println("The dates in this year, exclusing holidays are... "+
+                getBusinesdays(choice,LocalDate.of(2020,03,01),
+                        LocalDate.of(2020,10,3)));
         System.out.println("......................................................................................");
 
        for(LocalDate a:dates){
