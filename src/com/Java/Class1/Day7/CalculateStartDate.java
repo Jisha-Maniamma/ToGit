@@ -55,7 +55,7 @@ public class CalculateStartDate {
             }
         }
         System.out.println("........................................");
-        System.out.println("The scheduled start start date is "+end);
+        System.out.println("The scheduled start start date is= "+end);
 
     }
 }
