@@ -29,24 +29,25 @@ public class calculateDays {
 
         );
         System.out.println("No. of holidays are "+dates.size());
-        System.out.println("If saturday is not holiday in your company enter 1 ............or else enter 2 if saturday is a holiday.....enter 3 if the holidays are random");
+        System.out.println("If saturday is not holiday in your company\tenter 1\nor else if saturday is a holiday\tenter 2\nif the holidays are random\tenter 3");
         int choice=scan.nextInt();
         scan.nextLine();
         System.out.println("......................................................................................");
         System.out.println("The dates in this year, exclusing holidays are... "+
                 getBusinesdays(choice,LocalDate.of(2020,03,01),
-                        LocalDate.of(2020,10,3)));
+                        LocalDate.of(2020,10,3))+" between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2020,10,3));
         System.out.println("......................................................................................");
         AddDates(LocalDate.of(2020,04,06));
+        System.out.println("one more day added to holiday: "+LocalDate.of(2020,04,06));
         System.out.println("No. of holiadys are "+dates.size());
-        System.out.println("If saturday is not holiday in your company enter 1 ............or else enter 2 if saturday is a holiday");
+        System.out.println("If saturday is not holiday in your company\tenter 1\nor else if saturday is a holiday\tenter 2\nif the holidays are random\tenter 3");
         choice=scan.nextInt();
         scan.nextLine();
         System.out.println("......................................................................................");
 
         System.out.println("The dates in this year, excluding holidays are... "+
                 getBusinesdays(choice,LocalDate.of(2020,03,01),
-                        LocalDate.of(2020,10,3)));
+                        LocalDate.of(2020,10,3))+" between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2020,10,3));
         System.out.println("......................................................................................");
 
         /////////To print the list of holidays
