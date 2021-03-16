@@ -9,7 +9,8 @@ public class calculateDays {
 
     public static void main(String[] args) {
 
-        AddHolidays(LocalDate.of(2020,01,01) ,LocalDate.of(2020,01,02)
+        AddHolidays(LocalDate.of(2020,01,01) ,
+                LocalDate.of(2020,01,02)
                 ,LocalDate.of(2020,01,03)
                 ,LocalDate.of(2020,05,04)
                 ,LocalDate.of(2020,05,05)
@@ -35,7 +36,8 @@ public class calculateDays {
         System.out.println("......................................................................................");
         System.out.println("The dates in this year, exclusing holidays are... "+
                 getBusinesdays(choice,LocalDate.of(2020,03,01),
-                        LocalDate.of(2020,10,3))+" between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2020,10,3));
+                        LocalDate.of(2020,10,3))+
+                " between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2020,10,3));
         System.out.println("......................................................................................");
         AddDates(LocalDate.of(2020,04,06));
         System.out.println("one more day added to holiday: "+LocalDate.of(2020,04,06));
@@ -47,7 +49,8 @@ public class calculateDays {
 
         System.out.println("The dates in this year, excluding holidays are... "+
                 getBusinesdays(choice,LocalDate.of(2020,03,01),
-                        LocalDate.of(2020,10,3))+" between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2020,10,3));
+                        LocalDate.of(2020,10,3))+
+                " between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2020,10,3));
         System.out.println("......................................................................................");
 
         /////////To print the list of holidays
