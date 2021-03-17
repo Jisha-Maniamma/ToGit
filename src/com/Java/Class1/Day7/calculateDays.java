@@ -102,6 +102,8 @@ public class calculateDays {
                     if (!dates.contains(tempStartdate)  && day != DayOfWeek.SUNDAY) {
                         businessDay++;
 
+                    }else if(dates.contains(tempStartdate)){
+                        System.out.println("yes...............................................Holiday");
                     }
                     tempStartdate = tempStartdate.plusDays(1);
                 }
@@ -113,6 +115,8 @@ public class calculateDays {
                     if (!dates.contains(tempStartdate)  && day!=DayOfWeek.SATURDAY && day != DayOfWeek.SUNDAY) {
                         businessDay++;
 
+                    }else if(dates.contains(tempStartdate)){
+                        System.out.println("yes...............................................Holiday");
                     }
                     tempStartdate = tempStartdate.plusDays(1);
                 }
@@ -123,6 +127,8 @@ public class calculateDays {
                     if (!dates.contains(tempStartdate) ) {
                         businessDay++;
 
+                    }else if(dates.contains(tempStartdate)){
+                        System.out.println("yes...............................................Holiday");
                     }
                     tempStartdate = tempStartdate.plusDays(1);
                 }
