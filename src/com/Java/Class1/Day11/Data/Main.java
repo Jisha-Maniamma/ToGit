@@ -7,13 +7,12 @@ package com.Java.Class1.Day11.Data;
  */
 public class Main {
     public static void main(String[] args) {
-
-        /**
-         * Only required first time then not required.
-         *
-         * @return  the details to be stored in the text format {@code Main} instance
-         *
-         */
+/**
+ * Only required first time then not required.
+ *
+ * @return  the details to be stored in the text format {@code Main} instance
+ *
+ */
 
 //        ToDoItems item1 = new ToDoItems("Mail birthday card", "John",
 //                LocalDate.of(2016, Month.APRIL, 25));
