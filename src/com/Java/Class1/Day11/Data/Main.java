@@ -1,17 +1,20 @@
 package com.Java.Class1.Day11.Data;
 
+import java.io.IOException;
+
 /**
  * @author Jisha Maniamma
  * @version 1.0
  * @date 2021/03/18 11:45
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 /**
  * Only required first time then not required.
  * @return  the details to be stored in the text format {@code Main} instance
  *
  */
+ToDoData.getInstance().LoadFromText();
 
 //        ToDoItems item1 = new ToDoItems("Mail birthday card", "John",
 //                LocalDate.of(2016, Month.APRIL, 25));
@@ -33,6 +36,7 @@ public class Main {
 //        ToDoData.getInstance().setTodoItems(toDoItems);
 //
 //        stoop();
+
     }
 
     private static void stoop() {

@@ -21,6 +21,7 @@ public class calculate3 {
     public static List<LocalDate> dates=new ArrayList<>();
 
     public static   List<Person> p1=new ArrayList<Person>();
+    public static   List<Person> p2=new ArrayList<Person>();
 
     public static void main(String[] args) {
 
@@ -29,22 +30,30 @@ public class calculate3 {
         p1.add(new Person("krishna"));
 
         //////////////list to observable list/////////////////////
+        p2=FXCollections.observableArrayList();
         ObservableList<Person> p= FXCollections.observableArrayList(p1);
+        p2=p;
         System.out.println(p.get(0).getName()+" "+p.get(1).getName());
         ///////////////////////////////////
 
         Person person=new Person("jisha");
-       for(Person pp: p1){
-           if(pp.getName().contains("jisha")){
-               System.out.println("yes...name in the list");
-           }
-       }
+        for(Person pp: p1){
+            if(pp.getName().contains("jisha")){
+                System.out.println("yes...name in the list");
+            }
+        }
 
         for(Person pp:p){
             if(pp.getName().contains("jisha")){
                 System.out.println("yes...name in the observabl list");
             }
         }
+        for(Person pp:p2){
+            //  System.out.println("hai");
+            System.out.println(pp.getName());
+        }
+        p1=FXCollections.observableArrayList();
+        System.out.println(p1.size());
 
     }
 }
