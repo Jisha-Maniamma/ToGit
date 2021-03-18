@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-
+stoop();
             ToDoItems item1 = new ToDoItems("Mail birthday card", "John",
                     LocalDate.of(2016, Month.APRIL, 25));
             ToDoItems item2 = new ToDoItems("Doctor's Appointment", "Jisha",
@@ -24,8 +24,22 @@ public class Main {
             ToDoItems item5 = new ToDoItems("Pick up dry cleaning", "Ron",
                     LocalDate.of(2016, Month.APRIL,20));
 
-        List<ToDoItems> List=new ArrayList<ToDoItems>();
+        List<ToDoItems> toDoItems=new ArrayList<ToDoItems>();
+toDoItems.add(item1);
+        toDoItems.add(item2);
+        toDoItems.add(item3);
+        toDoItems.add(item4);
+        toDoItems.add(item5);
+ToDoData.getInstance().setTodoItems(toDoItems);
+    }
 
+    private static void stoop() {
 
+        try{
+            ToDoData.getInstance().storeToText();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
