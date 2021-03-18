@@ -9,7 +9,6 @@ public class Main {
     public static void main(String[] args) {
 /**
  * Only required first time then not required.
- *
  * @return  the details to be stored in the text format {@code Main} instance
  *
  */
