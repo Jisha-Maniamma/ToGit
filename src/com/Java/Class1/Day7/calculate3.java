@@ -28,15 +28,24 @@ public class calculate3 {
         p1.add(new Person("jisha"));
         p1.add(new Person("krishna"));
 
-        ///////////////////////////////////
+        //////////////list to observable list/////////////////////
         ObservableList<Person> p= FXCollections.observableArrayList(p1);
         System.out.println(p.get(0).getName()+" "+p.get(1).getName());
         ///////////////////////////////////
 
         Person person=new Person("jisha");
-        if(p1.indexOf(person)>=0){
-            System.out.println("yes");
+       for(Person pp: p1){
+           if(pp.getName().contains("jisha")){
+               System.out.println("yes...name in the list");
+           }
+       }
+
+        for(Person pp:p){
+            if(pp.getName().contains("jisha")){
+                System.out.println("yes...name in the observabl list");
+            }
         }
+
     }
 }
 class Person{
