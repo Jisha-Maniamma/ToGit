@@ -19,23 +19,35 @@ public class main_Contains_example {
         Human p=Human.setPerson(4,"jisha");
         containsORNot( p1, p);
         containsOrNot(date,startDate);
+        containsOrNot(p1,"jisha");
     }
+    private static void containsOrNot(List<Human> p1,String name){
+        System.out.println(",,,,,,,,,,,,,,,,,,,,");
+        for(Human h:p1){
 
+            if(h.getName().equals(name)){
+                System.out.println("yes this name of human in the list of humans");
+            }
+            else{
+                System.out.println("no this name not in the list of humans");
+            }
+        }
+    }
     private static void containsOrNot(List<LocalDate> date, LocalDate startDate) {
    if(date.contains(startDate)){
-       System.out.println("yes");
+       System.out.println("yes this date in list of dates");
    }
    else {
-       System.out.println("no");
+       System.out.println("no this date not in list of dates");
    }
     }
 
     private static void containsORNot(List<Human> p1, Human p) {
         if( p1.contains(p)) {
-            System.out.println("yes");
+            System.out.println("yes this human in list of humans");
         }
         else{
-            System.out.println("no");
+            System.out.println("no this human not in list of humans");
         }
     }
 
