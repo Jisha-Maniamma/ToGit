@@ -28,5 +28,14 @@ private  ToDoData(){
         this.todoItems = todoItems;
     }
 
+    ///to load text
+    public void LoadFromText(){
+
+    }
+    //to save to text
+    public void storeToText(){
+
+    }
+
 
 }
