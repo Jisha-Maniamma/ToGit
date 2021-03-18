@@ -47,27 +47,27 @@ public class ToDoData {
 
         Path path= Paths.get(FILE_NAME);
         BufferedReader br= Files.newBufferedReader(path);
- String input;
+        String input;
 
- try{
-     while((input=br.readLine())!=null){
-         String[] itms=input.split(",");
-         String name=itms[0];
-                 String Taskname=itms[1];
-                         String date=itms[2];
+        try{
+            while((input=br.readLine())!=null){
+                String[] itms=input.split(",");
+                String name=itms[0];
+                String Taskname=itms[1];
+                String date=itms[2];
 
-         LocalDate date1=LocalDate.parse(date,df);
-         ToDoItems toDoItems1=new ToDoItems(Taskname,name,date1);
-         todoItems.add(toDoItems1);
+                LocalDate date1=LocalDate.parse(date,df);
+                ToDoItems toDoItems1=new ToDoItems(Taskname,name,date1);
+                todoItems.add(toDoItems1);
 
-         System.out.println(toDoItems1.getPersonName()+" "+toDoItems1.getTaskName()+" "+toDoItems1.getDateOfTask());
-     }
- }
- finally{
-     if(br!=null){
-         br.close();
-     }
- }
+                System.out.println(toDoItems1.getPersonName()+" "+toDoItems1.getTaskName()+" "+toDoItems1.getDateOfTask());
+            }
+        }
+        finally{
+            if(br!=null){
+                br.close();
+            }
+        }
 
 
     }
@@ -77,13 +77,13 @@ public class ToDoData {
         BufferedWriter bw= Files.newBufferedWriter(path);
         try{
             Iterator<ToDoItems> iter=todoItems.iterator();
-                    while(iter.hasNext())
-                    {
-                        ToDoItems items=iter.next();
-                        bw.write(String.format("%s,%s,%s", items.getPersonName()
+            while(iter.hasNext())
+            {
+                ToDoItems items=iter.next();
+                bw.write(String.format("%s,%s,%s", items.getPersonName()
                         , items.getTaskName(), items.getDateOfTask().format(df)));
-                        bw.newLine();
-                    }
+                bw.newLine();
+            }
         }finally{
             if(bw!=null){
                 bw.close();
