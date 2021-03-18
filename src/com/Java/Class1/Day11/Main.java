@@ -1,4 +1,4 @@
-package com.Java.Class1.Day11.Data;
+package com.Java.Class1.Day11;
 
 import java.io.IOException;
 
