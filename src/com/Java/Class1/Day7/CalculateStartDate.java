@@ -46,6 +46,7 @@ public class CalculateStartDate {
     private static void calcul(LocalDate enddate, int days){
         LocalDate end=enddate;
         System.out.println("Original end date= "+end);
+        System.out.println(dates.size());
         for(int i=1;i<=days;i++){
             end= end.minusDays(1);
             //  System.out.println("Not weekend "+end);
