@@ -48,9 +48,9 @@ public class calculateDays {
         System.out.println("......................................................................................");
 
         System.out.println("The dates in this year, excluding holidays are... "+
-                getBusinesdays(choice,LocalDate.of(2020,03,01),
-                        LocalDate.of(2020,10,3))+
-                " between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2020,10,3));
+                getBusinesdays(choice,LocalDate.of(2020,03,19),
+                        LocalDate.of(2020,03,22))+
+                " between "+LocalDate.of(2020,03,19)+" and "+LocalDate.of(2020,03,22));
         System.out.println("......................................................................................");
 
         /////////To print the list of holidays
