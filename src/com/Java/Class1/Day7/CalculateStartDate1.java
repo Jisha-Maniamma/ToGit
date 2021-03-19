@@ -2,6 +2,7 @@ package com.Java.Class1.Day7;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,8 +12,35 @@ import java.util.List;
  */
 public class CalculateStartDate1 {
     public static void main(String[] args) {
+        AddHolidays(LocalDate.of(2021,03,17) ,
+                LocalDate.of(2021,03,19)
+
+
+        );
         calcul(LocalDate.of(2021,03,22),1);
         //  calcul1(LocalDate.of(2021,04,17),34);
+    }
+
+
+    public static List<LocalDate> dates=new ArrayList<>();
+
+
+
+
+
+    public static List<LocalDate> AddHolidays(LocalDate... datesInput){
+
+        for(LocalDate NewDates:datesInput){
+
+            dates.add(NewDates);
+        }
+        return dates;
+    }
+
+    public static List<LocalDate> AddDates(LocalDate date1){
+
+        dates.add(date1);
+        return dates;
     }
 
 
@@ -27,7 +55,7 @@ public class CalculateStartDate1 {
                 //saturday and sunday
                 for(int i=1;i<=days;i++) {
                     end = end.minusDays(1);
-                    if ( CalculateStartDate.dates.contains(end) || end.getDayOfWeek() == DayOfWeek.SUNDAY || end.getDayOfWeek() == DayOfWeek.SATURDAY) {
+                    if ( dates.contains(end) || end.getDayOfWeek() == DayOfWeek.SUNDAY || end.getDayOfWeek() == DayOfWeek.SATURDAY) {
                         // System.out.println("************** **************** reduce time: "+i+" the date is now "+end);
                         end = end.minusDays(1);
                         //   System.out.println("weekend");
