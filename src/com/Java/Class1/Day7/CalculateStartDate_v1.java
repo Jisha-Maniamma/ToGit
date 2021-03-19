@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class CalculateStartDate_v1 {
     public static void main(String[] args) {
-        AddHolidays(LocalDate.of(2020,01,01) ,
+        AddHolidays(LocalDate.of(2020,01,02) ,
                 LocalDate.of(2020,01,02)
                 ,LocalDate.of(2020,01,03)
                 ,LocalDate.of(2020,05,04)
