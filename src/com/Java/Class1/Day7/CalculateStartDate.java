@@ -7,8 +7,8 @@ import java.util.List;
 
 public class CalculateStartDate {
     public static void main(String[] args) {
-        AddHolidays(LocalDate.of(2021,03,12) ,
-                LocalDate.of(2021,03,03)
+        AddHolidays(LocalDate.of(2021,03,17) ,
+                LocalDate.of(2021,03,19)
 
 
         );
@@ -17,7 +17,7 @@ public class CalculateStartDate {
             System.out.println(a);
         }
         System.out.println("........................................");
-      calcul(LocalDate.of(2021,03,16),4);
+        calcul(LocalDate.of(2021,03,22),1);
     }
 
 
@@ -44,14 +44,14 @@ public class CalculateStartDate {
 
 
     private static void calcul(LocalDate enddate, int days){
-       LocalDate end=enddate;
+        LocalDate end=enddate;
         System.out.println("Original end date= "+end);
         for(int i=1;i<=days;i++){
             end= end.minusDays(1);
-          //  System.out.println("Not weekend "+end);
+            //  System.out.println("Not weekend "+end);
             if( dates.contains(end) || end.getDayOfWeek()== DayOfWeek.SUNDAY ||  end.getDayOfWeek()== DayOfWeek.SATURDAY){
                 end=end.minusDays(1);
-             //   System.out.println("weekend");
+                //   System.out.println("weekend");
             }
         }
         System.out.println("........................................");
