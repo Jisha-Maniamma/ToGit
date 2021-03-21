@@ -62,7 +62,7 @@ public class CalculateStartDate_v1 {
     private static void calcul(LocalDate Enddate, double i) {
         LocalDate end=Enddate;
         double days=i;
-        System.out.println("...To reduce.... no. of Milestone date: "+days+"..... From date: "+end+"...");
+        System.out.println("...To reduce.... no. of date: "+days+"..... From Milestone date: "+end+"...");
         System.out.println("Number of holidays "+dates.size());int ii=0;
         for(;ii<=days;){
 
