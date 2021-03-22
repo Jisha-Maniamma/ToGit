@@ -27,6 +27,13 @@ public class calculateDays {
                 ,LocalDate.of(2020,9,21)
                 ,LocalDate.of(2020,12,30)
                 ,LocalDate.of(2020,12,31)
+                ,LocalDate.of(2020,12,31)
+                ,LocalDate.of(2021,03,19)
+                ,LocalDate.of(2021,03,17)
+                ,LocalDate.of(2021,04,10)
+                ,LocalDate.of(2021,04,02)
+
+
 
         );
         System.out.println("No. of holidays are "+dates.size());
@@ -52,7 +59,10 @@ public class calculateDays {
                         LocalDate.of(2020,03,22))+
                 " between "+LocalDate.of(2020,03,19)+" and "+LocalDate.of(2020,03,22));
         System.out.println("......................................................................................");
-
+        System.out.println("**********************Saturday and sunday****************");
+        System.out.println( getBusinesdays(2,LocalDate.of(2020,12,8),
+                LocalDate.of(2021,05,10))+
+                " between "+LocalDate.of(2021,05,10)+" and "+LocalDate.of(2020,12,8));
         /////////To print the list of holidays
 //       for(LocalDate a:dates){
 //           System.out.println(a);
@@ -112,10 +122,10 @@ public class calculateDays {
             case 2 :
                 while(tempStartdate.isBefore(endDate) ) {
                     DayOfWeek day = tempStartdate.getDayOfWeek();
-                    if (!dates.contains(tempStartdate)  && day!=DayOfWeek.SATURDAY && day != DayOfWeek.SUNDAY) {
+                    if (!ContainsOr(tempStartdate)  && day!=DayOfWeek.SATURDAY && day != DayOfWeek.SUNDAY) {
                         businessDay++;
 
-                    }else if(dates.contains(tempStartdate)){
+                    }else if(ContainsOr(tempStartdate)){
                         System.out.println("yes...............................................Holiday");
                     }
                     tempStartdate = tempStartdate.plusDays(1);
@@ -139,6 +149,18 @@ public class calculateDays {
         }
         return businessDay;
     }
+    private static boolean ContainsOr(LocalDate date){
+        for(LocalDate h:dates){
 
+            //  System.out.println("******"+h+"******");
+            if(h.getDayOfYear()==date.getDayOfYear()){
+                // System.out.println("........holiday......"+date);
+                return true;}
+
+        }
+        return false;
+
+
+    }
 //    }
 }

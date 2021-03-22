@@ -33,13 +33,13 @@ public class CalculateStartDate_v2 {
 
         );
         System.out.println("***************** Sunday and saturday off ***************");
-        calcul(1,LocalDate.of(2021,04,19),20);
+        calcul(1,LocalDate.of(2021,05,10),5);
         System.out.println();
         System.out.println("***************** sunday off ***************");
-        calcul(2,LocalDate.of(2021,04,19),20);
+        calcul(2,LocalDate.of(2021,05,10),5);
         System.out.println();
         System.out.println("***************** Random off ***************");
-        calcul(3,LocalDate.of(2021,04,19),20);
+        calcul(3,LocalDate.of(2021,05,10),5);
         //  calcul1(LocalDate.of(2021,04,17),34);
     }
 
