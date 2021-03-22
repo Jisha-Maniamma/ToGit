@@ -97,7 +97,7 @@ private static boolean ContainsOr(LocalDate date){
 
                         }
                         else{
-                            System.out.println("not weekend " +end +" "+end.getDayOfWeek());
+                          //  System.out.println("not weekend " +end +" "+end.getDayOfWeek());
                             end=end.minusDays(1);
                             ii++;
                         }
@@ -112,12 +112,12 @@ private static boolean ContainsOr(LocalDate date){
 
                         if(ContainsOr(end)|| end.getDayOfWeek()==DayOfWeek.SUNDAY ){
                             // System.out.println("Weekend "+end);
-                            System.out.println("holiday dates===="+end);
+                            System.out.println("its Holiday "+end +" "+end.getDayOfWeek());
                             end=end.minusDays(1);
 
                         }
                         else{
-                            System.out.println("not weekend " +end);
+                           // System.out.println("not weekend " +end);
                             end=end.minusDays(1);
                             ii++;
                         }
@@ -136,7 +136,7 @@ private static boolean ContainsOr(LocalDate date){
 
                         }
                         else{
-                            System.out.println("not weekend " +end);
+                          //  System.out.println("not weekend " +end);
                             end=end.minusDays(1);
                             ii++;
                         }
