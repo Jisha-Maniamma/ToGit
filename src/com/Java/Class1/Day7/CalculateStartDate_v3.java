@@ -34,13 +34,13 @@ public class CalculateStartDate_v3 {
 
             );
             System.out.println("***************** Sunday and saturday off ***************");
-            System.out.println(calcul(1,LocalDate.of(2021,05,10),200));
+            System.out.println(calcul(1,LocalDate.of(2021,8,15),500));
             System.out.println();
             System.out.println("***************** sunday off ***************");
-            System.out.println(calcul(2,LocalDate.of(2021,05,10),200));
+            System.out.println(calcul(2,LocalDate.of(2021,8,15),500));
             System.out.println();
             System.out.println("***************** Random off ***************");
-            System.out.println(calcul(3,LocalDate.of(2021,05,10),200));
+            System.out.println(calcul(3,LocalDate.of(2021,8,15),500));
             //  calcul1(LocalDate.of(2021,04,17),34);
         }
 
@@ -70,7 +70,7 @@ private static boolean ContainsOr(LocalDate date){
     for(LocalDate h:dates){
 
       //  System.out.println("******"+h+"******");
-        if(h.getDayOfYear()==date.getDayOfYear()){
+        if(h.getYear()==date.getYear() && h.getDayOfYear()==date.getDayOfYear()){
             // System.out.println("........holiday......"+date);
             return true;}
 
