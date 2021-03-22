@@ -46,6 +46,14 @@ public class Main {
 //ORDER BY artists.name;
 
 
+//drop view Jisha_Table_new;
+
+
+//CREATE VIEW Jisha_Table_new As
+//SELECT artists.name as ArtistsName,albums.name AlbumsName,songs.track,songs.title FROM songs
+//INNER JOIN albums on songs.album=albums._id
+//INNER JOIN artists on albums.artist=artists._id
+//ORDER BY artists.name;
 
     }
 }
