@@ -6,4 +6,7 @@ package com.Java.Class1.Day12.Database1;
  * @date 2021/03/22 15:03
  */
 public class Main {
+    public static void main(String[] args) {
+
+    }
 }
