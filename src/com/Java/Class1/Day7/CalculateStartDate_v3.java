@@ -34,7 +34,7 @@ public class CalculateStartDate_v3 {
 
         );
         System.out.println("***************** Sunday and saturday off ***************");
-        System.out.println(calcul(1,LocalDate.of(2021,8,15),500));
+        System.out.println(calcul(1,LocalDate.of(2021,04,19),20));
         System.out.println();
         System.out.println("***************** sunday off ***************");
         System.out.println(calcul(2,LocalDate.of(2021,8,15),500));
@@ -88,7 +88,7 @@ public class CalculateStartDate_v3 {
                         end=end.minusDays(1);
                         ii++;
                     }
-                    System.out.println("calculating count ..."+ii);
+                    //System.out.println("calculating count ..."+ii);
                 }
                 end=end.plusDays(1);
                 break;
