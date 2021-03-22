@@ -30,11 +30,13 @@ public class Main {
 //ORDER BY artists.name;
 
 
+
 //SELECT artists.name,albums.name,songs.track,songs.title FROM songs
 //INNER JOIN albums on songs.album=albums._id
 //INNER JOIN artists on albums.artist=artists._id
 //where artists.name like "%ELF"
 //ORDER BY artists.name;
+
 
 
 //CREATE VIEW Jisha_Table_new As
