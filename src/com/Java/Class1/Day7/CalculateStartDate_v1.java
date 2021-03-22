@@ -67,12 +67,12 @@ public class CalculateStartDate_v1 {
         for(;ii<=days;){
 
             if(dates.contains(end) ||end.getDayOfWeek()== DayOfWeek.SATURDAY || end.getDayOfWeek()==DayOfWeek.SUNDAY ){
-               // System.out.println("Weekend "+end);
+               System.out.println("Weekend "+end);
                 end=end.minusDays(1);
 
             }
             else{
-               // System.out.println("not weekend " +end);
+                System.out.println("not weekend " +end);
                 end=end.minusDays(1);
                 ii++;
             }
