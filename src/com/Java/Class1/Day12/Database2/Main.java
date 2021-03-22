@@ -55,5 +55,15 @@ public class Main {
 //INNER JOIN artists on albums.artist=artists._id
 //ORDER BY artists.name;
 
+
+//SELECT count(songs._id) FROM songs;
+
+
+
+
+
+
+
+
     }
 }
