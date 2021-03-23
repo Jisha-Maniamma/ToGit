@@ -1,9 +1,6 @@
 package com.Java.Class1.Day12.Database1;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * @author Jisha Maniamma
@@ -24,6 +21,12 @@ public class Main {
             statement.execute("INSERT into company(_id,name,departmentName) values(6,'Juntos Engineering','civil')");
            // statement.execute("update company SET _id=5 where name='Juntos Engineering'");
            // statement.execute("delete from company where name='Juntos Engineering'");
+
+           statement.execute("select DISTINCT name  from company");
+            ResultSet result=statement.getResultSet();
+            while (result.next()){
+                System.out.println("name : "+result.getString("name"));
+            }
             statement.close();
             conn.close();
         }catch (SQLException e){
