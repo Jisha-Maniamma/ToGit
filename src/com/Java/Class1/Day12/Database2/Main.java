@@ -1,5 +1,10 @@
 package com.Java.Class1.Day12.Database2;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  * @author Jisha Maniamma
  * @version 1.0
@@ -17,8 +22,16 @@ public class Main {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
+        try{
+            Connection conn= DriverManager.getConnection(CONNECTION_NAME);
+            Statement statement=conn.createStatement();
 
+            statement.execute("CREATE TABLE IF NOT EXISTS "+TABLE_NAME+" ("
+            +COLUMN_ID+" Integer,"+COLUMN_NAME+" Text,"+COLUMN_DEPARTMENT+" Text) ");
+        }catch (SQLException e){
+            System.out.println("The error that exists is "+e.getMessage());
+        }
 
 
 
