@@ -17,7 +17,7 @@ public class Main {
         try{
             Connection conn= DriverManager.getConnection("jdbc:sqlite:sample.db");
             Statement statement=conn.createStatement();
-            statement.execute("");
+            statement.execute("CREATE TABLE users( _id INTEGER, name TEXT,departmentName TEXT)");
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
