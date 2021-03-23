@@ -1,9 +1,6 @@
 package com.Java.Class1.Day12.Database2;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * @author Jisha Maniamma
@@ -28,7 +25,37 @@ public class Main {
             Statement statement=conn.createStatement();
 
             statement.execute("CREATE TABLE IF NOT EXISTS "+TABLE_NAME+" ("
-            +COLUMN_ID+" Integer,"+COLUMN_NAME+" Text,"+COLUMN_DEPARTMENT+" Text) ");
+                    +COLUMN_ID+" Integer,"+COLUMN_NAME+" Text,"+COLUMN_DEPARTMENT+" Text) ");
+
+//            statement.execute("INSERT into "+TABLE_NAME+" ("
+//                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(7,'ghi LTD','Accounting')");
+//
+//            statement.execute("INSERT into "+TABLE_NAME+" ("
+//                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(8,'HIS','Accounting')");
+//            statement.execute("INSERT into "+TABLE_NAME+" ("
+//                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(9,'NTT','Electronics')");
+//            statement.execute("INSERT into "+TABLE_NAME+" ("
+//                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(10,'Docomo Consulting','IT')");
+//            statement.execute("INSERT into "+TABLE_NAME+" ("
+//                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(11,'SoftBank Consulting','IT')");
+
+            statement.execute("UPDATE "+TABLE_NAME+" SET "+COLUMN_NAME+"= 'JAIST' where "+COLUMN_ID+"= 11");
+
+            ResultSet result=statement.executeQuery("SELECT DISTINCT "+COLUMN_DEPARTMENT+" from "+TABLE_NAME);
+
+            System.out.println("The column names present in our database is- ");
+            while(result.next()){
+                System.out.println(result.getString(COLUMN_DEPARTMENT));
+            }
+
+            /*
+            The column names present in our database is-
+            IT
+            Civil
+            Mechanical
+            Electronics
+            Accounting
+             */
         }catch (SQLException e){
             System.out.println("The error that exists is "+e.getMessage());
         }
