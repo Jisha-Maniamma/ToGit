@@ -15,9 +15,9 @@ public class Main {
 
 //creating  database
         try{
-            Connection conn= DriverManager.getConnection("jdbc:sqlite:sample1.db");
+            Connection conn= DriverManager.getConnection("jdbc:sqlite:sample.db");
             Statement statement=conn.createStatement();
-            statement.execute("CREATE TABLE users( _id INTEGER, name TEXT,departmentName TEXT)");
+            statement.execute("CREATE TABLE IF NOT EXISTS users( _id INTEGER, name TEXT,departmentName TEXT)");
 
             statement.close();
             conn.close();
