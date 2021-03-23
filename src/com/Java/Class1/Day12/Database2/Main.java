@@ -49,6 +49,10 @@ public class Main {
             while(result.next()){
                 System.out.println(result.getString(COLUMN_DEPARTMENT));
             }
+            result.close();
+            statement.close();
+            conn.close();
+
 
             /*
             The column names present in our database is-
@@ -114,14 +118,6 @@ public class Main {
 
 
 //SELECT count(songs._id) FROM songs;
-
-
-
-
-
-
-
-
     }
     private static void InsertCompanyData(int id, String Cname,String departmentname,Statement statement){
         try{
@@ -129,8 +125,8 @@ public class Main {
 
 //            statement.execute("INSERT into "+TABLE_NAME+" ("+COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values("
 //                                                                +121+" ,"+'a'+" ,"+'p'+")");
-             statement.execute("INSERT into "+TABLE_NAME+" ("
-                 +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values("+id+",'"+Cname+"','"+departmentname+"')");
+            statement.execute("INSERT into "+TABLE_NAME+" ("
+                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values("+id+",'"+Cname+"','"+departmentname+"')");
 
             //            statement.execute("INSERT into "+TABLE_NAME+" ("
 //                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(7,'ghi LTD','Accounting')");
