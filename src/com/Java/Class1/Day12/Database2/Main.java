@@ -12,6 +12,8 @@ public class Main {
     public static final String TABLE_NAME="company";
 
     public static final String COLUMN_ID="_id";
+    public static final String COLUMN_NAME="name";
+    public static final String COLUMN_DEPARTMENT="departmentName";
 
 
 
