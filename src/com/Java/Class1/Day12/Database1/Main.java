@@ -22,13 +22,15 @@ public class Main {
             // statement.execute("update company SET _id=5 where name='Juntos Engineering'");
             // statement.execute("delete from company where name='Juntos Engineering'");
 
-            statement.execute("select DISTINCT name, _id from company");
-            ResultSet result=statement.getResultSet();
+//            statement.execute("select DISTINCT name, _id from company");
+//            ResultSet result=statement.getResultSet();
+
+            ResultSet result= statement.executeQuery("select DISTINCT name, _id from company");
             while (result.next()){
                 System.out.println("name : "+result.getString("name")+
                         " _id: "+result.getInt("_id"));
             }
-            /*
+            /* output-
             Juntos Consulting	1
             Juntos Consulting	3
             Juntos Engineering	4
