@@ -17,8 +17,8 @@ public class Main {
         try{
             Connection conn= DriverManager.getConnection("jdbc:sqlite:sample.db");
             Statement statement=conn.createStatement();
-            statement.execute("CREATE TABLE IF NOT EXISTS users( _id INTEGER, name TEXT,departmentName TEXT)");
-
+            statement.execute("CREATE TABLE IF NOT EXISTS company( _id INTEGER, name TEXT,departmentName TEXT)");
+statement.execute("INSERT into company(_id,name,departmentName) values(1,'Juntos Consulting','IT')");
             statement.close();
             conn.close();
         }catch (SQLException e){
