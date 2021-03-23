@@ -25,8 +25,11 @@ public class Main {
             Statement statement=conn.createStatement();
 
             statement.execute("CREATE TABLE IF NOT EXISTS "+TABLE_NAME+" ("
-                    +COLUMN_ID+" Integer,"+COLUMN_NAME+" Text,"+COLUMN_DEPARTMENT+" Text) ");
-
+                    +COLUMN_ID+" INTEGER PRIMARY KEY,"+COLUMN_NAME+" TEXT NOT NULL,"+COLUMN_DEPARTMENT+" TEXT NOT NULL) ");
+//
+//            statement.execute("CREATE TABLE IF NOT EXISTS "+TABLE_NAME+" ("
+//                    +COLUMN_ID+" INTEGER PRIMARY KEY,"+COLUMN_NAME+" TEXT NOT NULL,"+COLUMN_DEPARTMENT+" TEXT NOT NULL) ");
+//
 //            statement.execute("INSERT into "+TABLE_NAME+" ("
 //                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(7,'ghi LTD','Accounting')");
 //
@@ -39,11 +42,11 @@ public class Main {
 //            statement.execute("INSERT into "+TABLE_NAME+" ("
 //                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(11,'SoftBank Consulting','IT')");
 //            InsertCompanyData(12,"aaa","CS",statement);
-
+//            InsertCompanyData(13,"aaaaaaaaa","CS",statement);
 
             statement.execute("UPDATE "+TABLE_NAME+" SET "+COLUMN_NAME+"= 'JAIST' where "+COLUMN_ID+"= 11");
 
-            ResultSet result=statement.executeQuery("SELECT DISTINCT "+COLUMN_DEPARTMENT+" from "+TABLE_NAME);
+            ResultSet result=statement.executeQuery("SELECT DISTINCT "+COLUMN_DEPARTMENT+" FROM "+TABLE_NAME);
 
             System.out.println("The column names present in our database is- ");
             while(result.next()){
