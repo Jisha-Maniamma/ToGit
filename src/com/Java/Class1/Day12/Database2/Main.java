@@ -11,7 +11,7 @@ import java.sql.Statement;
  * @date 2021/03/22 15:04
  */
 public class Main {
-    public static final String DB_NAME="sample.db";
+    public static final String DB_NAME="sample2.db";
     public static final String CONNECTION_NAME="jdbc:sqlite:"+DB_NAME;
 
     public static final String TABLE_NAME="company";
