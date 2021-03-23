@@ -3,6 +3,7 @@ package com.Java.Class1.Day12.Database1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * @author Jisha Maniamma
@@ -15,7 +16,8 @@ public class Main {
 //creating  database
         try{
             Connection conn= DriverManager.getConnection("jdbc:sqlite:sample.db");
-
+            Statement statement=conn.createStatement();
+            statement.execute("");
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
