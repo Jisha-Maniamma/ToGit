@@ -16,9 +16,14 @@ public class Main {
 //creating  database
         try{
             Connection conn= DriverManager.getConnection("jdbc:sqlite:sample.db");
+
+           // conn.setAutoCommit(false);
             Statement statement=conn.createStatement();
             statement.execute("CREATE TABLE IF NOT EXISTS company( _id INTEGER, name TEXT,departmentName TEXT)");
-statement.execute("INSERT into company(_id,name,departmentName) values(1,'Juntos Consulting','IT')");
+            statement.execute("INSERT into company(_id,name,departmentName) values(7,'Juntos Consulting','Customer Care')");
+            statement.execute("INSERT into company(_id,name,departmentName) values(6,'Juntos Engineering','civil')");
+           // statement.execute("update company SET _id=5 where name='Juntos Engineering'");
+           // statement.execute("delete from company where name='Juntos Engineering'");
             statement.close();
             conn.close();
         }catch (SQLException e){
