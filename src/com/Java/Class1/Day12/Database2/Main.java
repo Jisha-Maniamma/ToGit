@@ -38,6 +38,8 @@ public class Main {
 //                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(10,'Docomo Consulting','IT')");
 //            statement.execute("INSERT into "+TABLE_NAME+" ("
 //                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(11,'SoftBank Consulting','IT')");
+//            InsertCompanyData(12,"aaa","CS",statement);
+
 
             statement.execute("UPDATE "+TABLE_NAME+" SET "+COLUMN_NAME+"= 'JAIST' where "+COLUMN_ID+"= 11");
 
@@ -121,4 +123,22 @@ public class Main {
 
 
     }
+    private static void InsertCompanyData(int id, String Cname,String departmentname,Statement statement){
+        try{
+
+
+//            statement.execute("INSERT into "+TABLE_NAME+" ("+COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values("
+//                                                                +121+" ,"+'a'+" ,"+'p'+")");
+             statement.execute("INSERT into "+TABLE_NAME+" ("
+                 +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values("+id+",'"+Cname+"','"+departmentname+"')");
+
+            //            statement.execute("INSERT into "+TABLE_NAME+" ("
+//                    +COLUMN_ID+" ,"+COLUMN_NAME+" ,"+COLUMN_DEPARTMENT+" ) Values(7,'ghi LTD','Accounting')");
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
 }
