@@ -1,8 +1,8 @@
 package com.Java.Class1.Day12.Database3;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Jisha Maniamma
@@ -50,7 +50,30 @@ public class DataSource {
             System.out.println("The error is- "+e.getMessage());
         }
     }
+    public List<Artists> querryArtist(){
+//        Statement statement=null;
+//        ResultSet result=null;
+        try(Statement statement= conn.createStatement();
+            ResultSet result= statement.executeQuery("SELECT * FROM "+TABLE_ARTIST)){
+//            Statement statement= conn.createStatement();
+//            ResultSet result= statement.executeQuery("SELECT * FROM "+TABLE_ARTIST)
+            List<Artists> artists=new ArrayList<>();
 
+            while(result.next()){
+                Artists artist=new Artists();
+                artist.setId(result.getInt(TABLE_ARTIST_ID));
+                artist.setName(result.getString(TABLE_ARTIST_NAME));
+
+                artists.add(artist);
+
+            }
+            return artists;
+        }catch(SQLException e){
+            System.out.println("The error is- "+e.getMessage());
+            return null; }
+
+
+    }
     public static void main(String[] args) {
 
 //         conn= DriverManager.getConnection(CONNECTION);
