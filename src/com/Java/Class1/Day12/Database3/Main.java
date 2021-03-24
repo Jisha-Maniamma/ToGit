@@ -18,7 +18,7 @@ public class Main {
 
         List<Artists> artists=dataSource.querryArtist();
         if(artists==null){
-            System.out.println("Empty artist data");
+            System.out.println("Empty artist data in the database");
             return;
         }
 
