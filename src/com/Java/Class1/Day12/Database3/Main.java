@@ -16,7 +16,9 @@ public class Main {
             return;
         }
 
-        List<Artists> artists=dataSource.querryArtist(3);
+        //TO PRINT ARTISTS IN DESIRED ORDER
+
+        List<Artists> artists=dataSource.querryArtist(DataSource.ORDER_BY_ASC);
         if(artists==null){
             System.out.println("Empty artist data in the database");
             return;
