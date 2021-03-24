@@ -81,8 +81,8 @@ public class DataSource {
 
             while(result.next()){
                 Artists artist=new Artists();
-                artist.setId(result.getInt(TABLE_ARTIST_ID));
-                artist.setName(result.getString(TABLE_ARTIST_NAME));
+                artist.setId(result.getInt(INDEX_ARTIST_ID));
+                artist.setName(result.getString(INDEX_ARTIST_NAME));
 
                 artists.add(artist);
 
