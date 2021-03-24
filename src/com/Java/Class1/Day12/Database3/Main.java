@@ -8,6 +8,11 @@ package com.Java.Class1.Day12.Database3;
 public class Main {
 
     public static void main(String[] args) {
-
+        DataSource dataSource=new DataSource();
+        if(!dataSource.open()){
+            System.out.println("cant open");
+            return;
+        }
+        dataSource.close();
     }
 }
