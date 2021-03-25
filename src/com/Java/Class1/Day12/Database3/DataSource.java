@@ -187,10 +187,11 @@ public class DataSource {
         System.out.println("The SQL query is- \""+ sb.toString());
         try(Statement statement= conn.createStatement(); ResultSet resultSet= statement.executeQuery(sb.toString())){
             List<SongArtistAlbum> SongDetails=new ArrayList<>();
+
             return SongDetails;
 
         }catch(SQLException e){
-            System.out.println("The error generated while feting the song details is- "+e.getMessage());
+            System.out.println("The error generated while fetching the song details [song track number, album name, artist name] is- "+e.getMessage());
             return null;
         }
 
