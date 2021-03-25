@@ -16,23 +16,30 @@ public class Main {
             return;
         }
 
-        //TO PRINT ARTISTS IN DESIRED ORDER
 
+        System.out.println("//////////////////////////////////////////////");
+        //TO PRINT ARTISTS IN DESIRED ORDER
         List<Artists> artists=dataSource.querryArtist(DataSource.ORDER_BY_ASC);
         if(artists==null){
             System.out.println("Empty artist data in the database");
             return;
         }
+        for(Artists a:artists){
+            System.out.println("The name  of the artist is- "+a.getName());
+        }
 
-       for(Artists a:artists){
-           System.out.println("The name  of the artist is- "+a.getName());
-       }
+
         System.out.println("//////////////////////////////////////////////");
-       //to print nam of albums by any given artist
+        //to print nam of albums by any given artist
         List<String> AlbumsByArtists=dataSource.queryAlbumsForartist("Iron Maiden",DataSource.ORDER_BY_ASC);
-for (String a:AlbumsByArtists){
-    System.out.println(" The songs by Iron Maiden is- "+a.toString());
-}
+        for (String a:AlbumsByArtists){
+            System.out.println(" The songs by Iron Maiden is- "+a.toString());
+        }
+
+
+
+
+
 
         dataSource.close();
     }
