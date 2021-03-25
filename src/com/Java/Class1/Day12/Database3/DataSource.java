@@ -208,11 +208,21 @@ public class DataSource {
 
     }
 
+    public static final String GET_COUNT="SELECT COUNT(*) FROM ";
+    public int getCount(String TableName){
+        StringBuilder sb=new StringBuilder(GET_COUNT);
+        sb.append(TableName);
+        try(Statement statement= conn.createStatement(); ResultSet resultSet= statement.executeQuery(sb.toString())){
+            // while(resultSet.next()){
+            int count=resultSet.getInt(1);
+            return count;
+            //}
 
-public int getCount(String TableName){
+        }catch(SQLException e){
+            System.out.println("The error while counting the number of items in the table is- "+e.getMessage());
+            return -1;}
 
-        return -1;
-}
+    }
 
 
 
