@@ -187,7 +187,13 @@ public class DataSource {
         System.out.println("The SQL query is- \""+ sb.toString());
         try(Statement statement= conn.createStatement(); ResultSet resultSet= statement.executeQuery(sb.toString())){
             List<SongArtistAlbum> SongDetails=new ArrayList<>();
+            while(resultSet.next()){
+                SongArtistAlbum allAboutSelectedSong=new SongArtistAlbum();
+                allAboutSelectedSong.setAlbumName(resultSet.getString(2));
+                allAboutSelectedSong.setSongTrackNumber(resultSet.getInt(3));
+                allAboutSelectedSong.setArtistName(resultSet.getString(1));
 
+            }
             return SongDetails;
 
         }catch(SQLException e){
