@@ -224,6 +224,24 @@ public class DataSource {
 
     }
 
+    //CREATE VIEW if NOT EXISTS artist_list As SELECT
+    //artists.name as singer,
+    //albums.name as album,
+    //songs.track as track,
+    //songs.title as songName
+    //FROM songs
+    //INNER JOIN albums on albums._id=songs.album
+    //INNER JOIN artists on artists._id=albums.artist ORDER by songs.track;
+    public static final String NEW_VIEW_NAME="";
+    public boolean createNewView(){
+        try(Statement statement= conn.createStatement()){
+           //statement.execute();
+            return true;
+        }catch(SQLException e){
+            System.out.println("The error while trying to create the new view is- "+e.getMessage());
+            return false;
+        }
 
+    }
 
 }
