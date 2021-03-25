@@ -193,6 +193,7 @@ public class DataSource {
                 allAboutSelectedSong.setSongTrackNumber(resultSet.getInt(3));
                 allAboutSelectedSong.setArtistName(resultSet.getString(1));
 
+                SongDetails.add(allAboutSelectedSong);
             }
             return SongDetails;
 
