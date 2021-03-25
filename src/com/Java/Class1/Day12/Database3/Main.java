@@ -37,7 +37,14 @@ public class Main {
         }
 
 
-
+        System.out.println("//////////////////////////////////////////////");
+        //to get details about the song
+        List<SongArtistAlbum> allAboutGivenSong=dataSource.QuerySongDetails("Go Your Own Way",DataSource.ORDER_BY_ASC);
+        for(SongArtistAlbum a:allAboutGivenSong){
+            System.out.println("The song artist is- "+a.getArtistName());
+            System.out.println("The song is in album- "+a.getAlbumName());
+            System.out.println("The song is in track- "+a.getSongTrackNumber());
+        }
 
 
 

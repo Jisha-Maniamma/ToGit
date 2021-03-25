@@ -28,7 +28,7 @@ public class DataSource {
     public static final int INDEX_ARTIST_ID=1;
     public static final int INDEX_ARTIST_NAME=2;
     //////////////////////////
-    public static final String TABLE_SONG="song";
+    public static final String TABLE_SONG="songs";
     public static final String COLUMN_SONG_ID ="_id";
     public static final String COLUMN_SONG_TRACK ="track";
     public static final String COLUMN_SONG_TITLE ="title";
@@ -112,7 +112,7 @@ public class DataSource {
     public static final String Query_Albums_From_ArtistsName=
             "SELECT "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+
                     " FROM "+TABLE_ALBUM+" INNER JOIN "+TABLE_ARTIST +" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+" = "+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST
-                    +" WHERE "+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+"=\"";
+                    +" WHERE "+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+" = "+" \"";
     public static final String Query_Albums_From_ArtistsName_ORDER=" ORDER BY "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" COLLATE NOCASE ";
 
     public List<String> queryAlbumsForartist(String artistname,int sortOrder){
@@ -166,7 +166,7 @@ public class DataSource {
                     ","+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+ " FROM "+TABLE_SONG+
                     " INNER JOIN "+TABLE_ALBUM+" ON "+TABLE_ALBUM+"."+COLUMN_ALBUM_ID+"="+TABLE_SONG+"."+COLUMN_SONG_ALBUM+
                     " INNER JOIN "+TABLE_ARTIST+" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+"="+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST+
-                    " WHERE "+TABLE_SONG+"."+COLUMN_SONG_TITLE+"\"";
+                    " WHERE "+TABLE_SONG+"."+COLUMN_SONG_TITLE+"= \"";
     public static final String QUERRY_SONG_DETAILS_ORDER=" ORDER BY "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+","+TABLE_ARTIST+"."+
             COLUMN_ARTIST_NAME+" COLLATE NOCASE";
 
