@@ -173,7 +173,14 @@ public class DataSource {
 
     public static final String QUERY_VIEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+" WHERE "+COLUMN_SONG_TITLE+"= \"";
     //SELECT  name,album,track FROM song_details_list_V3 where title="(I Can't Get No) Satisfacion"
+    public List<SongArtistAlbum> QueryNewView(String songName){
+        StringBuilder sb=new StringBuilder(QUERY_VIEW);
+        sb.append(songName);
+        sb.append("\"");
+        System.out.println("The SQL query is- \""+ sb.toString());
+        return getAboutSong(sb);
 
+    }
 
     public List<SongArtistAlbum> QuerySongDetails(String song,int SortOrderorder){
         StringBuilder sb=new StringBuilder(QUERRY_SONG_DETAILS);
@@ -190,7 +197,7 @@ public class DataSource {
             }
         }
         System.out.println("The SQL query is- \""+ sb.toString());
-       return getAboutSong(sb);
+        return getAboutSong(sb);
 
 
     }
