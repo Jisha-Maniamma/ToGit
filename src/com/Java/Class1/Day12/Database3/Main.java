@@ -55,8 +55,9 @@ public class Main {
         System.out.println("//////////////////////////////////////////////");
         //to get count of any table
         if(dataSource.createNewView())
-            System.out.println("The new view created");
-
+            System.out.println("congraualation... the new view- "+DataSource.NEW_VIEW_NAME+" was created ");
+        else
+            System.out.println("sorry");
 
         dataSource.close();
     }

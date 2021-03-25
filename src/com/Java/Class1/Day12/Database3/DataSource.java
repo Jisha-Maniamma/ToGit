@@ -232,10 +232,20 @@ public class DataSource {
     //FROM songs
     //INNER JOIN albums on albums._id=songs.album
     //INNER JOIN artists on artists._id=albums.artist ORDER by songs.track;
-    public static final String NEW_VIEW_NAME="";
+    public static final String NEW_VIEW_NAME="song_details_list";
+    public static final String QUERY_CREATE_NEW_VIEW="CREATE VIEW IF NOT EXISTS "+NEW_VIEW_NAME+" AS SELECT "+
+            TABLE_SONG+"."+COLUMN_SONG_TITLE+" AS  songName, "+
+            TABLE_SONG+"."+COLUMN_SONG_TRACK+" AS trackNumber, "+
+            TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" AS albumName, "+
+            TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+" AS artistName "+
+            " FROM "+TABLE_SONG+
+            " INNER JOIN "+TABLE_ALBUM+" ON "+TABLE_ALBUM+"."+COLUMN_ALBUM_ID+"="+TABLE_SONG+"."+COLUMN_SONG_ALBUM+
+            " INNER JOIN "+TABLE_ARTIST+" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+"="+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST
+            +" ORDER BY "+TABLE_SONG+"."+COLUMN_SONG_TRACK;
+
     public boolean createNewView(){
         try(Statement statement= conn.createStatement()){
-           //statement.execute();
+           statement.execute(QUERY_CREATE_NEW_VIEW);
             return true;
         }catch(SQLException e){
             System.out.println("The error while trying to create the new view is- "+e.getMessage());
