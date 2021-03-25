@@ -161,7 +161,18 @@ public class DataSource {
     //INNER JOIN artists ON artists._id=albums.artist
     //where songs.title="Go Your Own Way" order by albums.name,artists.name
     //COLLATE NOCASE ASC;
+    public static final String QUERRY_SONG_DETAILS=
+            "SELECT "+TABLE_SONG+"."+COLUMN_SONG_TRACK+","+ TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+
+                    ","+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+ " FROM "+TABLE_SONG+
+                    " INNER JOIN "+TABLE_ALBUM+" ON "+TABLE_ALBUM+"."+COLUMN_ALBUM_ID+"="+TABLE_SONG+"."+COLUMN_SONG_ALBUM+
+                    " INNER JOIN "+TABLE_ARTIST+" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+"="+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST+
+                    " WHERE "+TABLE_SONG+"."+COLUMN_SONG_TITLE+"\"";
+    public static final String QUERRY_SONG_DETAILS_ORDER=" ORDER BY "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+","+TABLE_ARTIST+"."+
+            COLUMN_ARTIST_NAME+" COLLATE NOCASE";
+
+
     public List<SongArtistAlbum> QuerySongDetails(String song,int SortOrderorder){
+return null;
 
     }
 
