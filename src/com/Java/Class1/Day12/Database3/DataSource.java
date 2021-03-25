@@ -108,4 +108,42 @@ public class DataSource {
 //        Statement statement= conn.createStatement();
 
     }
+
+
+    public List<String> queryAlbumsForartist(String artistname,int sortOrder){
+
+        StringBuilder sb=new StringBuilder("SELECT ");
+        sb.append(TABLE_ALBUM);
+        sb.append(".");
+        sb.append(COLUMN_ALBUM_NAME);
+        sb.append(" FROM ");
+        sb.append(TABLE_ALBUM+" INNER JOIN ");
+        sb.append(TABLE_ARTIST +" ON ");
+        sb.append(TABLE_ARTIST+"."+COLUMN_ARTIST_ID+" = "+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST);
+        sb.append(" WHERE "+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+"=\"");
+        sb.append(artistname+"\" ");
+
+        if(sortOrder!=ORDER_BY_NONE){
+            sb.append(" ORDER BY ");
+            sb.append(TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" COLLATE NOCASE ");
+            if(sortOrder==ORDER_BY_ASC){
+                sb.append(" ASC");
+            } else{
+                sb.append(" DESC");
+            }
+        }
+        System.out.println("SQL statement is- "+sb.toString());
+        try(Statement statement= conn.createStatement(); ResultSet resultSet= statement.executeQuery(sb.toString())){
+            List<String> AlbumNames=new ArrayList<>();
+
+            while(resultSet.next()){
+            AlbumNames.add(resultSet.getString(1));
+            }
+            return AlbumNames;
+        }catch(SQLException e){
+            System.out.println("The error in finding out the albums of an artist is- "+e.getMessage());
+       return null;
+        }
+
+    }
 }
