@@ -232,12 +232,12 @@ public class DataSource {
     //FROM songs
     //INNER JOIN albums on albums._id=songs.album
     //INNER JOIN artists on artists._id=albums.artist ORDER by songs.track;
-    public static final String NEW_VIEW_NAME="song_details_list";
+    public static final String NEW_VIEW_NAME="song_details_list_V1";
     public static final String QUERY_CREATE_NEW_VIEW="CREATE VIEW IF NOT EXISTS "+NEW_VIEW_NAME+" AS SELECT "+
-            TABLE_SONG+"."+COLUMN_SONG_TITLE+" AS  songName, "+
-            TABLE_SONG+"."+COLUMN_SONG_TRACK+" AS trackNumber, "+
-            TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" AS albumName, "+
-            TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+" AS artistName "+
+            TABLE_SONG+"."+COLUMN_SONG_TITLE+" AS "+ COLUMN_SONG_TITLE+", "+
+            TABLE_SONG+"."+COLUMN_SONG_TRACK+" AS "+COLUMN_SONG_TRACK+", "+
+            TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" AS "+COLUMN_ALBUM_NAME+", "+
+            TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+" AS"+COLUMN_ARTIST_NAME+" "+
             " FROM "+TABLE_SONG+
             " INNER JOIN "+TABLE_ALBUM+" ON "+TABLE_ALBUM+"."+COLUMN_ALBUM_ID+"="+TABLE_SONG+"."+COLUMN_SONG_ALBUM+
             " INNER JOIN "+TABLE_ARTIST+" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+"="+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST
