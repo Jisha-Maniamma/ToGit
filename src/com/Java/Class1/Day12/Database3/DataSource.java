@@ -189,9 +189,10 @@ public class DataSource {
             List<SongArtistAlbum> SongDetails=new ArrayList<>();
             while(resultSet.next()){
                 SongArtistAlbum allAboutSelectedSong=new SongArtistAlbum();
+                allAboutSelectedSong.setArtistName(resultSet.getString(3));
                 allAboutSelectedSong.setAlbumName(resultSet.getString(2));
-                allAboutSelectedSong.setSongTrackNumber(resultSet.getInt(3));
-                allAboutSelectedSong.setArtistName(resultSet.getString(1));
+                allAboutSelectedSong.setSongTrackNumber(resultSet.getInt(1));
+
 
                 SongDetails.add(allAboutSelectedSong);
             }
