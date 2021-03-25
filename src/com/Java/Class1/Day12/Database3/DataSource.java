@@ -172,7 +172,28 @@ public class DataSource {
 
 
     public List<SongArtistAlbum> QuerySongDetails(String song,int SortOrderorder){
-return null;
+        StringBuilder sb=new StringBuilder(QUERRY_SONG_DETAILS);
+        sb.append(song+"\"");
+
+
+        if(SortOrderorder!=ORDER_BY_NONE){
+            sb.append(QUERRY_SONG_DETAILS_ORDER);
+            if(SortOrderorder==ORDER_BY_ASC){
+                sb.append(" ASC");
+            }else{
+                sb.append(" DESC");
+            }
+        }
+        System.out.println("The SQL query is- \""+ sb.toString());
+        try(Statement statement= conn.createStatement(); ResultSet resultSet= statement.executeQuery(sb.toString())){
+            List<SongArtistAlbum> SongDetails=new ArrayList<>();
+            return SongDetails;
+
+        }catch(SQLException e){
+            System.out.println("The error generated while feting the song details is- "+e.getMessage());
+            return null;
+        }
+
 
     }
 
