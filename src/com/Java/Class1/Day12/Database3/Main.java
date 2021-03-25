@@ -59,6 +59,20 @@ public class Main {
         else
             System.out.println("sorry");
 
+
+        System.out.println("//////////////////////////////////////////////");
+        //to query the new view
+        List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView("Go Your Own Way");
+        if(allaboutGivenSong_View==null)
+            System.out.println("sorry the list is empty");
+
+        for(SongArtistAlbum aa:allaboutGivenSong_View){
+            System.out.println("The song artist is- "+aa.getArtistName());
+            System.out.println("The song is in album- "+aa.getAlbumName());
+            System.out.println("The song is in track- "+aa.getSongTrackNumber());
+        }
+
+
         dataSource.close();
     }
 }
