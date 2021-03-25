@@ -171,6 +171,9 @@ public class DataSource {
     public static final String QUERRY_SONG_DETAILS_ORDER=" ORDER BY "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+","+TABLE_ARTIST+"."+
             COLUMN_ARTIST_NAME+" COLLATE NOCASE";
 
+    public static final String QUERY_VIEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+" WHERE "+COLUMN_SONG_TITLE+"= \"";
+    //SELECT  name,album,track FROM song_details_list_V3 where title="(I Can't Get No) Satisfacion"
+
 
     public List<SongArtistAlbum> QuerySongDetails(String song,int SortOrderorder){
         StringBuilder sb=new StringBuilder(QUERRY_SONG_DETAILS);
@@ -187,7 +190,12 @@ public class DataSource {
             }
         }
         System.out.println("The SQL query is- \""+ sb.toString());
-        try(Statement statement= conn.createStatement(); ResultSet resultSet= statement.executeQuery(sb.toString())){
+       return getAboutSong(sb);
+
+
+    }
+    public List<SongArtistAlbum> getAboutSong(StringBuilder s){
+        try(Statement statement= conn.createStatement(); ResultSet resultSet= statement.executeQuery(s.toString())){
             List<SongArtistAlbum> SongDetails=new ArrayList<>();
             while(resultSet.next()){
                 SongArtistAlbum allAboutSelectedSong=new SongArtistAlbum();
@@ -204,8 +212,6 @@ public class DataSource {
             System.out.println("The error generated while fetching the song details [song track number, album name, artist name] is- "+e.getMessage());
             return null;
         }
-
-
     }
 
     public static final String GET_COUNT="SELECT COUNT(*) FROM ";
@@ -232,20 +238,39 @@ public class DataSource {
     //FROM songs
     //INNER JOIN albums on albums._id=songs.album
     //INNER JOIN artists on artists._id=albums.artist ORDER by songs.track;
-    public static final String NEW_VIEW_NAME="song_details_list_V1";
+    public static final String NEW_VIEW_NAME="song_details_list_V3";
     public static final String QUERY_CREATE_NEW_VIEW="CREATE VIEW IF NOT EXISTS "+NEW_VIEW_NAME+" AS SELECT "+
             TABLE_SONG+"."+COLUMN_SONG_TITLE+" AS "+ COLUMN_SONG_TITLE+", "+
             TABLE_SONG+"."+COLUMN_SONG_TRACK+" AS "+COLUMN_SONG_TRACK+", "+
-            TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" AS "+COLUMN_ALBUM_NAME+", "+
-            TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+" AS"+COLUMN_ARTIST_NAME+" "+
+            TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" AS "+COLUMN_SONG_ALBUM+", "+
+            TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+" AS "+COLUMN_ARTIST_NAME+" "+
             " FROM "+TABLE_SONG+
             " INNER JOIN "+TABLE_ALBUM+" ON "+TABLE_ALBUM+"."+COLUMN_ALBUM_ID+"="+TABLE_SONG+"."+COLUMN_SONG_ALBUM+
             " INNER JOIN "+TABLE_ARTIST+" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+"="+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST
             +" ORDER BY "+TABLE_SONG+"."+COLUMN_SONG_TRACK;
 
+
+//    public static final String CREATE_ARTIST_FOR_SONG_VIEW = "CREATE VIEW IF NOT EXISTS " +
+//            TABLE_ARTIST_SONG_VIEW + " AS SELECT " +
+//            TABLE_ARTISTS + "." + COLUMN_ARTIST_NAME + ", " +
+//            TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + " AS " + COLUMN_SONG_ALBUM +
+//            ", " +
+//            TABLE_SONGS + "." + COLUMN_SONG_TRACK + ", "
+//            + TABLE_SONGS + "." + COLUMN_SONG_TITLE +
+//            " FROM " + TABLE_SONGS +
+//            " INNER JOIN " + TABLE_ALBUMS + " ON " + TABLE_SONGS +
+//            "." + COLUMN_SONG_ALBUM + " = " + TABLE_ALBUMS + "." + COLUMN_ALBUM_ID +
+//            " INNER JOIN " + TABLE_ARTISTS + " ON " + TABLE_ALBUMS + "." + COLUMN_ALBUM_ARTIST +
+//            " = " + TABLE_ARTISTS + "." + COLUMN_ARTIST_ID +
+//            " ORDER BY " +
+//            TABLE_ARTISTS + "." + COLUMN_ARTIST_NAME + ", " +
+//            TABLE_ALBUMS + "." + COLUMN_ALBUM_NAME + ", " +
+//            TABLE_SONGS + "." + COLUMN_SONG_TRACK;
+
+
     public boolean createNewView(){
         try(Statement statement= conn.createStatement()){
-           statement.execute(QUERY_CREATE_NEW_VIEW);
+            statement.execute(QUERY_CREATE_NEW_VIEW);
             return true;
         }catch(SQLException e){
             System.out.println("The error while trying to create the new view is- "+e.getMessage());
@@ -253,5 +278,6 @@ public class DataSource {
         }
 
     }
+
 
 }
