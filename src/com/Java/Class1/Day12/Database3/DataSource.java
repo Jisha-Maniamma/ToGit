@@ -127,7 +127,8 @@ public class DataSource {
 //        sb.append(TABLE_ARTIST +" ON ");
 //        sb.append(TABLE_ARTIST+"."+COLUMN_ARTIST_ID+" = "+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST);
 //        sb.append(" WHERE "+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+"=\"");
-        sb.append(artistname+"\" ");
+        sb.append(artistname);
+        sb.append("\" ");
 
         if(sortOrder!=ORDER_BY_NONE){
             sb.append(Query_Albums_From_ArtistsName_ORDER);
@@ -173,7 +174,8 @@ public class DataSource {
 
     public List<SongArtistAlbum> QuerySongDetails(String song,int SortOrderorder){
         StringBuilder sb=new StringBuilder(QUERRY_SONG_DETAILS);
-        sb.append(song+"\"");
+        sb.append(song);
+        sb.append("\"");
 
 
         if(SortOrderorder!=ORDER_BY_NONE){
@@ -206,6 +208,11 @@ public class DataSource {
 
     }
 
+
+public int getCount(String TableName){
+
+        return -1;
+}
 
 
 

@@ -46,6 +46,12 @@ public class Main {
             System.out.println("The song is in track- "+a.getSongTrackNumber());
         }
 
+        System.out.println("//////////////////////////////////////////////");
+        //to get count of any table
+        System.out.println("The count of items in the table "+DataSource.TABLE_SONG+ " is- "+dataSource.getCount(DataSource.TABLE_SONG));
+        System.out.println("The count of items in the table "+DataSource.TABLE_ARTIST+ " is- "+dataSource.getCount(DataSource.TABLE_ARTIST));
+        System.out.println("The count of items in the table "+DataSource.TABLE_ALBUM+ " is- "+dataSource.getCount(DataSource.TABLE_ALBUM));
+
 
 
         dataSource.close();
