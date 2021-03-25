@@ -109,23 +109,30 @@ public class DataSource {
 
     }
 
+    public static final String Query_Albums_From_ArtistsName=
+            "SELECT "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+
+                    " FROM "+TABLE_ALBUM+" INNER JOIN "+TABLE_ARTIST +" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+" = "+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST
+                    +" WHERE "+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+"=\"";
+    public static final String Query_Albums_From_ArtistsName_ORDER=" ORDER BY "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" COLLATE NOCASE ";
 
     public List<String> queryAlbumsForartist(String artistname,int sortOrder){
 
-        StringBuilder sb=new StringBuilder("SELECT ");
-        sb.append(TABLE_ALBUM);
-        sb.append(".");
-        sb.append(COLUMN_ALBUM_NAME);
-        sb.append(" FROM ");
-        sb.append(TABLE_ALBUM+" INNER JOIN ");
-        sb.append(TABLE_ARTIST +" ON ");
-        sb.append(TABLE_ARTIST+"."+COLUMN_ARTIST_ID+" = "+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST);
-        sb.append(" WHERE "+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+"=\"");
+        StringBuilder sb=new StringBuilder(Query_Albums_From_ArtistsName);
+
+//        sb.append(TABLE_ALBUM);
+//        sb.append(".");
+//        sb.append(COLUMN_ALBUM_NAME);
+//        sb.append(" FROM ");
+//        sb.append(TABLE_ALBUM+" INNER JOIN ");
+//        sb.append(TABLE_ARTIST +" ON ");
+//        sb.append(TABLE_ARTIST+"."+COLUMN_ARTIST_ID+" = "+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST);
+//        sb.append(" WHERE "+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+"=\"");
         sb.append(artistname+"\" ");
 
         if(sortOrder!=ORDER_BY_NONE){
-            sb.append(" ORDER BY ");
-            sb.append(TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" COLLATE NOCASE ");
+            sb.append(Query_Albums_From_ArtistsName_ORDER);
+//            sb.append(" ORDER BY ");
+//            sb.append(TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" COLLATE NOCASE ");
             if(sortOrder==ORDER_BY_ASC){
                 sb.append(" ASC");
             } else{
