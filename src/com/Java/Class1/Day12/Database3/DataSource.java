@@ -144,13 +144,28 @@ public class DataSource {
             List<String> AlbumNames=new ArrayList<>();
 
             while(resultSet.next()){
-            AlbumNames.add(resultSet.getString(1));
+                AlbumNames.add(resultSet.getString(1));
             }
             return AlbumNames;
         }catch(SQLException e){
             System.out.println("The error in finding out the albums of an artist is- "+e.getMessage());
-       return null;
+            return null;
         }
 
     }
+
+
+
+    //SELECT songs.track,albums.name,artists.name FROM songs
+    //INNER JOIN albums ON albums._id=songs.album
+    //INNER JOIN artists ON artists._id=albums.artist
+    //where songs.title="Go Your Own Way" order by albums.name,artists.name
+    //COLLATE NOCASE ASC;
+    public List<SongArtistAlbum> QuerySongDetails(String song,int SortOrderorder){
+
+    }
+
+
+
+
 }
