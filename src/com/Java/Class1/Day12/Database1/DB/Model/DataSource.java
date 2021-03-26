@@ -12,7 +12,7 @@ import java.sql.Statement;
  */
 public class DataSource {
 
-    public static final String DATABASE_NAME="Master_Project_Info_v1.db";
+    public static final String DATABASE_NAME="Master_Project_Info_v3.db";
     private static final String CONNECTION="jdbc:sqlite:"+DATABASE_NAME;
 
     private Connection conn;
@@ -39,7 +39,7 @@ public class DataSource {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //CREATE TABLE IF NOT EXISTS company( _id INTEGER, name TEXT)
     private static final String TABLE_COMPANY="company_info";
-    private static final String COLUMN_COMPANY_ID="_id";
+    private static final String COLUMN_COMPANY_ID="_idCompany";
     private static final String COLUMN_COMPANY_NAME="name";
     private static final String CREATE="CREATE TABLE IF NOT EXISTS ";
     private static final String QUERY_CREATE_TABLE_COMPANY=CREATE+TABLE_COMPANY+
@@ -47,7 +47,7 @@ public class DataSource {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //to create department table
     private static final String TABLE_DEPARTMENT="department_info";
-    private static final String COLUMN_DEPARTMENT_ID="_id";
+    private static final String COLUMN_DEPARTMENT_ID="_idDepartment";
     private static final String COLUMN_DEPARTMENT_NAME="name";
     private static final String QUERY_CREATE_TABLE_DEPARTMENT=CREATE+TABLE_DEPARTMENT+
             "("+COLUMN_DEPARTMENT_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+COLUMN_DEPARTMENT_NAME+" TEXT NOT NULL)";
@@ -79,16 +79,38 @@ public class DataSource {
     private static final String COLUMN_PROJECT_INFO_ID="_id";
     private static final String COLUMN_PROJECT_INFO_PROJECT_NAME="project_Name";
     private static final String COLUMN_PROJECT_INFO_LEADER_NAME="leader_Name";
-    private static final String COLUMN_PROJECT_INFO_COMPANY="company";
-    private static final String COLUMN_PROJECT_INFO_DEPARTMENT="department";
+    private static final String COLUMN_PROJECT_INFO_COMPANY="_idCompany";
+    private static final String COLUMN_PROJECT_INFO_DEPARTMENT="_idDepartment";
     private static final String COLUMN_PROJECT_INFO_MILESTONE_DATE="milestone_date";
     private static final String COLUMN_PROJECT_INFO_END_DATE="end_date";
     private static final String COLUMN_PROJECT_INFO_ACTUAL_START_DATE="actualStart_date";
     private static final String COLUMN_PROJECT_INFO_CHECK_DATE="check_date";
+
+    /*
+
+
+CREATE TABLE project_info5 (
+    _id   INTEGER PRIMARY KEY,
+    supplier_name TEXT    NOT NULL,
+    _idCompany  INTEGER NOT NULL,
+	 _idDepartment  INTEGER NOT NULL,
+    FOREIGN KEY (_idCompany) REFERENCES company_info (_idCompany),
+	  FOREIGN KEY (_idDepartment) REFERENCES department_info (_idCompany)
+);
+
+     */
+
+
     private static final String QUERY_CREATE_TABLE_PROJECT_INFO=CREATE+TABLE_PROJECT_INFO+
             "("+COLUMN_PROJECT_INFO_ID+" INTEGER PRIMARY KEY, "+COLUMN_PROJECT_INFO_PROJECT_NAME+" TEXT NOT NULL UNIQUE, "+
-            COLUMN_PROJECT_INFO_LEADER_NAME+" TEXT NOT NULL, " +COLUMN_PROJECT_INFO_COMPANY+"INTEGER, FOREIGN KEY("+COLUMN_PROJECT_INFO_COMPANY+") REFERENCES "+TABLE_COMPANY+" ("+COLUMN_COMPANY_ID+"), "+
-            COLUMN_PROJECT_INFO_DEPARTMENT+" INTEGER NOT NULL, "+COLUMN_PROJECT_INFO_MILESTONE_DATE+" TEXT NOT NULL, "
+            COLUMN_PROJECT_INFO_LEADER_NAME+" TEXT NOT NULL, " +
+
+            COLUMN_PROJECT_INFO_COMPANY+" INTEGER NOT NULL, FOREIGN KEY ( "+COLUMN_PROJECT_INFO_COMPANY+" ) REFERENCES "+
+            TABLE_COMPANY+" ( "+COLUMN_COMPANY_ID+" ), "+
+            COLUMN_PROJECT_INFO_DEPARTMENT+" INTEGER NOT NULL, FOREIGN KEY ( "+COLUMN_PROJECT_INFO_DEPARTMENT+" ) REFERENCES "+
+            TABLE_DEPARTMENT+" ( "+COLUMN_DEPARTMENT_ID+"), "+
+
+            COLUMN_PROJECT_INFO_MILESTONE_DATE+" TEXT NOT NULL, "
             +COLUMN_PROJECT_INFO_END_DATE+" TEXT NOT NULL, "+COLUMN_PROJECT_INFO_ACTUAL_START_DATE+" TEXT NOT NULL, "+
             COLUMN_PROJECT_INFO_CHECK_DATE+" TEXT NOT NULL)";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,7 +149,7 @@ public class DataSource {
             statement.execute(QUERY_CREATE_TABLE_LOGIN_CREDENTIALS_INFO);
             statement.execute(QUERY_CREATE_TABLE_PROJECT_INFO);
             statement.execute(QUERY_CREATE_TABLE_PROJECT_ANALYSIS_INFO);
-statement.execute("PRAGMA foreign_keys = ON;");
+//statement.execute("PRAGMA foreign_keys = ON;");
             System.out.println(" sql to create database -");
             System.out.println("---> "+QUERY_CREATE_TABLE_COMPANY);
             System.out.println("---> "+QUERY_CREATE_TABLE_DEPARTMENT);
