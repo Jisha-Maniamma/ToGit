@@ -12,7 +12,7 @@ import java.sql.Statement;
  */
 public class DataSource {
 
-    public static final String DATABASE_NAME="Master_Project_Info_v5.db";
+    public static final String DATABASE_NAME="Master_Project_Info_v6.db";
     private static final String CONNECTION="jdbc:sqlite:"+DATABASE_NAME;
 
     private Connection conn;
@@ -72,7 +72,10 @@ public class DataSource {
     private static final String COLUMN_LOGIN_CREDENTIALS_INFO_UserId ="useId";
     private static final String COLUMN_LOGIN_CREDENTIALS_INFO_Password ="password";
     private static final String QUERY_CREATE_TABLE_LOGIN_CREDENTIALS_INFO=CREATE+TABLE_LOGIN_CREDENTIALS_INFO+
-            "("+ COLUMN_LOGIN_CREDENTIALS_INFO_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+ COLUMN_LOGIN_CREDENTIALS_INFO_UserId +" TEXT NOT NULL UNIQUE ,"+
+            "("+ COLUMN_LOGIN_CREDENTIALS_INFO_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+            "FOREIGN KEY ( "+COLUMN_LOGIN_CREDENTIALS_INFO_ID+" ) REFERENCES "+
+            TABLE_USER_LOGIN_INFO+" ( "+COLUMN_USER_LOGIN_INFO_ID+" ), "+
+            COLUMN_LOGIN_CREDENTIALS_INFO_UserId +" TEXT NOT NULL UNIQUE ,"+
             COLUMN_LOGIN_CREDENTIALS_INFO_Password +" TEXT)";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //to create project_info
