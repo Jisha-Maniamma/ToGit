@@ -12,7 +12,7 @@ import java.sql.Statement;
  */
 public class DataSource {
 
-    public static final String DATABASE_NAME="Master_Project_Info_v4.db";
+    public static final String DATABASE_NAME="Master_Project_Info_v5.db";
     private static final String CONNECTION="jdbc:sqlite:"+DATABASE_NAME;
 
     private Connection conn;
@@ -59,11 +59,12 @@ public class DataSource {
     private static final String COLUMN_USER_LOGIN_INFO_LAST_NAME="lastName";
     private static final String COLUMN_USER_LOGIN_INFO_EMAIL="emailId";
     private static final String COLUMN_USER_LOGIN_INFO_GENDER="gender";
-    private static final String COLUMN_USER_LOGIN_INFO_COMPANY="company";
+   // private static final String COLUMN_USER_LOGIN_INFO_COMPANY="company";
     private static final String QUERY_CREATE_TABLE_USER_LOGIN_INFO=CREATE+TABLE_USER_LOGIN_INFO+
             "("+COLUMN_USER_LOGIN_INFO_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+COLUMN_USER_LOGIN_INFO_FIRST_NAME+" TEXT NOT NULL,"+
             COLUMN_USER_LOGIN_INFO_LAST_NAME+" TEXT NOT NULL,"+COLUMN_USER_LOGIN_INFO_EMAIL+" TEXT NOT NULL UNIQUE ,"+COLUMN_USER_LOGIN_INFO_GENDER
-            +" TEXT NOT NULL,"+COLUMN_USER_LOGIN_INFO_COMPANY+" INTEGER NOT NULL)";
+            +" TEXT NOT NULL)";
+//           +COLUMN_USER_LOGIN_INFO_COMPANY+" INTEGER NOT NULL)";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //to create login credentials table
     private static final String TABLE_LOGIN_CREDENTIALS_INFO="login_credentials";
