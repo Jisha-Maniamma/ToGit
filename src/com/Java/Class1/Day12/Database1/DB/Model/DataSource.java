@@ -59,24 +59,25 @@ public class DataSource {
     private static final String COLUMN_USER_LOGIN_INFO_LAST_NAME="lastName";
     private static final String COLUMN_USER_LOGIN_INFO_EMAIL="emailId";
     private static final String COLUMN_USER_LOGIN_INFO_GENDER="gender";
-   // private static final String COLUMN_USER_LOGIN_INFO_COMPANY="company";
+    // private static final String COLUMN_USER_LOGIN_INFO_COMPANY="company";
     private static final String QUERY_CREATE_TABLE_USER_LOGIN_INFO=CREATE+TABLE_USER_LOGIN_INFO+
             "("+COLUMN_USER_LOGIN_INFO_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+COLUMN_USER_LOGIN_INFO_FIRST_NAME+" TEXT NOT NULL,"+
             COLUMN_USER_LOGIN_INFO_LAST_NAME+" TEXT NOT NULL,"+COLUMN_USER_LOGIN_INFO_EMAIL+" TEXT NOT NULL UNIQUE ,"+COLUMN_USER_LOGIN_INFO_GENDER
             +" TEXT NOT NULL)";
-//           +COLUMN_USER_LOGIN_INFO_COMPANY+" INTEGER NOT NULL)";
+    //           +COLUMN_USER_LOGIN_INFO_COMPANY+" INTEGER NOT NULL)";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //to create login credentials table
     private static final String TABLE_LOGIN_CREDENTIALS_INFO="login_credentials";
     private static final String COLUMN_LOGIN_CREDENTIALS_INFO_ID ="_id";
-    private static final String COLUMN_LOGIN_CREDENTIALS_INFO_UserId ="useId";
+    private static final String COLUMN_LOGIN_CREDENTIALS_INFO_UserId ="userId";
     private static final String COLUMN_LOGIN_CREDENTIALS_INFO_Password ="password";
     private static final String QUERY_CREATE_TABLE_LOGIN_CREDENTIALS_INFO=CREATE+TABLE_LOGIN_CREDENTIALS_INFO+
             "("+ COLUMN_LOGIN_CREDENTIALS_INFO_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
-            "FOREIGN KEY ( "+COLUMN_LOGIN_CREDENTIALS_INFO_ID+" ) REFERENCES "+
-            TABLE_USER_LOGIN_INFO+" ( "+COLUMN_USER_LOGIN_INFO_ID+" ), "+
             COLUMN_LOGIN_CREDENTIALS_INFO_UserId +" TEXT NOT NULL UNIQUE ,"+
-            COLUMN_LOGIN_CREDENTIALS_INFO_Password +" TEXT)";
+            COLUMN_LOGIN_CREDENTIALS_INFO_Password +" TEXT,"+
+
+            "FOREIGN KEY ( "+COLUMN_LOGIN_CREDENTIALS_INFO_ID+" ) REFERENCES "+
+            TABLE_USER_LOGIN_INFO+" ( "+COLUMN_USER_LOGIN_INFO_ID+") ) ";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //to create project_info
     private static final String TABLE_PROJECT_INFO="project_info";
@@ -114,9 +115,11 @@ CREATE TABLE project_info5 (
 
             COLUMN_PROJECT_INFO_MILESTONE_DATE+" TEXT NOT NULL, "
             +COLUMN_PROJECT_INFO_END_DATE+" TEXT NOT NULL, "+COLUMN_PROJECT_INFO_ACTUAL_START_DATE+" TEXT NOT NULL, "+
-            COLUMN_PROJECT_INFO_CHECK_DATE+" TEXT NOT NULL, "+"FOREIGN KEY ( "+COLUMN_PROJECT_INFO_COMPANY+" ) REFERENCES "+
-    TABLE_COMPANY+" ( "+COLUMN_COMPANY_ID+" ), "+" FOREIGN KEY ( "+COLUMN_PROJECT_INFO_DEPARTMENT+" ) REFERENCES "+
-    TABLE_DEPARTMENT+" ( "+COLUMN_DEPARTMENT_ID+")) ";
+            COLUMN_PROJECT_INFO_CHECK_DATE+" TEXT NOT NULL, "+
+
+            "FOREIGN KEY ( "+COLUMN_PROJECT_INFO_COMPANY+" ) REFERENCES "+
+            TABLE_COMPANY+" ( "+COLUMN_COMPANY_ID+" ), "+" FOREIGN KEY ( "+COLUMN_PROJECT_INFO_DEPARTMENT+" ) REFERENCES "+
+            TABLE_DEPARTMENT+" ( "+COLUMN_DEPARTMENT_ID+")) ";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //to create project_planning_info
     private static final String TABLE_PROJECT_PLANING_INFO="planing_phase_info";
