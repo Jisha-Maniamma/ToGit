@@ -27,4 +27,7 @@ public class AllAboutProject {
 
 
 
+    //getters and setters
+
+
 }
