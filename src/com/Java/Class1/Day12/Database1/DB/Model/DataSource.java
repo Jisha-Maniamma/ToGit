@@ -12,7 +12,7 @@ import java.sql.Statement;
  */
 public class DataSource {
 
-    public static final String DATABASE_NAME="Master_Project_Info_v3.db";
+    public static final String DATABASE_NAME="Master_Project_Info_v4.db";
     private static final String CONNECTION="jdbc:sqlite:"+DATABASE_NAME;
 
     private Connection conn;
@@ -105,14 +105,14 @@ CREATE TABLE project_info5 (
             "("+COLUMN_PROJECT_INFO_ID+" INTEGER PRIMARY KEY, "+COLUMN_PROJECT_INFO_PROJECT_NAME+" TEXT NOT NULL UNIQUE, "+
             COLUMN_PROJECT_INFO_LEADER_NAME+" TEXT NOT NULL, " +
 
-            COLUMN_PROJECT_INFO_COMPANY+" INTEGER NOT NULL, FOREIGN KEY ( "+COLUMN_PROJECT_INFO_COMPANY+" ) REFERENCES "+
-            TABLE_COMPANY+" ( "+COLUMN_COMPANY_ID+" ), "+
-            COLUMN_PROJECT_INFO_DEPARTMENT+" INTEGER NOT NULL, FOREIGN KEY ( "+COLUMN_PROJECT_INFO_DEPARTMENT+" ) REFERENCES "+
-            TABLE_DEPARTMENT+" ( "+COLUMN_DEPARTMENT_ID+"), "+
+            COLUMN_PROJECT_INFO_COMPANY+" INTEGER NOT NULL,"+
+            COLUMN_PROJECT_INFO_DEPARTMENT+" INTEGER NOT NULL, "+
 
             COLUMN_PROJECT_INFO_MILESTONE_DATE+" TEXT NOT NULL, "
             +COLUMN_PROJECT_INFO_END_DATE+" TEXT NOT NULL, "+COLUMN_PROJECT_INFO_ACTUAL_START_DATE+" TEXT NOT NULL, "+
-            COLUMN_PROJECT_INFO_CHECK_DATE+" TEXT NOT NULL)";
+            COLUMN_PROJECT_INFO_CHECK_DATE+" TEXT NOT NULL, "+"FOREIGN KEY ( "+COLUMN_PROJECT_INFO_COMPANY+" ) REFERENCES "+
+    TABLE_COMPANY+" ( "+COLUMN_COMPANY_ID+" ), "+" FOREIGN KEY ( "+COLUMN_PROJECT_INFO_DEPARTMENT+" ) REFERENCES "+
+    TABLE_DEPARTMENT+" ( "+COLUMN_DEPARTMENT_ID+")) ";
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //to create project_planning_info
     private static final String TABLE_PROJECT_PLANING_INFO="planing_phase_info";
