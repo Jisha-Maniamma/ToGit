@@ -101,14 +101,19 @@ public class DataSource {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     //to create project_analysis_info
     public static final String TABLE_PROJECT_ANALYSIS_INFO="analysis_info";
-    public static final String COLUMN_PROJECT_ANALYSIS_INFO_ID="";
-    public static final String COLUMN_PROJECT_ANALYSIS_INFO_CC="";
-    public static final String COLUMN_PROJECT_ANALYSIS_INFO_PB="";
-    public static final String COLUMN_PROJECT_ANALYSIS_INFO_PRIORITY="";
-    public static final String COLUMN_PROJECT_ANALYSIS_INFO_REMAINING_WAIT="";
-    public static final String COLUMN_PROJECT_ANALYSIS_INFO_STATUS="";
-    public static final String COLUMN_PROJECT_ANALYSIS_INFO_SCHEDULED_START_DATE="";
+    public static final String COLUMN_PROJECT_ANALYSIS_INFO_ID="_id";
+    public static final String COLUMN_PROJECT_ANALYSIS_INFO_CC="cc";
+    public static final String COLUMN_PROJECT_ANALYSIS_INFO_PB="pb";
+    public static final String COLUMN_PROJECT_ANALYSIS_INFO_PRIORITY="priority";
+    public static final String COLUMN_PROJECT_ANALYSIS_INFO_REMAINING_WAIT="remaining_wait";
+    public static final String COLUMN_PROJECT_ANALYSIS_INFO_STATUS="status";
+    public static final String COLUMN_PROJECT_ANALYSIS_INFO_SCHEDULED_START_DATE="scheduled_start";
 
+    public static final String QUERY_CREATE_TABLE_PROJECT_ANALYSIS_INFO=CREATE+TABLE_PROJECT_ANALYSIS_INFO+
+            "("+COLUMN_PROJECT_ANALYSIS_INFO_ID+" INTEGER PRIMARY KEY, "+COLUMN_PROJECT_ANALYSIS_INFO_CC+" INTEGER NOT NULL, "
+            +COLUMN_PROJECT_ANALYSIS_INFO_PB+" INTEGER NOT NULL, "+COLUMN_PROJECT_ANALYSIS_INFO_PRIORITY+" INTEGER NOT NULL, "+
+            COLUMN_PROJECT_ANALYSIS_INFO_REMAINING_WAIT+" INTEGER NOT NULL, "+COLUMN_PROJECT_ANALYSIS_INFO_STATUS+" TEXT NOT NULL, "+
+            COLUMN_PROJECT_ANALYSIS_INFO_SCHEDULED_START_DATE+" TEXT NOT NULL)";
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -121,12 +126,15 @@ public class DataSource {
             statement.execute(QUERY_CREATE_TABLE_USER_LOGIN_INFO);
             statement.execute(QUERY_CREATE_TABLE_LOGIN_CREDENTIALS_INFO);
             statement.execute(QUERY_CREATE_TABLE_PROJECT_INFO);
+            statement.execute(QUERY_CREATE_TABLE_PROJECT_ANALYSIS_INFO);
+
             System.out.println(" sql to create database -");
             System.out.println("---> "+QUERY_CREATE_TABLE_COMPANY);
             System.out.println("---> "+QUERY_CREATE_TABLE_DEPARTMENT);
             System.out.println("---> "+QUERY_CREATE_TABLE_USER_LOGIN_INFO);
             System.out.println("---> "+QUERY_CREATE_TABLE_LOGIN_CREDENTIALS_INFO);
             System.out.println("---> "+QUERY_CREATE_TABLE_PROJECT_INFO);
+            System.out.println("---> "+QUERY_CREATE_TABLE_PROJECT_ANALYSIS_INFO);
             return true;
         }catch(SQLException e){
             System.out.println("Error while creating a nw table is- "+e.getMessage());
