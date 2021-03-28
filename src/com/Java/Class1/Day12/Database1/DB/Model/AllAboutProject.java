@@ -1,6 +1,7 @@
 package com.Java.Class1.Day12.Database1.DB.Model;
 
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -10,13 +11,13 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class AllAboutProject {
     //////////////////////////
-    private int companyId;
+    private SimpleIntegerProperty companyId;
     private SimpleStringProperty CompanyName;
     /////////////////////////
-    private int departmentId;
+    private SimpleIntegerProperty departmentId;
     private SimpleStringProperty departmentName;
     ////////////////////////
-    private int userId;
+    private SimpleIntegerProperty userId;
     private SimpleStringProperty fName;
     private SimpleStringProperty lName;
     private SimpleStringProperty email;
@@ -114,11 +115,15 @@ public class AllAboutProject {
 
 
     public int getCompanyId() {
+        return companyId.get();
+    }
+
+    public SimpleIntegerProperty companyIdProperty() {
         return companyId;
     }
 
     public void setCompanyId(int companyId) {
-        this.companyId = companyId;
+        this.companyId.set(companyId);
     }
 
     public String getCompanyName() {
@@ -134,11 +139,15 @@ public class AllAboutProject {
     }
 
     public int getDepartmentId() {
+        return departmentId.get();
+    }
+
+    public SimpleIntegerProperty departmentIdProperty() {
         return departmentId;
     }
 
     public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
+        this.departmentId.set(departmentId);
     }
 
     public String getDepartmentName() {
@@ -154,11 +163,15 @@ public class AllAboutProject {
     }
 
     public int getUserId() {
+        return userId.get();
+    }
+
+    public SimpleIntegerProperty userIdProperty() {
         return userId;
     }
 
     public void setUserId(int userId) {
-        this.userId = userId;
+        this.userId.set(userId);
     }
 
     public String getfName() {
