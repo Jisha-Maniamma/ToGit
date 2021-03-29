@@ -98,6 +98,16 @@ public class DataSource {
 
     public void close(){
         try{
+            if(insertToAlbum!=null){
+                insertToAlbum.close();
+            }
+            if(insertToArtists!=null){
+                insertToArtists.close();
+            }
+            if(insertIntoSongs!=null){
+                insertIntoSongs.close();
+
+            }
             if(querySongInfoView!=null){
                 querySongInfoView.close();
             }
