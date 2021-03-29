@@ -42,15 +42,19 @@ public class DataSource {
     public static final int ORDER_BY_ASC=2;
     public static final int ORDER_BY_DESC=3;
 
-//public static final String QUERY_VIEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+" FROM "+NEW_VIEW_NAME+" WHERE "+COLUMN_SONG_TITLE+"= \"";
-//WHERE "+COLUMN_SONG_TITLE+"= \"";
-public static final String NEW_VIEW_NAME="song_details_list_V3";
+    //public static final String QUERY_VIEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+" FROM "+NEW_VIEW_NAME+" WHERE "+COLUMN_SONG_TITLE+"= \"";
+    //WHERE "+COLUMN_SONG_TITLE+"= \"";
+    public static final String NEW_VIEW_NAME="song_details_list_V3";
 
 
-//INSERT INTO artists (name) VALUES("Jisha");
-//INSERT INTO albums (name,artist) VALUES("jai hooooo",202);
-//INSERT INTO songs (track,title,album) VALUES(9,"Desi Hits",440);
+    //INSERT INTO artists (name) VALUES("Jisha");
+    //INSERT INTO albums (name,artist) VALUES("jai hooooo",202);
+    //INSERT INTO songs (track,title,album) VALUES(9,"Desi Hits",440);
 
+    public static final String INSERT_INTO_ARTIST="INSERT INTO "+TABLE_ARTIST+" ("+COLUMN_ARTIST_NAME+") VALUES (?)";
+    public static final String INERT_INTO_ALBUMS="INSERT INTO "+TABLE_ALBUM+" ("+COLUMN_ALBUM_NAME+","+COLUMN_ALBUM_ARTIST+") VALUES (?,?)";
+    public static final String INSERT_INTO_SONGS="INSERT INTO "+TABLE_SONG+" ("+COLUMN_SONG_TRACK+","+COLUMN_SONG_TITLE+","+
+            COLUMN_SONG_ALBUM+") VALUES (?,?,?)";
 
     public static final String Query_Albums_From_ArtistsName=
             "SELECT "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+
@@ -68,11 +72,22 @@ public static final String NEW_VIEW_NAME="song_details_list_V3";
 
     private Connection conn;
     private PreparedStatement querySongInfoView;
+    private PreparedStatement insertToAlbum ;
+    private PreparedStatement insertToArtists;
+    private PreparedStatement insertIntoSongs;
+
+
+
 
     public boolean open(){
         try{
             conn= DriverManager.getConnection(CONNECTION);
             querySongInfoView=conn.prepareStatement(QUERY_VIEW_NEW);
+            insertToAlbum=conn.prepareStatement(INSERT_INTO_ARTIST);
+            insertToArtists=conn.prepareStatement(INERT_INTO_ALBUMS);
+            insertIntoSongs=conn.prepareStatement(INSERT_INTO_SONGS);
+
+
             return true;
         }catch(SQLException e){
             System.out.println("The error is- "+e.getMessage());
