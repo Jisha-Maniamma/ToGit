@@ -45,9 +45,7 @@ public class DataSource {
 //public static final String QUERY_VIEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+" FROM "+NEW_VIEW_NAME+" WHERE "+COLUMN_SONG_TITLE+"= \"";
 //WHERE "+COLUMN_SONG_TITLE+"= \"";
 public static final String NEW_VIEW_NAME="song_details_list_V3";
-    public static final String QUERY_VIEW_NEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+
-            "FROM "+NEW_VIEW_NAME+
-            "WHERE "+COLUMN_SONG_TITLE+"= ?";
+
 
     public static final String Query_Albums_From_ArtistsName=
             "SELECT "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+
@@ -55,8 +53,13 @@ public static final String NEW_VIEW_NAME="song_details_list_V3";
                     +" WHERE "+TABLE_ARTIST+"."+COLUMN_ARTIST_NAME+" = "+" \"";
     public static final String Query_Albums_From_ArtistsName_ORDER=" ORDER BY "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+" COLLATE NOCASE ";
 
-
-
+    public static final String QUERY_VIEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+
+            " FROM "+NEW_VIEW_NAME+
+            " WHERE "+COLUMN_SONG_TITLE+"= \"";
+    //SELECT  name,album,track FROM song_details_list_V3 where title="(I Can't Get No) Satisfacion"
+    public static final String QUERY_VIEW_NEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+
+            " FROM "+NEW_VIEW_NAME+
+            " WHERE "+COLUMN_SONG_TITLE+"= ?";
 
     private Connection conn;
     private PreparedStatement querySongInfoView;
@@ -291,8 +294,7 @@ public static final String NEW_VIEW_NAME="song_details_list_V3";
         }
 
     }
-    public static final String QUERY_VIEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+" FROM "+NEW_VIEW_NAME+" WHERE "+COLUMN_SONG_TITLE+"= \"";
-    //SELECT  name,album,track FROM song_details_list_V3 where title="(I Can't Get No) Satisfacion"
+
     public List<SongArtistAlbum> QueryNewView(String songName){
         StringBuilder sb=new StringBuilder(QUERY_VIEW);
 
@@ -308,7 +310,7 @@ public static final String NEW_VIEW_NAME="song_details_list_V3";
 
         try{
             querySongInfoView.setString(1,songName);
-            ResultSet resultSet= querySongInfoView.executeQuery(songName);
+            ResultSet resultSet= querySongInfoView.executeQuery();
             List<SongArtistAlbum> SongDetails=new ArrayList<>();
             while(resultSet.next()){
                 SongArtistAlbum allAboutSelectedSong=new SongArtistAlbum();

@@ -70,8 +70,8 @@ public class Main {
         //select name from albums where albums._id=4 or 1=1; sab kuch printed
 
         //to query the new view
-        List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView(songName);
-        if(allaboutGivenSong_View==null)
+        List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView1(songName);
+        if(allaboutGivenSong_View.isEmpty())
             System.out.println("sorry the list is empty");
 
 //        List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView("Go Your Own Way");
