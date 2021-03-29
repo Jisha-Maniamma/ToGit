@@ -67,7 +67,7 @@ public class Main {
         String songName=scan.nextLine();
 
         // Attack using -Go Your Own Way" or 1=1 "
-
+        //select name from albums where albums._id=4 or 1=1; sab kuch printed
 
         //to query the new view
         List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView(songName);
