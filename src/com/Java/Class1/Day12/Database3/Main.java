@@ -84,8 +84,9 @@ public class Main {
             System.out.println("The song is in track- "+aa.getSongTrackNumber());
         }
 
-        //select name,artists,trck from newList where title=? o artist=?
+        //select name,artists,track from newList where title=? o artist=?
 
+        //
 
         dataSource.close();
     }

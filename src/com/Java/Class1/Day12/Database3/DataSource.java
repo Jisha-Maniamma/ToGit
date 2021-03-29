@@ -47,6 +47,11 @@ public class DataSource {
 public static final String NEW_VIEW_NAME="song_details_list_V3";
 
 
+//INSERT INTO artists (name) VALUES("Jisha");
+//INSERT INTO albums (name,artist) VALUES("jai hooooo",202);
+//INSERT INTO songs (track,title,album) VALUES(9,"Desi Hits",440);
+
+
     public static final String Query_Albums_From_ArtistsName=
             "SELECT "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+
                     " FROM "+TABLE_ALBUM+" INNER JOIN "+TABLE_ARTIST +" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+" = "+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST
