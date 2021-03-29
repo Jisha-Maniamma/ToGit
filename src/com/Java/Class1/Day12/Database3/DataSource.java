@@ -216,6 +216,7 @@ public class DataSource {
     public int getCount(String TableName){
         StringBuilder sb=new StringBuilder(GET_COUNT);
         sb.append(TableName);
+        System.out.println(sb.toString());
         try(Statement statement= conn.createStatement(); ResultSet resultSet= statement.executeQuery(sb.toString())){
             // while(resultSet.next()){
             int count=resultSet.getInt(1);
