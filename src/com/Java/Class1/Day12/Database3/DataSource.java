@@ -83,8 +83,8 @@ public class DataSource {
         try{
             conn= DriverManager.getConnection(CONNECTION);
             querySongInfoView=conn.prepareStatement(QUERY_VIEW_NEW);
-            insertToAlbum=conn.prepareStatement(INSERT_INTO_ARTIST);
-            insertToArtists=conn.prepareStatement(INERT_INTO_ALBUMS);
+            insertToArtists=conn.prepareStatement(INSERT_INTO_ARTIST,Statement.RETURN_GENERATED_KEYS);
+            insertToAlbum=conn.prepareStatement(INERT_INTO_ALBUMS,Statement.RETURN_GENERATED_KEYS);
             insertIntoSongs=conn.prepareStatement(INSERT_INTO_SONGS);
 
 
