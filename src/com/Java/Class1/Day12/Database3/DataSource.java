@@ -56,6 +56,11 @@ public class DataSource {
     public static final String INSERT_INTO_SONGS="INSERT INTO "+TABLE_SONG+" ("+COLUMN_SONG_TRACK+","+COLUMN_SONG_TITLE+","+
             COLUMN_SONG_ALBUM+") VALUES (?,?,?)";
 
+    public static final String QUERY_ARTIST=" SELECT "+COLUMN_ARTIST_ID+" FROM "+TABLE_ARTIST+
+            " WHERE "+COLUMN_ARTIST_NAME+" =?";
+    public static final String QUERY_ALBUM=" SELECT "+COLUMN_ALBUM_ID+" FROM "+TABLE_ALBUM+
+            " WHERE "+COLUMN_ALBUM_NAME+" =?";
+
     public static final String Query_Albums_From_ArtistsName=
             "SELECT "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+
                     " FROM "+TABLE_ALBUM+" INNER JOIN "+TABLE_ARTIST +" ON "+TABLE_ARTIST+"."+COLUMN_ARTIST_ID+" = "+TABLE_ALBUM+"."+COLUMN_ALBUM_ARTIST
