@@ -44,7 +44,7 @@ public class AllAboutProject {
     private SimpleDoubleProperty Yaxis;
     ///////////////////////
     //planing//
-    private SimpleStringProperty currentTask;
+
     private SimpleDoubleProperty T1;
     private SimpleDoubleProperty T2;
     private SimpleDoubleProperty T3;
@@ -74,6 +74,7 @@ public class AllAboutProject {
     private SimpleDoubleProperty R12;
     /////////////////////
     //execution//
+    private SimpleStringProperty currentTask;
     private SimpleDoubleProperty Te1;
     private SimpleDoubleProperty Te2;
     private SimpleDoubleProperty Te3;
