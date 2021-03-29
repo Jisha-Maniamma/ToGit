@@ -66,6 +66,9 @@ public class Main {
         System.out.println("Enter the song you would lik to search-");
         String songName=scan.nextLine();
 
+        // Attack using -Go Your Own Way" or 1=1 "
+
+
         //to query the new view
         List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView(songName);
         if(allaboutGivenSong_View==null)
