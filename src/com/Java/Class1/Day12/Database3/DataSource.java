@@ -57,9 +57,9 @@ public class DataSource {
             COLUMN_SONG_ALBUM+") VALUES (?,?,?)";
 
     public static final String QUERY_ARTIST=" SELECT "+COLUMN_ARTIST_ID+" FROM "+TABLE_ARTIST+
-            " WHERE "+COLUMN_ARTIST_NAME+" =?";
+            " WHERE "+COLUMN_ARTIST_NAME+" = ?";
     public static final String QUERY_ALBUM=" SELECT "+COLUMN_ALBUM_ID+" FROM "+TABLE_ALBUM+
-            " WHERE "+COLUMN_ALBUM_NAME+" =?";
+            " WHERE "+COLUMN_ALBUM_NAME+" = ?";
 
     public static final String Query_Albums_From_ArtistsName=
             "SELECT "+TABLE_ALBUM+"."+COLUMN_ALBUM_NAME+
@@ -81,7 +81,8 @@ public class DataSource {
     private PreparedStatement insertToArtists;
     private PreparedStatement insertIntoSongs;
 
-
+    private PreparedStatement queryArtist;
+    private PreparedStatement queryAlbum;
 
 
     public boolean open(){
@@ -92,7 +93,8 @@ public class DataSource {
             insertToAlbum=conn.prepareStatement(INERT_INTO_ALBUMS,Statement.RETURN_GENERATED_KEYS);
             insertIntoSongs=conn.prepareStatement(INSERT_INTO_SONGS);
 
-
+            queryArtist=conn.prepareStatement(QUERY_ARTIST);
+            queryAlbum=conn.prepareStatement(QUERY_ALBUM);
             return true;
         }catch(SQLException e){
             System.out.println("The error is- "+e.getMessage());
