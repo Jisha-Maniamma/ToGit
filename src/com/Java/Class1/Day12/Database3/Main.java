@@ -1,6 +1,7 @@
 package com.Java.Class1.Day12.Database3;
 
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author Jisha Maniamma
@@ -55,16 +56,24 @@ public class Main {
         System.out.println("//////////////////////////////////////////////");
         //to get count of any table
         if(dataSource.createNewView())
-            System.out.println("congraualation... the new view- "+DataSource.NEW_VIEW_NAME+" was created ");
+            System.out.println("congratulation... the new view- "+DataSource.NEW_VIEW_NAME+" was created ");
         else
             System.out.println("sorry");
 
 
         System.out.println("//////////////////////////////////////////////");
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the song you would lik to search-");
+        String songName=scan.nextLine();
+
         //to query the new view
-        List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView("Go Your Own Way");
+        List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView(songName);
         if(allaboutGivenSong_View==null)
             System.out.println("sorry the list is empty");
+
+//        List<SongArtistAlbum> allaboutGivenSong_View=dataSource.QueryNewView("Go Your Own Way");
+//        if(allaboutGivenSong_View==null)
+//            System.out.println("sorry the list is empty");
 
         for(SongArtistAlbum aa:allaboutGivenSong_View){
             System.out.println("The song artist is- "+aa.getArtistName());
