@@ -90,7 +90,7 @@ public class Main {
         //select name,artists,track from newList where title=? o artist=?
 
         //
-
+dataSource.insertSong(7,"Harai krishna","Indian Songs","Ram");
         dataSource.close();
     }
 }

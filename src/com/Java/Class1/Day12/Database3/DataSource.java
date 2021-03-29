@@ -399,7 +399,7 @@ public class DataSource {
 
 
     }
-    private int insertAlbum(int  artistId,String albumName) throws SQLException{
+    private int insertAlbum(String albumName,int  artistId) throws SQLException{
         queryAlbum.setString(1,albumName);
         ResultSet resultSet=queryArtist.executeQuery();
         if(resultSet.next()){
@@ -426,11 +426,11 @@ public class DataSource {
 
     }
 
-    private void insertSong(int track, String songTitle,String album, String artist){
+    public void insertSong(int track, String songTitle,String album, String artist){
         try{
             conn.setAutoCommit(false);
             int artitID=insertArtist(artist);
-            int albumID=insertAlbum(artitID,album);
+            int albumID=insertAlbum(album,artitID);
             insertIntoSongs.setInt(1,track);
             insertIntoSongs.setString(2,songTitle);
             insertIntoSongs.setInt(3, albumID);
@@ -443,7 +443,7 @@ public class DataSource {
 
 
 
-        }catch(SQLException e){
+        }catch(Exception e){
             System.out.println(e.getMessage());
             try{
                 System.out.println("Performing rollback");
