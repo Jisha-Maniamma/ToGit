@@ -42,20 +42,17 @@ public class DataSource {
     public static final int ORDER_BY_ASC=2;
     public static final int ORDER_BY_DESC=3;
 
-    //public static final String QUERY_VIEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+"
-// FROM "+NEW_VIEW_NAME+"
-// WHERE "+COLUMN_SONG_TITLE+"= \"";
     public static final String NEW_VIEW_NAME="song_details_list_V3";
     public static final String QUERY_VIEW_NEW="SELECT "+COLUMN_ARTIST_NAME+","+COLUMN_SONG_ALBUM+","+COLUMN_SONG_TRACK+
             "FROM "+NEW_VIEW_NAME+
             "WHERE "+COLUMN_SONG_TITLE+"= ?";
+
+
     private Connection conn;
     private PreparedStatement querySongInfoView;
-
     public boolean open(){
         try{
             conn= DriverManager.getConnection(CONNECTION);
-            querySongInfoView=conn.prepareStatement(QUERY_VIEW_NEW);
             return true;
         }catch(SQLException e){
             System.out.println("The error is- "+e.getMessage());
@@ -66,9 +63,6 @@ public class DataSource {
 
     public void close(){
         try{
-            if(querySongInfoView!=null){
-                querySongInfoView.close();
-            }
             if(conn!=null)
                 conn.close();
 
@@ -248,7 +242,7 @@ public class DataSource {
     //FROM songs
     //INNER JOIN albums on albums._id=songs.album
     //INNER JOIN artists on artists._id=albums.artist ORDER by songs.track;
-
+   // public static final String NEW_VIEW_NAME="song_details_list_V3";
     public static final String QUERY_CREATE_NEW_VIEW="CREATE VIEW IF NOT EXISTS "+NEW_VIEW_NAME+" AS SELECT "+
             TABLE_SONG+"."+COLUMN_SONG_TITLE+" AS "+ COLUMN_SONG_TITLE+", "+
             TABLE_SONG+"."+COLUMN_SONG_TRACK+" AS "+COLUMN_SONG_TRACK+", "+
@@ -299,35 +293,5 @@ public class DataSource {
         return getAboutSong(sb);
 
     }
-
-    public List<SongArtistAlbum> QueryNewView1(String songName){
-
-
-        try{
-            querySongInfoView.setString(1,songName);
-            ResultSet resultSet= querySongInfoView.executeQuery(songName);
-            List<SongArtistAlbum> SongDetails=new ArrayList<>();
-            while(resultSet.next()){
-                SongArtistAlbum allAboutSelectedSong=new SongArtistAlbum();
-                allAboutSelectedSong.setArtistName(resultSet.getString(3));
-                allAboutSelectedSong.setAlbumName(resultSet.getString(2));
-                allAboutSelectedSong.setSongTrackNumber(resultSet.getInt(1));
-
-
-                SongDetails.add(allAboutSelectedSong);
-            }
-            return SongDetails;
-
-        }catch(SQLException e){
-            System.out.println("The error generated while fetching the song details [song track number, album name, artist name] is- "+e.getMessage());
-            return null;
-        }
-
-    }
-
-
-
-
-
 
 }
