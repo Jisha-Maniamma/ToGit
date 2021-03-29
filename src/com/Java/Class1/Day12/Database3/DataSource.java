@@ -372,7 +372,64 @@ public class DataSource {
         }
 
     }
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+    private int GetArtistID(String artistName) throws SQLException{
+        queryArtist.setString(1,artistName);
+        ResultSet resultSet=queryArtist.executeQuery();
+        if(resultSet.next()){
+            return resultSet.getInt(1);
 
+        }else{
+            insertToArtists.setString(1,artistName);
+            int modifiedColumn=insertToArtists.executeUpdate();
+            if(modifiedColumn!=1){
+                throw  new SQLException("Sorry couldnot add the artist to the table");
+            }
+            ResultSet resultSet1=insertToArtists.getGeneratedKeys();
+            if(resultSet1.next()){
+                return resultSet1.getInt(1);
+            }else{
+                throw new SQLException("Sorry cannot print the artist id");
+            }
+
+        }
+
+    }
+
+    private int gtAlbumId(String albumName,int artistID) throws SQLException{
+        queryAlbum.setString(1,albumName);
+        ResultSet resultSet=queryArtist.executeQuery();
+        if(resultSet.next()){
+            return resultSet.getInt(1);
+        }
+        else{
+            insertToAlbum.setString(1,albumName);
+            insertToAlbum.setInt(2,artistID);
+
+            int modifiedColumn=insertToAlbum.executeUpdate();
+            if(modifiedColumn!=1){
+                throw new SQLException("Sorry couldnot insert thethe new album");
+            }
+
+            ResultSet resultSet1=insertToAlbum.getGeneratedKeys();
+            if(resultSet1.next()){
+                return resultSet1.getInt(1);
+            }else{
+               throw new SQLException("Sorry cannot print the album id value");
+            }
+
+        }
+
+
+
+    }
+
+    public void addSong(){
+
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private int insertArtist(String artistName) throws SQLException{
         queryArtist.setString(1,artistName);
@@ -448,7 +505,7 @@ public class DataSource {
             try{
                 System.out.println("Performing rollback");
                 conn.rollback();
-                }catch(SQLException e1){
+            }catch(SQLException e1){
                 System.out.println(e1.getMessage());
             }
 
