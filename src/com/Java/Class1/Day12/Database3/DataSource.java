@@ -372,7 +372,7 @@ public class DataSource {
         }
 
     }
-////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
     private int GetArtistID(String artistName) throws SQLException{
         queryArtist.setString(1,artistName);
@@ -397,7 +397,7 @@ public class DataSource {
 
     }
 
-    private int gtAlbumId(String albumName,int artistID) throws SQLException{
+    private int GetAlbumId(String albumName,int artistID) throws SQLException{
         queryAlbum.setString(1,albumName);
         ResultSet resultSet=queryArtist.executeQuery();
         if(resultSet.next()){
@@ -416,7 +416,7 @@ public class DataSource {
             if(resultSet1.next()){
                 return resultSet1.getInt(1);
             }else{
-               throw new SQLException("Sorry cannot print the album id value");
+                throw new SQLException("Sorry cannot print the album id value");
             }
 
         }
@@ -425,7 +425,39 @@ public class DataSource {
 
     }
 
-    public void addSong(){
+    public void addSong(String songTitle,String artistName, String albumName,int trackNumber ){
+    //to add song ino the database after checking for albums and artist
+        try{
+            conn.setAutoCommit(false);
+            int artist=GetArtistID(artistName);
+            int album=GetAlbumId(albumName,artist);
+            insertIntoSongs.setInt(1,trackNumber);
+            insertIntoSongs.setString(2,songTitle);
+            insertIntoSongs.setInt(3,album);
+            int modifiedcolumn=insertIntoSongs.executeUpdate();
+            if(modifiedcolumn==1){
+                conn.commit();
+            }else{
+                throw new SQLException("not possible to add the value");
+            }
+
+
+        }catch(Exception e){
+
+            System.out.println(e.getMessage());
+            try{
+               conn.rollback();
+            }catch (Exception e1){
+                System.out.println(e1.getMessage());
+            }
+        }finally{
+            try{
+                conn.setAutoCommit(true);
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+
 
     }
 
