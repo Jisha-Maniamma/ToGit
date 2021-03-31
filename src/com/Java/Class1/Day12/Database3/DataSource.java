@@ -88,13 +88,13 @@ public class DataSource {
     public boolean open(){
         try{
             conn= DriverManager.getConnection(CONNECTION);
-            querySongInfoView=conn.prepareStatement(QUERY_VIEW_NEW);
-            insertToArtists=conn.prepareStatement(INSERT_INTO_ARTIST,Statement.RETURN_GENERATED_KEYS);
-            insertToAlbum=conn.prepareStatement(INERT_INTO_ALBUMS,Statement.RETURN_GENERATED_KEYS);
-            insertIntoSongs=conn.prepareStatement(INSERT_INTO_SONGS);
-
-            queryArtist=conn.prepareStatement(QUERY_ARTIST);
-            queryAlbum=conn.prepareStatement(QUERY_ALBUM);
+//            querySongInfoView=conn.prepareStatement(QUERY_VIEW_NEW);
+//            insertToArtists=conn.prepareStatement(INSERT_INTO_ARTIST,Statement.RETURN_GENERATED_KEYS);
+//            insertToAlbum=conn.prepareStatement(INERT_INTO_ALBUMS,Statement.RETURN_GENERATED_KEYS);
+//            insertIntoSongs=conn.prepareStatement(INSERT_INTO_SONGS);
+//
+//            queryArtist=conn.prepareStatement(QUERY_ARTIST);
+//            queryAlbum=conn.prepareStatement(QUERY_ALBUM);
             return true;
         }catch(SQLException e){
             System.out.println("The error is- "+e.getMessage());
