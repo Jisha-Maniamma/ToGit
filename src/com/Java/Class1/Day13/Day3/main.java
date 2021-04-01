@@ -15,7 +15,7 @@ public class main {
         Long b2=Long.valueOf(127);
         System.out.println(b1==b2);
 
-        Long c1=Long.parseLong("1.2");
+        Long c1=Long.parseLong("1");
         System.out.println(c1);
     }
 }
