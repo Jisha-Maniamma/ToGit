@@ -16,6 +16,7 @@ public class Main {
         System.out.println(b3==b4);
         System.out.println(b1==b2);
         System.out.println(b2==b4);
+        System.out.println("**********************");
 
         System.out.println(s1==s2);
         System.out.println(s1.equals(s2));
