@@ -427,6 +427,16 @@ public class DataSource {
 
     public void addSong(String songTitle,String artistName, String albumName,int trackNumber ){
     //to add song ino the database after checking for albums and artist
+        /*
+        try{
+        conn.setautoCommit(fasle);
+
+
+
+        }
+         */
+
+
         try{
             conn.setAutoCommit(false);
             int artist=GetArtistID(artistName);
