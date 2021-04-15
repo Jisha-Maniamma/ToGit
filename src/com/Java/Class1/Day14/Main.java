@@ -35,7 +35,11 @@ public class Main {
         System.out.println("...........................");
         Project project_SW=new Project("Max");
 //        Project Bridge_okinawa=new Project();
+        check(project_SW);
 
+    }
+
+    public static void check(Project newProject) {
 
     }
 }
