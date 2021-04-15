@@ -1,5 +1,6 @@
 package com.Java.Class1.Day14;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -19,6 +20,37 @@ public class Main {
 
 
         System.out.println("...........................");
+        System.out.println(" Obtaining some basic info ");
+        System.out.println("...........................");
+        LocalDate date1=LocalDate.of(2021,01,01);
+        LocalDate date2=LocalDate.parse("2020-01-03");
+        System.out.println(date1.getYear());
+        System.out.println(date1.getDayOfYear());
+        System.out.println(date1.getChronology());
+        System.out.println(date1.getDayOfWeek());
+        System.out.println("...........................");
 
+        System.out.println("\n");
+
+        System.out.println("...........................");
+        Project poject_SW=new Project("Max");
+//        Project Bridge_okinawa=new Project();
+
+
+    }
+}
+class Project{
+    private String name;
+
+    public Project(String name) {
+        this.name = name;
+    }
+
+//    public void setName(String inputName){
+//        this.name=inputName;
+//    }
+
+    public String getName(){
+        return this.name;
     }
 }
