@@ -43,8 +43,8 @@ public class calculateDays {
         System.out.println("......................................................................................");
         System.out.println("The dates in this year, exclusing holidays are... "+
                 getBusinesdays(choice,LocalDate.of(2020,03,01),
-                        LocalDate.of(2020,10,3))+
-                " between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2020,10,3));
+                        LocalDate.of(2021,10,3))+
+                " between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2021,10,3));
         System.out.println("......................................................................................");
         AddDates(LocalDate.of(2020,04,06));
         System.out.println("one more day added to holiday: "+LocalDate.of(2020,04,06));
@@ -95,7 +95,15 @@ public class calculateDays {
         return dates;
     }
 
-
+    private static boolean ContainsOr(LocalDate date){
+        for(LocalDate h:dates){
+            //  System.out.println("******"+h+"******");
+            if(h.getYear()==date.getYear() && h.getDayOfYear()==date.getDayOfYear()){
+                // System.out.println("........holiday......"+date);
+                return true;}
+        }
+        return false;
+    }
 
     public static int getBusinesdays(int choice,LocalDate startDate, LocalDate endDate){
         System.out.println("Inside....calculator...No. of holidays are "+dates.size());
@@ -109,11 +117,11 @@ public class calculateDays {
             case 1:
                 while(tempStartdate.isBefore(endDate) ) {
                     DayOfWeek day = tempStartdate.getDayOfWeek();
-                    if (!dates.contains(tempStartdate)  && day != DayOfWeek.SUNDAY) {
-                        businessDay++;
+                    if (!ContainsOr(tempStartdate)  && day != DayOfWeek.SUNDAY) {
+                        System.out.println("its not Holiday "+tempStartdate +" "+tempStartdate.getDayOfWeek()); businessDay++;
 
                     }else if(dates.contains(tempStartdate)){
-                        System.out.println("yes...............................................Holiday");
+                        System.out.println("its Holiday "+tempStartdate +" "+tempStartdate.getDayOfWeek());
                     }
                     tempStartdate = tempStartdate.plusDays(1);
                 }
@@ -123,10 +131,10 @@ public class calculateDays {
                 while(tempStartdate.isBefore(endDate) ) {
                     DayOfWeek day = tempStartdate.getDayOfWeek();
                     if (!ContainsOr(tempStartdate)  && day!=DayOfWeek.SATURDAY && day != DayOfWeek.SUNDAY) {
-                        businessDay++;
+                        System.out.println("its not Holiday "+tempStartdate +" "+tempStartdate.getDayOfWeek());businessDay++;
 
-                    }else if(ContainsOr(tempStartdate)){
-                        System.out.println("yes...............................................Holiday");
+                    }else {
+                        System.out.println("its Holiday "+tempStartdate +" "+tempStartdate.getDayOfWeek());// System.out.println("yes...............................................Holiday");
                     }
                     tempStartdate = tempStartdate.plusDays(1);
                 }
@@ -135,10 +143,10 @@ public class calculateDays {
                 while(tempStartdate.isBefore(endDate) ) {
                     DayOfWeek day = tempStartdate.getDayOfWeek();
                     if (!dates.contains(tempStartdate) ) {
-                        businessDay++;
+                        System.out.println("its not Holiday "+tempStartdate +" "+tempStartdate.getDayOfWeek()); businessDay++;
 
                     }else if(dates.contains(tempStartdate)){
-                        System.out.println("yes...............................................Holiday");
+                        System.out.println("its Holiday "+tempStartdate +" "+tempStartdate.getDayOfWeek());
                     }
                     tempStartdate = tempStartdate.plusDays(1);
                 }
@@ -149,18 +157,18 @@ public class calculateDays {
         }
         return businessDay;
     }
-    private static boolean ContainsOr(LocalDate date){
-        for(LocalDate h:dates){
-
-            //  System.out.println("******"+h+"******");
-            if(h.getDayOfYear()==date.getDayOfYear()){
-                // System.out.println("........holiday......"+date);
-                return true;}
-
-        }
-        return false;
-
-
-    }
+//    private static boolean ContainsOr(LocalDate date){
+//        for(LocalDate h:dates){
+//
+//            //  System.out.println("******"+h+"******");
+//            if(h.getDayOfYear()==date.getDayOfYear()){
+//                // System.out.println("........holiday......"+date);
+//                return true;}
+//
+//        }
+//        return false;
+//
+//
+//    }
 //    }
 }
