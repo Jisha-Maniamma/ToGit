@@ -36,7 +36,14 @@ public class Main {
         Project project_SW=new Project("Max");
 //        Project Bridge_okinawa=new Project();
         check(project_SW);
+        System.out.println("is still the value of the project Max? "+project_SW.getName().equals("Max"));
+   checkModified(project_SW);
+        System.out.println("is still the value of the project Max? "+project_SW.getName().equals("Max"));
 
+    }
+
+    private static void checkModified(Project project_sw) {
+        project_sw.setName("Robin");
     }
 
     public static void check(Project newProject) {
@@ -44,8 +51,8 @@ public class Main {
         System.out.println(newProject.getName().equals("Max"));
         newProject=new Project("Rocky");
         System.out.println(newProject.getName().equals("Rocky"));
-        newProject.setName("Robin");
-        System.out.println(newProject.getName().equals("Robin"));
+//        newProject.setName("Robin");
+//        System.out.println(newProject.getName().equals("Robin"));
     }
 }
 class Project{
