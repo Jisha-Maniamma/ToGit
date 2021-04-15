@@ -14,6 +14,10 @@ public class Animal {
     public void setName(String name) {
         this.name = name;
     }
+    public void Bark(){
+        System.out.println(getName()+" barks more than "+100000+" times");
+
+    }
 
     public void eat(){
         System.out.println(getName()+"...they eat");

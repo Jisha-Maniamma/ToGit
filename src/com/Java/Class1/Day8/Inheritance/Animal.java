@@ -18,4 +18,4 @@ class Beings{
     public void sit(){
         System.out.println("May be livimg/non-living....all specie can make sound");
     }
-        }
+}
