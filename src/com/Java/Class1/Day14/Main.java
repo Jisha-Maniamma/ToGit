@@ -33,7 +33,7 @@ public class Main {
         System.out.println("\n");
 
         System.out.println("...........................");
-        Project poject_SW=new Project("Max");
+        Project project_SW=new Project("Max");
 //        Project Bridge_okinawa=new Project();
 
 
