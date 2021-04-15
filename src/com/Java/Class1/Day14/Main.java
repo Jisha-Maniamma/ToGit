@@ -44,6 +44,8 @@ public class Main {
         System.out.println(newProject.getName().equals("Max"));
         newProject=new Project("Rocky");
         System.out.println(newProject.getName().equals("Rocky"));
+        newProject.setName("Robin");
+        System.out.println(newProject.getName().equals("Robin"));
     }
 }
 class Project{
@@ -53,9 +55,9 @@ class Project{
         this.name = name;
     }
 
-//    public void setName(String inputName){
-//        this.name=inputName;
-//    }
+    public void setName(String inputName){
+        this.name=inputName;
+    }
 
     public String getName(){
         return this.name;
