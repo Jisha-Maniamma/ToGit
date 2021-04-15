@@ -40,7 +40,10 @@ public class Main {
     }
 
     public static void check(Project newProject) {
-
+        System.out.println(newProject.getName().equals("Rock"));
+        System.out.println(newProject.getName().equals("Max"));
+        newProject=new Project("Rocky");
+        System.out.println(newProject.getName().equals("Rocky"));
     }
 }
 class Project{
