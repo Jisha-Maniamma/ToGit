@@ -6,6 +6,8 @@ package com.Java.Class1.Day15;
  * @date 2021/04/16 10:59
  */
 public class main {
-
+    public static void main(String[] args) {
+        System.out.println("Its working");
+    }
 
 }
