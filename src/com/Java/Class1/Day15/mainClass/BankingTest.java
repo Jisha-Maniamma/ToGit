@@ -25,12 +25,21 @@ class BankingTest {
 
     @org.junit.jupiter.api.Test
     void getBalance_after_withdraw() {
-        fail("yet to be implimented");
+        Banking account1=new Banking("Jisha","Maniamma",1000);
+        double balance=account1.withdraw(200);
+        assertEquals(800,account1.getBalance(),0);
     }
     @org.junit.jupiter.api.Test
-    void getBalance_after_dposit() {
-        fail("yet to be implimented");
+    void getBalance_after_deposit() {
+//        fail("yet to be implimented");
+
+        Banking account1=new Banking("Jisha","Maniamma",1000);
+        double balance=account1.deposit(200);
+        assertEquals(1180,account1.getBalance(),20);
+        // only one check is required while checking
+        // assertEquals(1200,account1.getBalance(),20);
     }
+
 
     @org.junit.jupiter.api.Test
     void TestDummy(){
