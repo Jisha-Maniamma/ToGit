@@ -10,6 +10,8 @@ public class Banking {
     private String FName;
     private String LName;
     private double Balance;
+    private int AccountType;
+    public static final int Chcecking=1;
 
     public Banking(String FName, String LName, double balance) {
         this.FName = FName;
@@ -34,5 +36,8 @@ public class Banking {
 
     public String getLName() {
         return LName;
+    }
+    public boolean isChecking(){
+        return  AccountType==Chcecking;
     }
 }
