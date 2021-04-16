@@ -12,11 +12,12 @@ public class Banking {
     private double Balance;
     private int AccountType;
     public static final int Chcecking=1;
-
-    public Banking(String FName, String LName, double balance) {
+    public static final int Savings=1;
+    public Banking(String FName, String LName, double balance,int AccountType) {
         this.FName = FName;
         this.LName = LName;
         this.Balance = balance;
+        this.AccountType=AccountType;
     }
 
     public double deposit(double amountDeposit){
