@@ -36,11 +36,20 @@ public class Main1 {
         LocalDate nextUpdateLimit=presseddate.plusDays(1);
         System.out.println(presseddate);
         System.out.println(nextUpdateLimit);
+        System.out.println("**************************************************************");
         //int lastday=sett
         System.out.println(TODAYS_DATE);
-
+        System.out.println("**************************************************************");
         DateTimeFormatter df=DateTimeFormatter.ofPattern("DD-mm-yyyy HH:mm:ss");
         System.out.println(df.format(TODAYS_DATE));
+        System.out.println("**************************************************************");
+        System.out.println();
+        System.out.println("......Debugger Excercise........");
+        System.out.println();
+        System.out.println("**************************************************************");
+
+        System.out.println("**************************************************************");
+
 
     }
 }
