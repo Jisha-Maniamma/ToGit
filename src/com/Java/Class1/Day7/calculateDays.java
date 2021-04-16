@@ -41,14 +41,14 @@ public class calculateDays {
         int choice=scan.nextInt();
         scan.nextLine();
         System.out.println("......................................................................................");
-        System.out.println("The dates in this year, exclusing holidays are... "+
+        System.out.println("The dates in this year, excluding holidays are... "+
                 getBusinesdays(choice,LocalDate.of(2020,03,01),
                         LocalDate.of(2021,10,3))+
                 " between "+LocalDate.of(2020,03,01)+" and "+LocalDate.of(2021,10,3));
         System.out.println("......................................................................................");
         AddDates(LocalDate.of(2020,04,06));
         System.out.println("one more day added to holiday: "+LocalDate.of(2020,04,06));
-        System.out.println("No. of holiadys are "+dates.size());
+        System.out.println("No. of holidays are "+dates.size());
         System.out.println("If saturday is not holiday in your company\tenter 1\nor else if saturday is a holiday\tenter 2\nif the holidays are random\tenter 3");
         choice=scan.nextInt();
         scan.nextLine();
