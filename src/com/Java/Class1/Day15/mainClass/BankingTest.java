@@ -9,6 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class BankingTest {
 
+    private Banking bankAccount1;
+    @org.junit.Before
+    public void setup(){
+
+    }
     @org.junit.jupiter.api.Test
     void deposit() {
       Banking account1=new Banking("Jisha","Maniamma",1000,Banking.Chcecking);
@@ -45,6 +50,8 @@ class BankingTest {
         assertTrue(account1.isChecking(), "ye its Checking");
 
     }
+
+
 
     @org.junit.jupiter.api.Test
     void TestDummy(){
