@@ -8,6 +8,20 @@ package com.Java.Class1.Day15;
 public class main {
     public static void main(String[] args) {
         System.out.println("Its working");
+        setvalueRandom.calulatePercentage(1200,6);
+        System.out.println(setvalueRandom.Totalmarks);
+        System.out.println(setvalueRandom.getTotalmarks());
     }
 
+}
+class setvalueRandom{
+   public static  int Totalmarks;
+
+    public static void calulatePercentage(int TotalMarks,int numberOfSubjects) {
+        Totalmarks=TotalMarks/numberOfSubjects;
+    }
+
+    public static int getTotalmarks() {
+        return Totalmarks;
+    }
 }
