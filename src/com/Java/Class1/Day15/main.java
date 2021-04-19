@@ -11,17 +11,35 @@ public class main {
         setvalueRandom.calulatePercentage(1200,6);
         System.out.println(setvalueRandom.Totalmarks);
         System.out.println(setvalueRandom.getTotalmarks());
+
+
+        System.out.println(getvalueRandom.getTotalmarks());
+        System.out.println(getvalueRandom.getTotalmarks1());
     }
 
 }
 class setvalueRandom{
    public static  int Totalmarks;
+    public static  int numberofSubjects;
 
     public static void calulatePercentage(int TotalMarks,int numberOfSubjects) {
         Totalmarks=TotalMarks/numberOfSubjects;
+        System.out.println("...."+Totalmarks);
+        numberofSubjects=numberOfSubjects;
     }
 
     public static int getTotalmarks() {
         return Totalmarks;
     }
+}
+class getvalueRandom{
+
+    public static int getTotalmarks() {
+        return setvalueRandom.Totalmarks;
+    }
+
+    public static int getTotalmarks1() {
+        return setvalueRandom.getTotalmarks();
+    }
+
 }
