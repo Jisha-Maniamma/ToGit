@@ -24,7 +24,7 @@ public class main {
         System.out.println(project.getProjectName());
         changeProjectName(project);
         System.out.println(project.getProjectName());
-        System.out.println("................");
+        System.out.println("........polymorphism........");
         Project itProject=new ITprojct("software");
         System.out.println(itProject.getProjectName());
         System.out.println(itProject.getProjectName());
