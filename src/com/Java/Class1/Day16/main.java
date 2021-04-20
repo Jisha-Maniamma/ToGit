@@ -18,6 +18,37 @@ public class main {
         LocalDate date3=LocalDate.parse(date1);
         System.out.println(date3);
         //System.out.println(date1);
+        Project project =new Project("okinawa");
+        System.out.println(project.getProjectName());
+        changeProjectName1(project);
+        System.out.println(project.getProjectName());
+        changeProjectName(project);
+        System.out.println(project.getProjectName());
+        System.out.println("................");
+        Project itProject=new ITprojct("software");
+        System.out.println(itProject.getProjectName());
+        System.out.println(itProject.getProjectName());
+        changeProjectName(itProject);
+        System.out.println(itProject.getProjectName());
+        itProject.ProjectsatrtDate();
+        itProject.ProjectEnddate();
+        System.out.println("................");
+        ITprojct itProject1=new ITprojct("software");
+        System.out.println(itProject1.getProjectName());
+        System.out.println(itProject1.getProjectName());
+        changeProjectName(itProject1);
+        System.out.println(itProject1.getProjectName());
+        itProject1.ProjectsatrtDate();
+        itProject1.ProjectEnddate();
+
+    }
+
+    private  static void changeProjectName(Project p1){
+        p1.setProjectName("tokyo");
+    }
+    private static void changeProjectName1(Project p1){
+        p1=new Project("osaka");
+        System.out.println("new object created "+p1.getProjectName());
     }
 }
 class Project{
@@ -33,5 +64,23 @@ class Project{
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
+    }
+
+    public void ProjectsatrtDate(){
+        System.out.println("project started one year back");
+    }
+
+    public void ProjectEnddate(){
+        System.out.println("project must end within one year");
+    }
+
+}
+class ITprojct extends Project{
+
+    public ITprojct(String projectName) {
+        super(projectName);
+    }
+    public void ProjectsatrtDate(){
+        System.out.println("project started one month back");
     }
 }
