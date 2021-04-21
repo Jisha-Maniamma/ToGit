@@ -1,5 +1,6 @@
 package com.Java.Class1.Day16;
 
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -9,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  * @date 2021/04/20 8:43
  */
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         DateTimeFormatter df=DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate date=LocalDate.now();
         System.out.println(date);
@@ -17,7 +18,17 @@ public class main {
         System.out.println(date1+1);
         LocalDate date3=LocalDate.parse(date1);
         System.out.println(date3);
-        //System.out.println(date1);
+
+        String datePoject="2021/04/12";
+
+        System.out.println("................");
+        // create a formater
+
+
+        // print result
+        System.out.println("LocalDate : " +datePoject.replace('/','-'));
+        System.out.println("............");
+
         Project project =new Project("okinawa");
         System.out.println(project.getProjectName());
         changeProjectName1(project);
