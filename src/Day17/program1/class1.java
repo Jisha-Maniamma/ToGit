@@ -13,6 +13,16 @@ public class class1 {
         Animal animalDog=new Dog();
         Animal animalCat=new cat();
 
+        check.findSound(dog);
+        check.findSound(cat);
+        check.findSound(dog);
+        check.findSound(animalDog);
+        check.findSound(animalCat);
+    }
+}
+class check{
+    public static void findSound(Animal animal){
+        animal.sound();
     }
 }
 class Dog extends Animal{
