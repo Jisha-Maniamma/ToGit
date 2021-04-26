@@ -13,11 +13,13 @@ public class class1 {
         Animal animalDog=new Dog();
         Animal animalCat=new cat();
 
+        System.out.println("********************");
         check.findSound(dog);
         check.findSound(cat);
         check.findSound(dog);
         check.findSound(animalDog);
         check.findSound(animalCat);
+        System.out.println("********************");
     }
 }
 class check{
