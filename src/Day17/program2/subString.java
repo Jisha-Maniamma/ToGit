@@ -19,9 +19,28 @@ public class subString {
         String name1=new String("Jisha");
         String name2=new String("Jisha");
 
+
+
         System.out.println(name1==name2);
 
         System.out.println(name1.equals(name2));
+        System.out.println("********************************");
+        String name3=getname();
+        String name4=getname();
+        System.out.println(name3==name4);
+        System.out.println(name3.equals(name4));
+        System.out.println("********************************");
+
+        StringBuffer sb=new StringBuffer("a");
+        StringBuffer sb1=new StringBuffer("a");
+
+        System.out.println(sb==sb1);
+        System.out.println(sb.equals(sb1));
+    }
+
+    public static String getname(){
+       // return new String("jisha");
+        return "jisha";
     }
 }
 class getname{
