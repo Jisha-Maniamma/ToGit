@@ -15,6 +15,13 @@ public class subString {
         String name="Jisha";
         System.out.println(name.substring(2));
         System.out.println(name.substring(1,4));
+        System.out.println("********************************");
+        String name1=new String("Jisha");
+        String name2=new String("Jisha");
+
+        System.out.println(name1==name2);
+
+        System.out.println(name1.equals(name2));
     }
 }
 class getname{
