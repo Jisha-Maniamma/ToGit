@@ -29,7 +29,7 @@ public class Arrayexampl {
         array1[3]=5;
         System.out.println(Arrays.toString(array1));
         System.out.println(Arrays.toString(checkArray));
-
+        System.out.println("///////////////////////////");
         String s1=new String("haiii   ");
         String s2=s1;
 
@@ -39,6 +39,10 @@ public class Arrayexampl {
         System.out.println(s2.hashCode());
         System.out.println(s1==s2);
         System.out.println(s1.equals(s2));
+        s1.replace("i","a");
+        System.out.println(s1==s2);
+        System.out.println(s1.equals(s2));
+        System.out.println("///////////////////////////");
         s2=s1+"aa";
         System.out.println(s1.hashCode());
         System.out.println(s2.hashCode());
