@@ -55,6 +55,15 @@ public class Arrayexampl {
         System.out.println(s1.substring(4));
         System.out.println("///////////////////////////");
 
+        Double d1= Double.valueOf("1.05");
+        Double d2=d1;
+        System.out.println(d1==d2);
+        System.out.println(d1.equals(d2));
+
+        d2=.005;
+
+        System.out.println(d1==d2);
+        System.out.println(d1.equals(d2));
     }
 
     private static void dereferenceArray(int[] array){
