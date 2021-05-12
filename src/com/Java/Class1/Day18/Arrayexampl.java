@@ -11,7 +11,9 @@ public class Arrayexampl {
     public static void main(String[] args) {
         int[] array1=new int[5];
         int[] checkArray=array1;
-        int[] array2={5,4,6,4};
+        int[] array2;
+        array2= new int[]{5, 4, 6, 4};
+        int[] array5={1,2,3,2,3,23};
         int[] array3=new int[]{4,5,6,8,9,1,0,2};
 
 
@@ -27,6 +29,10 @@ public class Arrayexampl {
         System.out.println(Arrays.toString(checkArray));
 
         array1[3]=5;
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(checkArray));
+
+        array1=new int[]{1,2,3};
         System.out.println(Arrays.toString(array1));
         System.out.println(Arrays.toString(checkArray));
         System.out.println("///////////////////////////");
