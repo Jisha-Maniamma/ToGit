@@ -53,7 +53,7 @@ public class Arrayexampl {
         System.out.println(Arrays.toString(checkArray));
 
         System.out.println(s1.substring(4));
-        System.out.println();
+        System.out.println("///////////////////////////");
 
     }
 
