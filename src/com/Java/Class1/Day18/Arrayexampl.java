@@ -1,5 +1,7 @@
 package com.Java.Class1.Day18;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 /**
@@ -9,6 +11,21 @@ import java.util.Arrays;
  */
 public class Arrayexampl {
     public static void main(String[] args) {
+
+
+
+
+        LocalDate date = LocalDate.now();
+String datee="2021-05-13";
+        System.out.println(date);
+        System.out.println(LocalDate.parse(datee));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        System.out.println(date.format(formatter));
+
+
+
+
+
         int[] array1=new int[5];
         int[] checkArray=array1;
         int[] array2;
