@@ -17,7 +17,41 @@ public class Bank {
         this.name=BankName;
         this.BankBranch=new ArrayList<Branch>();
     }
+    public boolean AddBranch(String BranchName){
+        if(FindBranch(BranchName)==null){
+            this.BankBranch.add(new Branch(BranchName));
+            return true;
 
+        }
+        return false;
+    }
+
+    //adding a customer to a bank
+    public boolean addCustomer(String customerName,String BranchName,double initialAmount){
+        Branch GivenBranch=FindBranch(BranchName);
+        if(GivenBranch!=null){
+            return GivenBranch.AddNewCustomer(customerName,initialAmount);
+
+        }
+        return false;
+    }
+
+    public boolean AddCustomerTransaction(String branchName,String customerName,double money){
+        Branch GivenBranch=FindBranch(branchName);
+        if(GivenBranch!=null){
+            return GivenBranch.AddTranaction(customerName,money);
+        }
+        return false;
+    }
+    private Branch FindBranch(String branchName) {
+        for(int i=0;i<BankBranch.size();i++){
+            Branch branch=BankBranch.get(i);
+            if(branch.getBranchName().equals(branchName)){
+                return  branch;
+            }
+        }
+        return null;
+    }
 
 
 
