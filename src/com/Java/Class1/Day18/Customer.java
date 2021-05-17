@@ -8,11 +8,11 @@ import java.util.List;
  * @version 1.0
  * @date 2021/05/17 14:37
  */
-public class Customers {
+public class Customer {
 private String CustomerName;
 private List<Double> transactions;
 
-public Customers(String name, double InitialTransaction){
+public Customer(String name, double InitialTransaction){
     this.CustomerName=name;
     transactions=new ArrayList<Double>();
     addTransaction(InitialTransaction);
