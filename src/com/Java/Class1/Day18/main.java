@@ -26,8 +26,8 @@ public class main {
 Bank bank1=new Bank("State Bank of India");
 bank1.AddBranch("AnuVijay T/S");
 bank1.addCustomer("AnuVijay T/S","Jisha",1200);
-        bank1.addCustomer("AnuVijay T/S","Manish",1200);
-        bank1.addCustomer("AnuVijay T/S","Gopi",1200);
-        bank1.addCustomer("AnuVijay T/S","Mani",1200);
+        bank1.addCustomer("AnuVijay T/S","Manish",10000);
+        bank1.addCustomer("AnuVijay T/S","Gopi",8100);
+        bank1.addCustomer("AnuVijay T/S","Mani",3200);
     }
 }
