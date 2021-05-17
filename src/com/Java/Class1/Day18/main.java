@@ -40,6 +40,7 @@ public class main {
         bank1.addCustomerTransaction("Adinadu","Arun",50);
 
         bank1.addCustomerTransaction("AnuVijay T/S","Jisha",200);
+        bank1.addCustomerTransaction("AnuVijay T/S","Jisha",1000);
         System.out.println( bank1.getBankBranch().get(0).getBranchName());
 
         System.out.println( bank1.getBankBranch().get(1).getBranchName());
