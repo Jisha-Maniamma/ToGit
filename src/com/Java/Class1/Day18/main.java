@@ -32,5 +32,15 @@ public class main {
 
         bank1.AddBranch("Adinadu");
         bank1.addCustomer("Adinadu","Arun",1200);
+
+bank1.AddCustomerTransaction("Adinadu","Arun",200);
+        bank1.AddCustomerTransaction("Adinadu","Arun",100);
+        bank1.AddCustomerTransaction("Adinadu","Arun",50);
+
+        bank1.AddCustomerTransaction("AnuVijay T/S","Jisha",200);
+
+        bank1.listCutomers("AnuVijay T/S",true);
+
+
     }
 }
