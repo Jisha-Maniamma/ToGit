@@ -18,7 +18,15 @@ public class Branch {
         CustomrList=new ArrayList<>();
     }
 
-    public boolean AddNewCustomer(String Customername,double InitialTransaction){
+    public String getBranchName() {
+        return BranchName;
+    }
+
+    public List<Customers> getCustomrList() {
+        return CustomrList;
+    }
+
+    public boolean AddNewCustomer(String Customername, double InitialTransaction){
         if(FindCustomer(Customername)==null){
             CustomrList.add(new Customers(Customername,InitialTransaction));
             return true;
