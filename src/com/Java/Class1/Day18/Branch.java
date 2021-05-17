@@ -11,7 +11,7 @@ import java.util.List;
 public class Branch {
 
     private String BranchName;
-    private List<Customers> CustomrList;
+    private List<Customer> CustomrList;
 
     public Branch(String name){
         this.BranchName=name;
@@ -22,22 +22,22 @@ public class Branch {
         return BranchName;
     }
 
-    public List<Customers> getCustomrList() {
+    public List<Customer> getCustomrList() {
         return CustomrList;
     }
 
     public boolean AddNewCustomer(String Customername, double InitialTransaction){
         if(FindCustomer(Customername)==null){
-            CustomrList.add(new Customers(Customername,InitialTransaction));
+            CustomrList.add(new Customer(Customername,InitialTransaction));
             return true;
         }
         return false;
     }
 
-    private Customers FindCustomer(String customername) {
+    private Customer FindCustomer(String customername) {
 
         for(int i=0;i<CustomrList.size();i++){
-            Customers customer=CustomrList.get(i);
+            Customer customer=CustomrList.get(i);
             if(customer.getCustomerName().equals(customername)){
                 return customer;
             }
@@ -47,7 +47,7 @@ public class Branch {
     }
 
     public boolean AddTranaction(String customerName,double money){
-        Customers ExistingCustomer=FindCustomer(customerName);
+        Customer ExistingCustomer=FindCustomer(customerName);
         if(ExistingCustomer!=null){
             ExistingCustomer.addTransaction(money);
             return true;
