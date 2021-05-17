@@ -33,6 +33,7 @@ public void addTransaction(double Trnsaction){
     }
 
     public List<Double> getTransactions() {
+        //System.out.print("Amount: ");
         return transactions;
     }
 
