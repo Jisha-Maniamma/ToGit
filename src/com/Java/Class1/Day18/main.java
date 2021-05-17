@@ -35,11 +35,11 @@ public class main {
         bank1.AddBranch("Adinadu");
         bank1.addCustomer("Adinadu","Arun",1200);
 
-        bank1.AddCustomerTransaction("Adinadu","Arun",200);
-        bank1.AddCustomerTransaction("Adinadu","Arun",100);
-        bank1.AddCustomerTransaction("Adinadu","Arun",50);
+        bank1.addCustomerTransaction("Adinadu","Arun",200);
+        bank1.addCustomerTransaction("Adinadu","Arun",100);
+        bank1.addCustomerTransaction("Adinadu","Arun",50);
 
-        bank1.AddCustomerTransaction("AnuVijay T/S","Jisha",200);
+        bank1.addCustomerTransaction("AnuVijay T/S","Jisha",200);
         System.out.println( bank1.getBankBranch().get(0).getBranchName());
 
         System.out.println( bank1.getBankBranch().get(1).getBranchName());
@@ -47,7 +47,7 @@ public class main {
         System.out.println();
         System.out.println("..................................");
         System.out.println("..................................");
-        bank1.listCutomers(bank1.getBankBranch().get(0).getBranchName(),true);
+        bank1.listCustomers(bank1.getBankBranch().get(0).getBranchName(),true);
         System.out.println("..................................");
         System.out.println("..................................");
 
