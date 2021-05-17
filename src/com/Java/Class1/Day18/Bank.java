@@ -13,6 +13,10 @@ public class Bank {
     private List<Branch> BankBranch;
     private String name;
 
+    public List<Branch> getBankBranch() {
+        return BankBranch;
+    }
+
     public Bank(String BankName){
         this.name=BankName;
         this.BankBranch=new ArrayList<Branch>();
@@ -29,7 +33,9 @@ public class Bank {
     //adding a customer to a bank
     public boolean addCustomer(String customerName,String BranchName,double initialAmount){
         Branch GivenBranch=FindBranch(BranchName);
+      //  System.out.println(GivenBranch.getCustomrList().get(0));
         if(GivenBranch!=null){
+            System.out.println(GivenBranch.getCustomrList().get(0));
             return GivenBranch.AddNewCustomer(customerName,initialAmount);
 
         }
@@ -57,7 +63,9 @@ public class Bank {
         Branch GivenBrnch=FindBranch(branchname);
         if(GivenBrnch!=null){
             System.out.println("Customers of branch...  "+GivenBrnch.getBranchName());
+
             List<Customers> customersOfbranch=GivenBrnch.getCustomrList();
+           // System.out.println(customersOfbranch.get(0));
             for(Customers a:customersOfbranch){
                 System.out.println("customer:"+a.getCustomerName());
                 if(Showtransactions){
