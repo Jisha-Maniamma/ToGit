@@ -84,14 +84,15 @@ public class Bank {
             System.out.println("Customers of branch...  "+GivenBrnch.getBranchName());
 
             List<Customer> customersOfbranch=GivenBrnch.getCustomrList();
-           // System.out.println(customersOfbranch.get(0));
+int i=0;           // System.out.println(customersOfbranch.get(0));
             for(Customer a:customersOfbranch){
+                System.out.println(".....................Customer "+(i++)+" is..........................");
                 System.out.println("customer:"+a.getCustomerName());
                 if(Showtransactions){
                     System.out.println("Transacation detils are ");
                     List<Double> transations=a.getTransactions();
                     for(Double b:transations){
-                        System.out.println(b);
+                        System.out.println("Amount: "+b);
                     }
                 }
 
