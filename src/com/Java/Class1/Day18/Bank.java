@@ -46,7 +46,7 @@ public class Bank {
         return false;
     }
 
-    public boolean AddCustomerTransaction(String branchName,String customerName,double money){
+    public boolean addCustomerTransaction(String branchName, String customerName, double money){
         Branch GivenBranch=FindBranch(branchName);
         if(GivenBranch!=null){
             return GivenBranch.AddTranaction(customerName,money);
@@ -78,14 +78,14 @@ public class Bank {
 //        return null;
 //    }
 
-    public boolean listCutomers(String branchname,boolean Showtransactions){
+    public boolean listCustomers(String branchname, boolean Showtransactions){
         Branch GivenBrnch=FindBranch(branchname);
         if(GivenBrnch!=null){
             System.out.println("Customers of branch...  "+GivenBrnch.getBranchName());
 
-            List<Customers> customersOfbranch=GivenBrnch.getCustomrList();
+            List<Customer> customersOfbranch=GivenBrnch.getCustomrList();
            // System.out.println(customersOfbranch.get(0));
-            for(Customers a:customersOfbranch){
+            for(Customer a:customersOfbranch){
                 System.out.println("customer:"+a.getCustomerName());
                 if(Showtransactions){
                     System.out.println("Transacation detils are ");
