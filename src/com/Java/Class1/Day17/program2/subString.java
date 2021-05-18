@@ -1,4 +1,4 @@
-package Day17.program2;
+package com.Java.Class1.Day17.program2;
 
 /**
  * @author Jisha Maniamma
