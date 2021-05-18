@@ -72,6 +72,11 @@ public class LinkedLList {
             System.out.println(iterator1.next());
 
         }
+        System.out.println("............................................");
+        Double d=12.23224;
+        System.out.println(d);
+        System.out.println(Math.round(d*100d)/100d);
+        System.out.println(d);
     }
 
     public static boolean AddNewName(List<String> a,String name){
