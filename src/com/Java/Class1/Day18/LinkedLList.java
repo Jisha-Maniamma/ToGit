@@ -57,6 +57,21 @@ public class LinkedLList {
             System.out.println(iterator1.next());
 
         }
+        System.out.println("*********************************************************");
+        LinkedList<String> ll2
+                = new LinkedList<String>();
+        AddNewName(ll2,"Ram");
+        AddNewName(ll2,"Adidev");
+        AddNewName(ll2,"Sita");
+        AddNewName(ll2,"Govind");
+        AddNewName(ll2,"Sushruta");
+
+        iterator1=ll2.listIterator();
+        while(iterator1.hasNext()){
+
+            System.out.println(iterator1.next());
+
+        }
     }
 
     public static boolean AddNewName(List<String> a,String name){
