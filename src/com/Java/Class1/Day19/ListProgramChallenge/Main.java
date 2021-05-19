@@ -2,6 +2,7 @@ package com.Java.Class1.Day19.ListProgramChallenge;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * @author Jisha Maniamma
@@ -49,7 +50,32 @@ public class Main {
 //        albums.get(1).addToPlaylist("333333",playlist);
 //        albums.get(1).addToPlaylist(0,playlist);
 
-
+        ListIterator<album> listIterator= albums.listIterator();
+        listIterator.next();
+//        while(listIterator.hasNext()){
+//            System.out.println("1"+listIterator.hasNext());
+//            System.out.println("2"+listIterator.next());
+//            listIterator.remove();
+//            System.out.println("3"+listIterator.hasNext());
+//        }
+//
+//        ListIterator<album> listIterator1= albums.listIterator();
+//        listIterator1.remove();
+//        while(listIterator1.hasNext()){
+//            System.out.println("1"+listIterator1.hasNext());
+//            System.out.println("2"+listIterator1.next());
+//            listIterator1.remove();
+//            System.out.println("3"+listIterator1.hasNext());
+//        }
+//        if(!listIterator1.hasNext()){
+//            System.out.println("noooooo");
+//        }
+        listIterator.remove();
+        if(listIterator.hasNext()) {
+            System.out.println("Now playing " + listIterator.next().toString());
+        } else if(listIterator.hasPrevious()) {
+            System.out.println("Now playing " + listIterator.previous());
+        }
     }
 
 
