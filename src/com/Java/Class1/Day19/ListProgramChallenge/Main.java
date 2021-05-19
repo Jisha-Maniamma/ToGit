@@ -45,9 +45,9 @@ public class Main {
 
      List<song> playlist=new ArrayList<>();
      albums.get(0).addToPlaylist("333333",playlist);
-        albums.get(0).addToPlaylist(3,playlist);
-        albums.get(1).addToPlaylist("333333",playlist);
-        albums.get(1).addToPlaylist(0,playlist);
+       albums.get(0).addToPlaylist(3,playlist);
+//        albums.get(1).addToPlaylist("333333",playlist);
+//        albums.get(1).addToPlaylist(0,playlist);
 
 
     }
