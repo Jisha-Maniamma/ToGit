@@ -38,7 +38,14 @@ public class album {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return albumName;
+    }
+
     private song findSong(String songName){
+
         for(song a:songs){
 
             if(a.getSongTitle().equalsIgnoreCase(songName)){
