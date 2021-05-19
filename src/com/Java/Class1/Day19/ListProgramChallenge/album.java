@@ -38,13 +38,35 @@ public class album {
         }
         return false;
     }
+    private song findSong(String songName){
+        for(song a:songs){
+
+            if(a.getSongTitle().equalsIgnoreCase(songName)){
+                return a;
+            }
+
+
+        }
+        return null;
+    }
 
     public void addToPlaylist(int trackNumber,List<song> playlistName){
-
-
+        //System.out.println();
+        if(trackNumber-1>0 && trackNumber-1<=songs.size()){
+            playlistName.add(songs.get(trackNumber-1));
+            System.out.println(" could add");
+        }
+        System.out.println("sory couldnot b added");
     }
     public void addToPlaylist(String title,List<song> playlistname){
 
+        if(findSong(title)!=null){
+            playlistname.add(findSong(title));
+            System.out.println("added the song into the playList");
+
+        }else{
+            System.out.println("sory this song dsnt exists in the album");
+        }
     }
 
 }
