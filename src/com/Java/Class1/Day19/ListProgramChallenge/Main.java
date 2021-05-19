@@ -70,12 +70,15 @@ public class Main {
 //        if(!listIterator1.hasNext()){
 //            System.out.println("noooooo");
 //        }
+        System.out.println(".......................");
         listIterator.remove();
         if(listIterator.hasNext()) {
             System.out.println("Now playing " + listIterator.next().toString());
         } else if(listIterator.hasPrevious()) {
             System.out.println("Now playing " + listIterator.previous());
         }
+
+        System.out.println(".......................");
     }
 
 
