@@ -11,13 +11,17 @@ public class main {
 Outer o=new Outer();
 Outer.inner i=o.new inner();
 
-
+Outer.inner1 i1=new Outer.inner1();
         System.out.println(i.y+o.x);
+        System.out.println(i1.z);
     }
 }
 class Outer{
     int x=12;
     class inner{
         int y=20;
+    }
+    static class inner1{
+        int z=30;
     }
 }
