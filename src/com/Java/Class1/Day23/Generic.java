@@ -8,7 +8,7 @@ import java.util.List;
  * @version 1.0
  * @date 2021/05/25 9:05
  */
-public class Generic extends Aclass{
+public class Generic extends Aclass implements MyInterface {
 
     public static void main(String[] args) {
         List<Integer> a= new ArrayList<>();
@@ -18,7 +18,7 @@ public class Generic extends Aclass{
         print(a);
         System.out.println("...................");
 new Generic().print();
-
+        System.out.println(MyInterface.ab);
     }
     public void print(){
         System.out.println(this.a);
@@ -34,4 +34,7 @@ new Generic().print();
 }
 class Aclass{
     int a;
+}
+interface MyInterface{
+    int ab=100;
 }
