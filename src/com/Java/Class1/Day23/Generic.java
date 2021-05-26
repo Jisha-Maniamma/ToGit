@@ -8,7 +8,7 @@ import java.util.List;
  * @version 1.0
  * @date 2021/05/25 9:05
  */
-public class Generic {
+public class Generic extends Aclass{
 
     public static void main(String[] args) {
         List<Integer> a= new ArrayList<>();
@@ -16,6 +16,13 @@ public class Generic {
         a.add(2);
 
         print(a);
+        System.out.println("...................");
+new Generic().print();
+
+    }
+    public void print(){
+        System.out.println(this.a);
+        System.out.println(super.a=20);
     }
 
     private static void print(List<Integer> a) {
@@ -24,4 +31,7 @@ public class Generic {
             System.out.println(aa);
         }
     }
+}
+class Aclass{
+    int a;
 }
