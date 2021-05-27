@@ -12,7 +12,16 @@ public class main {
         interviewer.conductInterview();
         ((HR) interviewer).specialization=new String[] {"Staffing"};
         System.out.println("......................................................");
+        Interviewer [] interview1=new Interviewer[2];
+        interview1[0]=new HR();
+        interview1[0]=new Manager();
 
+for(Interviewer a: interview1){
+    if(a instanceof Manager){
+int teamSize= ((Manager) a).teamsize;
+        System.out.println(teamSize);
+    }
+}
 
 
     }
@@ -21,7 +30,7 @@ class Employee{
 
 }
 class HR extends  Employee implements Interviewer{
-String[] specialization;
+    String[] specialization;
 
     public void conductInterview(){
         System.out.println("HR conducts interview");
@@ -29,7 +38,7 @@ String[] specialization;
 }
 
 class Manager extends  Employee implements  Interviewer{
-
+int teamsize;
     @Override
     public void conductInterview() {
         System.out.println("Manager conducts interview");
