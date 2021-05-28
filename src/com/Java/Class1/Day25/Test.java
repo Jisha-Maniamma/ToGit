@@ -26,7 +26,9 @@ public class Test {
 
         validate validatearray=e -> e.getPerformance()>=5;
         filter(empArrayList,validatearray);
-
+        System.out.println();
+        System.out.println("//////////////////////////////////////");
+        empArrayList.forEach(n -> System.out.println(n.getName().startsWith("K")));
 
     }
 
