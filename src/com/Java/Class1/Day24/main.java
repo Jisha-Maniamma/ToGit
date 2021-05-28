@@ -16,13 +16,18 @@ public class main {
         interview1[0]=new HR();
         interview1[0]=new Manager();
 
-for(Interviewer a: interview1){
-    if(a instanceof Manager){
-int teamSize= ((Manager) a).teamsize;
-        System.out.println(teamSize);
-    }
-}
+        for(Interviewer a: interview1){
+            if(a instanceof Manager){
+                int teamSize= ((Manager) a).teamsize;
+                System.out.println(teamSize);
+            }
+        }
 
+
+        Employee hrr=new HR();
+        Employee hrr1=new Manager();
+        ((HR) hrr).printRandom();
+        ((HR) interviewer).printRandom();
 
     }
 }
@@ -31,14 +36,16 @@ class Employee{
 }
 class HR extends  Employee implements Interviewer{
     String[] specialization;
-
+public void printRandom(){
+    System.out.println("hai");
+}
     public void conductInterview(){
         System.out.println("HR conducts interview");
     }
 }
 
 class Manager extends  Employee implements  Interviewer{
-int teamsize;
+    int teamsize;
     @Override
     public void conductInterview() {
         System.out.println("Manager conducts interview");
