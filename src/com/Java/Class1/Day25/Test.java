@@ -1,7 +1,5 @@
 package com.Java.Class1.Day25;
 
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Validate;
-
 import java.util.ArrayList;
 import java.util.List;
 
