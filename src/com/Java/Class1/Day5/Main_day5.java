@@ -3,6 +3,7 @@ package com.Java.Class1.Day5;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.function.Consumer;
 
 public class Main_day5 {
     public static void main(String[] args) {
@@ -52,6 +53,22 @@ public class Main_day5 {
         ////////////////////////////////////////////////////////
 
         printUsingIterator(projects);
+
+
+
+
+        //////////////////////////////////////////////
+        ///////////////////28/5/2021//////////////////
+        /////////////////////////////////////////////
+        System.out.println();
+        System.out.println("//////////////////////////////////////////////////");
+        projects.forEach((n) -> System.out.println(n));
+
+
+        System.out.println("//////////////////////////////////////////////////");
+        Consumer<String> method=(n) -> System.out.println(n);
+        projects.forEach(method);
+
 
     }
 
