@@ -14,7 +14,7 @@ public class exceptionxample {
 
 
 
-        prrrrint();
+      //  prrrrint();
         printAAAA a=new printAAAA();
 
       //  a.getPrinterName(2);
