@@ -13,9 +13,13 @@ public class office {
         Employee Raj=new HR();
 
 
-     //   Ron.specialization=new String[] {"Recruitment"};
+      //  Ron.specialization=new String[] {"Recruitment"};
         Ram.specialization=new String[] {"Recruitment"};
-     //   Raj.specialization=new String[] {"Recruitment"};
+      //  Raj.specialization=new String[] {"Recruitment"};
+
+     //   Ron.sayHai();
+        Ram.sayHai();
+      //  Raj.sayHai();
 
       //  Ron.name="Ron Rahul";
         Ram.name="Ron Rahul";
@@ -46,6 +50,9 @@ class HR extends Employee implements interview{
     String[] specialization;
     public void conductInterview() {
         System.out.println("HR is conducting interview");
+    }
+    public void sayHai(){
+        System.out.println("Hai fom manager");
     }
 }
 interface interview{
