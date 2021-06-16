@@ -46,6 +46,8 @@ public class Date_formatte {
 
         System.out.println();
         System.out.println(" ");
+        System.out.println(date6+" "+date7);
+        System.out.println(date6.equals(date7));
 
     }
 }
