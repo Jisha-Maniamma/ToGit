@@ -17,6 +17,8 @@ public class Main {
         Telephone JishaMobilePhone=new mobilePhone(1234);
         JishaMobilePhone.powerOn();
         JishaMobilePhone.isRinging();
+
+
     }
 
 
