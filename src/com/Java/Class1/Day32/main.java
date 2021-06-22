@@ -29,6 +29,7 @@ public class main extends main2{
            i++;
        }
         System.out.println(dates.size());
+        System.out.println(i);
        for(LocalDate aa:dates){
            System.out.println(aa);
        }
