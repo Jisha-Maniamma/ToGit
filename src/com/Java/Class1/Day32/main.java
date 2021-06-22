@@ -1,5 +1,9 @@
 package com.Java.Class1.Day32;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Jisha Maniamma
  * @version 1.0
@@ -13,6 +17,21 @@ public class main extends main2{
         it1 mm=new main();
         mm.m1();
         //mm.m2();mm.m3();mm.m4();
+
+        LocalDate startdate=LocalDate.parse("2021-04-28");
+        System.out.println(startdate.getMonth()+","+startdate.getYear());
+        List<LocalDate> dates=new ArrayList<>();
+        LocalDate enddate=LocalDate.parse("2021-05-10");
+        int i=0;
+       while(startdate.isBefore(enddate)){
+           dates.add(startdate);
+           startdate=startdate.plusDays(1);
+           i++;
+       }
+        System.out.println(dates.size());
+       for(LocalDate aa:dates){
+           System.out.println(aa);
+       }
     }
 
     @Override
