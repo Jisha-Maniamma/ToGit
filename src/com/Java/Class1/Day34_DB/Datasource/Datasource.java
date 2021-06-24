@@ -9,7 +9,7 @@ import java.sql.*;
  */
 public class Datasource {
 
-
+String name;
     String url = "jdbc:postgresql://localhost/postgres";
     String user = "postgres";
     String password = "juntos";
