@@ -10,7 +10,7 @@ import java.sql.*;
 public class Datasource {
 
 String name;
-    String url = "jdbc:postgresql://localhost/postgres";
+    String url = "jdbc:postgresql://192.168.1.25/postgres";
     String user = "postgres";
     String password = "juntos";
     Connection conn=null;
@@ -71,6 +71,7 @@ String name;
         }
     }
     private void close(){
+
         try{
             if(statement!=null){
                 statement.close();
