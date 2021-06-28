@@ -11,6 +11,9 @@ public class mobilePhone implements Telephone{
     public mobilePhone(int myNumber){
         this.myNumber=myNumber;
     }
+    public void sayHai(){
+        System.out.println("Hai...from mobile Phone");
+    }
     @Override
     public void powerOn() {
         isOn=true;
