@@ -25,13 +25,18 @@ public class chapter5 {
         int i=10;
         do
             while(++i <15)
-            //    System.out.println(i);
+                //    System.out.println(i);
                 i=i+20;
-               // System.out.println(i+" is");}
+            // System.out.println(i+" is");}
         while (i<2);
         System.out.println(i);
         System.out.println("/////////////////");
-
+        final int aa=30;
+//aa=30;
+        switch(i){
+            case aa+2:
+                System.out.println(i);
+        }
 
         ///infinite loop
 //        for(;;){
