@@ -30,6 +30,13 @@ public class chapter5 {
                // System.out.println(i+" is");}
         while (i<2);
         System.out.println(i);
+        System.out.println("/////////////////");
 
+
+        ///infinite loop
+//        for(;;){
+//            System.out.println(i);
+//            System.out.println("haiiii");
+//        }
     }
 }
