@@ -9,6 +9,10 @@ public class interfacexample implements  interviewer{
     public static void main(String[] args) {
         interviewer i=new Manager();
         i.submitIntrviewStatu();
+
+
+        Manager ii=new Manager();
+        ii.submitIntrviewStatu();
     }
 }
 class Manager implements interviewer{
