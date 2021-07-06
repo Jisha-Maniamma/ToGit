@@ -21,6 +21,10 @@ public class main1 {
     }
 
     private void guru() {
-        System.out.println("in guru"); throw new StackOverflowError();
+        int i=12;
+        System.out.println("in guru");
+        if(i<20){
+            throw new StackOverflowError();
+        }
     }
 }
