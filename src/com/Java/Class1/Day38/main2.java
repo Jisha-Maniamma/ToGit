@@ -21,7 +21,7 @@ m.goTreaking();
 
 
 }
-
+//if this extends only exception then throws chahiyae
 class fellHunrgyException extends RuntimeException{
 
 }
