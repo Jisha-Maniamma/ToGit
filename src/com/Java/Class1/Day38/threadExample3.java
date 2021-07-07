@@ -29,5 +29,6 @@ class ThreadColor{
     public static final String cyan="\u001B[36m";
     public static final String blue="\u001B[34m";
     public static final String black="\u001B[30m";
+//    public static final String
 
         }
