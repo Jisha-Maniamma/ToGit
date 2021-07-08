@@ -5,7 +5,7 @@ package com.Java.Class1.Day38;
  * @version 1.0
  * @date 2021/07/07 13:11
  */
-public class threadExample3 {
+public class threadExample3_colorVala {
 
     public static void main(String[] args) {
         System.out.println(ThreadColor.blue+"hello from main thread");
