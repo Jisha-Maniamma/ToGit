@@ -8,7 +8,7 @@ package com.Java.Class1.Day39;
 public class Thread1 extends Thread implements Runnable{
 
     public void run(){
-        for(int i=0;i<100;i++){
+        for(int i=0;i<10;i++){
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -26,5 +26,8 @@ public class Thread1 extends Thread implements Runnable{
         Thread t1=new Thread(new Thread1());
         t1.start();
 
+        System.out.println("..............");
+        System.out.println(0.68*40000);
+        System.out.println(0.69*200000);
     }
 }
