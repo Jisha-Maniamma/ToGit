@@ -19,6 +19,22 @@ public class main {
         StringBuilder sb2=new StringBuilder("feb");
         myrraylist.add(sb1);
         myrraylist.add(sb2);
+        ArrayList<StringBuilder> assignedArrList=myrraylist;
+        ArrayList<StringBuilder> clonedArList=( ArrayList<StringBuilder>)myrraylist.clone();
+
+
+        System.out.println(myrraylist==assignedArrList);
+        System.out.println(myrraylist==clonedArList);
+
+
+        StringBuilder myArrVVal=myrraylist.get(0);
+        StringBuilder assignedArrVal=assignedArrList.get(0);
+        StringBuilder clonedArrVal=clonedArList.get(0);
+
+        System.out.println(myArrVVal==assignedArrVal);
+        System.out.println(myArrVVal==clonedArrVal);
+
+
 //        System.out.println(myrraylist.toString().contains("jan"));
 
 
