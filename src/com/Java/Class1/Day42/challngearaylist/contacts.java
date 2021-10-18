@@ -21,4 +21,9 @@ public class contacts {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    public contacts(String name, String number) {
+        this.name = name;
+        this.number = number;
+    }
 }
