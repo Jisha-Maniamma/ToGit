@@ -26,4 +26,5 @@ public class contacts {
         this.name = name;
         this.number = number;
     }
+
 }
