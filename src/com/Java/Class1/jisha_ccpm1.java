@@ -24,5 +24,21 @@ dates.clear();
 
         var a=new Jisha_ccpm();
         a.main(args);
+        var i=1;
+        var b=new ArrayList<>();
+        var bf=new int[7];
+        System.out.println(i);
+        String s=null;
+        var e=s;
+        var s1=0.1;
+        short s2=2;
+        var s3=  (s1+s2);
+        var d=100*.01;
+        var he=0;
+        he= (int) (s1*i);
+        String n1="jisha";
+        String n2="jisha";
+        System.out.println(n1==n2);
+
     }
 }
