@@ -8,9 +8,9 @@ public class jisha_ccpm1 {
 
 
     public static void main(String[] args) {
-       List<LocalDate> dates=new ArrayList<>();
-       dates.clear();
-       dates.add(LocalDate.parse("2022-01-25"));
+        List<LocalDate> dates=new ArrayList<>();
+        dates.clear();
+        dates.add(LocalDate.parse("2022-01-25"));
         dates.add(LocalDate.parse("2022-01-26"));
         dates.add(LocalDate.parse("2022-01-27"));
         dates.add(LocalDate.parse("2022-01-31"));
@@ -19,7 +19,7 @@ public class jisha_ccpm1 {
 
 
         System.out.println(dates.get(dates.size()-1));
-dates.clear();
+        dates.clear();
         System.out.println(dates.size());
 
         var a=new Jisha_ccpm();
@@ -39,6 +39,26 @@ dates.clear();
         String n1="jisha";
         String n2="jisha";
         System.out.println(n1==n2);
+        System.out.println("//////////////////////////////////");
+        int[] reperating={1,2,3,2,2,2};
+        int [] nonreaparting=new int[reperating.length];
+        int count=0;
+        //   System.out.println(reperating);
+        for(int ij=0;ij<reperating.length;ij++){
+            int jp;
+            for( jp=0;jp<ij;jp++)
+            {
+                if(reperating[jp]==reperating[ij])
+                    break;
+            }
+            if(ij==jp){
+                nonreaparting[count]=reperating[ij];
+                System.out.println(reperating[ij]+" "+ij+" "+jp);
+                count++;}
+        }
+        System.out.println(".........");
+        for(int ah:nonreaparting)
+            if(ah!=0)System.out.println(ah);
 
     }
 }
