@@ -14,21 +14,21 @@ public class sde1 {
     static public void getNumbers(String s,int num){
         //s='abcd' num=4
         int[] count= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-        boolean loop=true;
-       // while(loop){
-            for(int i=0;i<s.length() & i<num;i++){
 
-//               for(int ii=0;ii<s.length();ii++){
-//                   for(int jj=1)
-//               }
+        if(num==1){
+            count[0]=s.length();
 
-                if(num==1){
-                    count[0]=s.length();
-                }
+        }
+        else {
+            for (int i = 0; i < s.length() & i < num; i++) {
+
+
+
 
             }
 
-       // }
+
+        }
         Totalcount=count;
 
     }
