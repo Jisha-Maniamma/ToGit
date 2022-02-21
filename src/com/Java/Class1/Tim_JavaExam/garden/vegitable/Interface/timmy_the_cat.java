@@ -41,7 +41,7 @@ class Animal{
 class cat extends Animal{
     public cat() {
         age--;
-        System.out.println("no parametr cat canstructor");
+        System.out.println("no parametr cat constructor");
 
     }
     @Override
