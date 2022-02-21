@@ -12,7 +12,7 @@ class Animal{
     int age=5;
     public Animal() {
         age++;
-        System.out.println("no parameter Animal canstructor");
+        System.out.println("no parameter Animal constructor");
 
     }
 
