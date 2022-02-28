@@ -6,7 +6,6 @@ public class Amazon1 {
         String answer1=test1(test);
         System.out.println(answer1);
         System.out.println(test2(answer1));
-
     }
     //////////////////////////////////
     private static String test2(String test){
@@ -21,13 +20,10 @@ public class Amazon1 {
             sb.append(ch[(i*2)]);
             System.out.println(count);
             while(count>0){
-
                 count--;
                 sb.append(ch[(i*2)]);
             }
         }
-
-
         return sb.toString();
     }
 
@@ -47,7 +43,6 @@ public class Amazon1 {
         char previous=0;
         StringBuilder sb=new StringBuilder();
         for(char c:char1){
-
             if(c==previous){
                 count++;
             }
@@ -57,11 +52,8 @@ public class Amazon1 {
                 count=1;
                 previous=c;
             }
-
-
         }
         sb.append(previous).append(count);
         return sb.toString();
-
     }
 }
