@@ -5,7 +5,7 @@ public class Amazon1 {
         String test="aaabbc";
         String answer1=test1(test);
         System.out.println(answer1);
-        System.out.println(test2(answer1));
+        System.out.println(test2("a1b4a7f1"));
     }
     //////////////////////////////////
     private static String test2(String test){
@@ -17,7 +17,7 @@ public class Amazon1 {
         StringBuilder sb=new StringBuilder();
         for (int i=0;i<(ch.length/2);i++){
             count=Character.getNumericValue(ch[(i*2)+1]);
-            sb.append(ch[(i*2)]);
+            //sb.append(ch[(i*2)]);
             System.out.println(count);
             while(count>0){
                 count--;
