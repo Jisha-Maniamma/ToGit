@@ -10,6 +10,7 @@ public class Amazon1 {
     //////////////////////////////////
     private static String test2(String test){
         int count=0;
+        int a=0;
         if(test.length()==0){
             return null;
         }
@@ -20,16 +21,15 @@ public class Amazon1 {
             //sb.append(ch[(i*2)]);
             System.out.println(count);
             while(count>0){
+                a++;
                 count--;
                 sb.append(ch[(i*2)]);
+                System.out.println(a);
             }
         }
         return sb.toString();
     }
-
 ////////////////////////////////////////
-
-
     private static String test1(String test ){
         char[] char1=test.toCharArray();
         int count=0;
