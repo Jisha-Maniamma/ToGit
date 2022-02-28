@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class bufferedReaderunderstanding {
     public static Scanner scan=new Scanner(System.in);
-    public static void main(String[] args) throws IOException {
+    public static void read(String[] args) throws IOException {
         File f=new File("C:/Users/J0119/Documents/Jisha_Maniamma/names1.txt");
         if (f.exists()){
             System.out.println("deleting...");
@@ -31,5 +31,24 @@ public class bufferedReaderunderstanding {
 
 
 
+    }
+
+
+    public static void main(String[] args) throws IOException {
+        File f=new File("C:/Users/J0119/Documents/Jisha_Maniamma/names.txt");
+        if(f.exists()){
+            BufferedReader br=new BufferedReader(new FileReader(f));
+            BufferedWriter writerr=new BufferedWriter(new FileWriter("C:/Users/J0119/Documents/Jisha_Maniamma/names1.txt",false));
+            String s;
+            String ssss = "";
+            while((s=br.readLine())!=null){
+                ssss+=s+"..s\n";
+
+            }
+            writerr.append(ssss);
+
+            br.close();
+            writerr.close();
+        }
     }
 }
