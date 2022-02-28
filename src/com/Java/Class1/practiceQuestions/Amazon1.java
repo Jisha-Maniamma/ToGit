@@ -6,11 +6,18 @@ public class Amazon1 {
         String answer1=test1(test);
         System.out.println(answer1);
         System.out.println(test2("a1b4a7f1"));
+        test3("abcdba");
+
+    }
+
+    //////////////////////////////////
+    private static void test3(String test){
+
     }
     //////////////////////////////////
     private static String test2(String test){
         int count=0;
-        int a=0;
+
         if(test.length()==0){
             return null;
         }
@@ -21,10 +28,10 @@ public class Amazon1 {
             //sb.append(ch[(i*2)]);
             System.out.println(count);
             while(count>0){
-                a++;
+
                 count--;
                 sb.append(ch[(i*2)]);
-                System.out.println(a);
+
             }
         }
         return sb.toString();
