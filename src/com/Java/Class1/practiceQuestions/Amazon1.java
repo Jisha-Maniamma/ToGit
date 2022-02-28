@@ -33,8 +33,6 @@ public class Amazon1 {
 
 
 
-
-
     private static String test1(String test ){
         char[] char1=test.toCharArray();
         int count=0;
