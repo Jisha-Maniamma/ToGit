@@ -19,7 +19,12 @@ final public class celetialbodies {
     public double getOrbitalPeriod() {
         return orbitalPeriod;
     }
-
+public boolean addMoon(celetialbodies moon){
+   return this.satellites.add(moon);
+}
+public Set<celetialbodies> gtSatellites(){
+        return new HashSet<>(this.satellites);
+}
 
 
 }
