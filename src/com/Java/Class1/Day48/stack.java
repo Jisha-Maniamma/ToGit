@@ -22,16 +22,32 @@ public class stack {
         if(!isFull()){
             position++;
             arrayStack[position]=value;
+        }else{
+            System.out.println("the stack is full");
         }
     }
-    public String pop(){
+    public void pop(){
         if(isEmpty()){
-            return "this sack is empty";
+            System.out.println("this sack is empty");
+            return ;
         }
-        return "the element is "+arrayStack[position];
+        System.out.println("the element is "+arrayStack[position]);
     }
 
+public void printSatck(){
+        int a=position;
+        while(a!=-1){
+            System.out.println("\t\t"+arrayStack[a]);
+            a--;
+        }
+}
 
 
-
+    public void printlessThan(int i) {
+        int a=position;
+        while(a!=-1){
+           if(arrayStack[a]<i) System.out.println("\t\t"+arrayStack[a]+" at location "+a);
+            a--;
+        }
+    }
 }
