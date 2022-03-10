@@ -26,4 +26,24 @@ final class HeavenlyBodies {
     public Set<HeavenlyBodies> getMoon(){
         return new HashSet<>(this.satellites);
     }
+
+
+    @Override
+    public boolean equals(Object HeavenlyBodiess){
+        if(HeavenlyBodiess==null){
+           return false;
+        }
+            if(this==HeavenlyBodiess){
+            return true;
+        }
+        System.out.println(((HeavenlyBodies)HeavenlyBodiess).getName().equals(this.name));
+            if(HeavenlyBodiess instanceof HeavenlyBodies)
+              return ((HeavenlyBodies)HeavenlyBodiess).getName().equals(this.name);
+            return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.name.hashCode();
+    }
 }
