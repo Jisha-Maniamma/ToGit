@@ -19,8 +19,10 @@ public class arrayRepeating1 {
         System.out.println("...........................................");
         System.out.println("...........................................");
 
-
-        findMaxRepeatingString1(new ArrayList<>(Arrays.asList(new String[]{"java", "apple", "car", "car", "java", "java"})));
+String text="LeetCode is one of the most well-known online judge platforms that you can use to practice your programming skills by solving coding questions. It has over 1,100 different problems, support for over 18 programming languages, and an active community that is always there to help you with the solutions you come up with.";
+        text=text.replaceAll("[-,.]","");
+        String[] inputText=text.split(" ");
+        findMaxRepeatingString1((Arrays.asList(new String[]{"java", "apple", "car", "car", "java", "java"})));
         System.out.println("...........................................");
 
         //////////////////////
