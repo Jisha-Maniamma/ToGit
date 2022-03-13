@@ -19,11 +19,11 @@ public class arrayRepeating1 {
         System.out.println("...........................................");
         System.out.println("...........................................");
 
-String text="LeetCode is one of the most well-known online judge platforms that you can use to practice your programming skills by solving coding questions. It has over 1,100 different problems, support for over 18 programming languages, and languages an languages languages languages active community that is always there to help you with the solutions you come up with.";
+        String text="LeetCode is one of the most well-known online judge platforms that you can use to practice your programming skills by solving coding questions. It has over 1,100 different problems, support for over 18 programming languages, and languages an languages languages languages active community that is always there to help you with the solutions you come up with.";
         text=text.replaceAll("[-,.]","");
         List<String> inputText= Arrays.asList(text.split(" "));
         findMaxRepeatingString1(inputText);
-       // findMaxRepeatingString1((Arrays.asList(new String[]{"java", "apple", "car", "car", "java", "java"})));
+        // findMaxRepeatingString1((Arrays.asList(new String[]{"java", "apple", "car", "car", "java", "java"})));
         System.out.println("...........................................");
 
         //////////////////////
@@ -78,25 +78,25 @@ String text="LeetCode is one of the most well-known online judge platforms that 
 
     }
     private static void findMaxRepeatingString1(List<String> strings){
-      int count=0;int max=0;
-      String maxrepating="";
-      int loction=0;
+        int count=0;int max=0;
+        String maxrepating="";
+        int loction=0;
 
-      for(int i=0;i< strings.size();i++){
-          count=0;
-          for(int j=0;j< strings.size();j++){
+        for(int i=0;i< strings.size();i++){
+            count=0;
+            for(int j=0;j< strings.size();j++){
 
-              if(strings.get(i).equals(strings.get(j))){
-                  count++;
-              }
-          }
+                if(strings.get(i).equals(strings.get(j))){
+                    count++;
+                }
+            }
 
 
-          if(count>max){
-              max=count;
-              maxrepating=strings.get(i);
-          }
-      }
+            if(count>max){
+                max=count;
+                maxrepating=strings.get(i);
+            }
+        }
         System.out.println(maxrepating);
     }
 }
