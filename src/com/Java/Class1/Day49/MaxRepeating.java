@@ -21,7 +21,27 @@ public class MaxRepeating {
         findDistinctString(Arrays.asList(new String[]{"a","b","a","a"}));
         System.out.println(".........................................");
         findOccurance(inputText);
-    }
+        System.out.println("............................");
+        Map < Integer , String > mMap = new HashMap < Integer , String > ();
+
+        // Store data in Map
+        mMap . put ( 1 , "apple" );
+        mMap . put ( 2 , "orange" );
+        mMap . put ( 4 , "pineapple" );
+        mMap . put ( 5 , "strawberry" );
+        mMap . put ( 3 , "melon" );
+
+        // Sort by key
+//        Object [] mapkey = mMap . keySet (). toArray ();
+//        Arrays .sort ( mapkey ) ;
+        System.out.println(mMap);
+        for ( Integer nKey : mMap . keySet ())
+        {
+            System .out .println ( mMap .get ( nKey ) ) ;
+        }
+
+
+}
 
     private static void findOccurance(List<String> asList) {
         int count=0;
