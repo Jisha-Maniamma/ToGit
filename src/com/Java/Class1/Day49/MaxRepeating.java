@@ -59,15 +59,17 @@ public class MaxRepeating {
             }
             }
       //  System.out.println(mySet);
-        List<Map.Entry<String,Integer>> answer=new ArrayList<>(mySet.entrySet());
-        System.out.println(answer);
-       Collections.sort(answer, new Comparator<Map.Entry<String, Integer>>() {
-           @Override
-           public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-               return o1.getValue().compareTo(o2.getValue());
-           }
-       });
-        System.out.println(answer);
+
+
+//        List<Map.Entry<String,Integer>> answer=new ArrayList<>(mySet.entrySet());
+//        System.out.println(answer);
+//       Collections.sort(answer, new Comparator<Map.Entry<String, Integer>>() {
+//           @Override
+//           public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+//               return o1.getValue().compareTo(o2.getValue());
+//           }
+//       });
+//        System.out.println(answer);
 
     }
 
