@@ -87,7 +87,7 @@ public class Amazon1 {
                 if(ch[i]==nonRepeating[j]){  System.out.println(nonRepeating[j]+" "+j);break;}
             System.out.println("->");
             if(i==j) {
-                System.out.println(j);
+                System.out.println(j+" "+Arrays.toString(nonRepeating));
                 nonRepeating[count] = ch[i];
                 count++;
             }
