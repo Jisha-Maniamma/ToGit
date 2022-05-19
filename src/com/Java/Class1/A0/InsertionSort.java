@@ -6,15 +6,15 @@ import java.util.*;
 
 public class InsertionSort {
     public static void main(String[] args) {
-//        String wait="155".replace(".0","");
-//        long b= Long.parseLong(wait);
-//        System.out.println(b);
-//        int[] myArray={1,5,9,10,22,2,20,56,99,23,10,1};
-//
-//          //       insertionSort(myArray); //Ascending order sort
-//          //        System.out.println(".....");
-//         //        insertionSortModified(myArray); //descending order sort
-//        findMaxSubstring("2aeababaecbccbbbccef");
+        String wait="155".replace(".0","");
+        long b= Long.parseLong(wait);
+        System.out.println(b);
+        int[] myArray={1,5,9,10,22,2,20,56,99,23,10,1};
+
+          //       insertionSort(myArray); //Ascending order sort
+          //        System.out.println(".....");
+         //        insertionSortModified(myArray); //descending order sort
+        findMaxSubstring("2aeababaecbccbbbccef");
     }
 
     private static void findMaxSubstring(String string) {
@@ -104,15 +104,15 @@ public class InsertionSort {
             }
         });
 
-//        List<Map.Entry<String,Integer>> answer=new ArrayList<>(mySet.entrySet());
-//        System.out.println(answer);
-//       Collections.sort(answer, new Comparator<Map.Entry<String, Integer>>() {
-//           @Override
-//           public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-//               return o1.getValue().compareTo(o2.getValue());
-//           }
-//       });
+        List<Map.Entry<String,Integer>> answer1=new ArrayList<>(mySet.entrySet());
         System.out.println(answer);
+       Collections.sort(answer, new Comparator<Map.Entry<String, Integer>>() {
+           @Override
+           public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+               return o1.getValue().compareTo(o2.getValue());
+           }
+       });
+        System.out.println(answer1);
 
     }
 
