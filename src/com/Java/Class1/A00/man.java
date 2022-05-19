@@ -9,13 +9,13 @@ public class man {
         List<String> ss=new ArrayList<>(Arrays.asList(s.split("[' ' ,.]")));
         System.out.println(ss);
         Map<String,Integer> myHashmap=new HashMap<>();
-//        for(String a:ss){
-//            System.out.println(a);
-//        }
+        for(String a:ss){
+            System.out.println(a);
+        }
         System.out.println(ss.size());
         int count=0;
-//        String[] myArray = new String[ss.size()];
-//        System.out.println(ss.toArray(myArray));
+        String[] myArray = new String[ss.size()];
+        System.out.println(ss.toArray(myArray));
         //Arrays.asList name.toArray(ara)
         for(int i=0;i<ss.size();i++){
 count=1;
@@ -39,5 +39,11 @@ count=1;
         System.out.println(myHashmap);
 
 
+        System.out.println("///////////////////////////////////////");
+        String myWord="Juntos";
+        myWord=myWord.toLowerCase();
+        String strng=" sotnju American Google LLC is an American multinational technology American company that focuses on artificial intelligence, search engine, online advertising, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.";
+
     }
+
 }
