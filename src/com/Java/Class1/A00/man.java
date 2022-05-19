@@ -30,8 +30,8 @@ count=1;
             }
             if(count>0){
 
-//               if(myHashmap.get(i)!=null)
-//                    System.out.println(myHashmap.get(ss.get(i)));
+               if(myHashmap.get(i)!=null)
+                    System.out.println(myHashmap.get(ss.get(i)));
                 myHashmap.put(ss.get(i),myHashmap.get((ss.get(i)))==null?1:myHashmap.get(ss.get(i))+1);
 
             }
