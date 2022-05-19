@@ -11,9 +11,9 @@ public class InsertionSort {
         System.out.println(b);
         int[] myArray={1,5,9,10,22,2,20,56,99,23,10,1};
 
-          //       insertionSort(myArray); //Ascending order sort
-          //        System.out.println(".....");
-         //        insertionSortModified(myArray); //descending order sort
+                 insertionSort(myArray); //Ascending order sort
+                  System.out.println(".....");
+                 insertionSortModified(myArray); //descending order sort
         findMaxSubstring("2aeababaecbccbbbccef");
     }
 
