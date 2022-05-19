@@ -23,7 +23,7 @@ count=1;
                 if(ss.get(i).equals(ss.get(j))){
                     System.out.println(ss.get(i));
                   count=count+1;
-                //    System.out.println(ss.get(i)+" "+ss.get(j)+" "+count);
+                    System.out.println(ss.get(i)+" "+ss.get(j)+" "+count);
                 }
 
 
