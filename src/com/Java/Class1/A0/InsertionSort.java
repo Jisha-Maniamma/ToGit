@@ -6,11 +6,47 @@ import java.util.*;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        int[] myArray={1,5,9,10,22,2,20,56,99,23,10,1};
-
-       insertionSort(myArray); //Ascending order sort
-        insertionSortModified(myArray); //descending order sort
+//        String wait="155".replace(".0","");
+//        long b= Long.parseLong(wait);
+//        System.out.println(b);
+//        int[] myArray={1,5,9,10,22,2,20,56,99,23,10,1};
+//
+//          //       insertionSort(myArray); //Ascending order sort
+//          //        System.out.println(".....");
+//         //        insertionSortModified(myArray); //descending order sort
+//        findMaxSubstring("2aeababaecbccbbbccef");
     }
+
+    private static void findMaxSubstring(String string) {
+        Set<String> myset=new HashSet<>();
+        String s="";
+        int count=0;
+        int number=Integer.parseInt(string.substring(0,1));
+        for(int i=1;i<string.length();i++){
+            s="";
+            count=1;
+
+            for(int j=i+1;j<string.length();j++){
+                if(string.charAt(i)!=string.charAt(j)){
+                   // s=s+string.charAt(i)+string.charAt(j);
+                    if(s.indexOf(string.charAt(j))!=-1){
+
+                    }
+                    else {
+                        count++;
+                        s=s+string.charAt(i)+string.charAt(j);
+                    }
+                }
+                if(count==number){
+                    myset.add(string.substring(i,j+1));
+                }
+            }
+
+
+        }
+        System.out.println(myset);
+    }
+
     public static void insertionSort(@NotNull int myArray[]) {
 
         for(int i=1;i<myArray.length;i++){
