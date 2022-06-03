@@ -74,8 +74,8 @@ StringBuffer date=new StringBuffer("20220506").insert(4,"-").insert(7,"-");
 
         System.out.println();
 
-       // System.out.println(date);
-//        scan.close();
+        System.out.println(date);
+        scan.close();
     }
 
     private static void equalsOrnot(String s, String s1) {
