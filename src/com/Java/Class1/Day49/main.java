@@ -38,16 +38,16 @@ public class main {
             String a=scan.nextLine();
 
 
-//            String ab=a.split(",")[2];
-//            System.out.println(ab.equals("1234"));
-//            String[] a=scan.next().split(",");
-//            if(! a[1].equals("社員名") ){
-//
-//                String aa=a[2];
-//                System.out.println(aa);
-//                equalsOrnot(aa,"J0007KS");
-//
-//            }
+            String ab=a.split(",")[2];
+            System.out.println(ab.equals("1234"));
+            String[] aa=scan.next().split(",");
+            if(! aa[1].equals("社員名") ){
+
+                String aaa=aa[2];
+                System.out.println(aaa);
+                equalsOrnot(aaa,"J0007KS");
+
+            }
 
 
         }
